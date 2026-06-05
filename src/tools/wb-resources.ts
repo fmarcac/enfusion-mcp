@@ -1,0 +1,124 @@
+import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { z } from "zod";
+import type { WorkbenchClient } from "../workbench/client.js";
+import { formatConnectionStatus, requireEditMode } from "../workbench/status.js";
+
+export function registerWbResources(server: McpServer, client: WorkbenchClient): void {
+  server.registerTool(
+    "wb_resources",
+    {
+      description:
+        "Manage Workbench resources. Register new resources, rebuild resource databases, get resource info, or open a resource in its editor.",
+      inputSchema: {
+        action: z
+          .enum(["register", "rebuild", "getInfo", "open", "browse"])
+          .describe(
+            "Action: register (add resource to DB), rebuild (regenerate resource DB), getInfo (resource metadata), open (open in editor), browse (list resources by path prefix)"
+          ),
+        path: z
+          .string()
+          .describe(
+            "Resource path or path prefix. Required for all actions. For browse: use a prefix like 'Prefabs/Characters/' to find matching resources."
+          ),
+        buildRuntime: z
+          .boolean()
+          .optional()
+          .describe("Build runtime data during register/rebuild (slower but ensures assets are ready)"),
+      },
+    },
+    async ({ action, path, buildRuntime }) => {
+      try {
+        // Mutating actions require edit mode
+        if (action === "register" || action === "rebuild") {
+          const modeErr = requireEditMode(client, `${action} resource`);
+          if (modeErr) {
+            return { content: [{ type: "text" as const, text: modeErr + formatConnectionStatus(client) }] };
+          }
+        }
+
+        if (action === "browse") {
+          const result = await client.call<Record<string, unknown>>("EMCP_WB_Resources", { action, path });
+          const entries = Array.isArray(result.entries) ? result.entries : [];
+          const total = typeof result.entryCount === "number" ? result.entryCount : entries.length;
+
+          if (entries.length === 0) {
+            return {
+              content: [{ type: "text" as const, text: `**No resources found** matching \`${path}\`\n\n${result.message || ""}${formatConnectionStatus(client)}` }],
+            };
+          }
+          const lines = [`**Resources matching \`${path}\`** (${entries.length} of ${total})\n`];
+          for (const entry of entries) {
+            const e = entry as Record<string, unknown>;
+            lines.push(`- \`${e.path}\` *(${e.type || "?"})*`);
+          }
+          if (total > entries.length) {
+            lines.push(`\n*${total - entries.length} more not shown (cap 200).*`);
+          }
+          return { content: [{ type: "text" as const, text: lines.join("\n") + formatConnectionStatus(client) }] };
+        }
+
+        if (action === "getInfo") {
+          // Use built-in GetResourceInfo handler
+          const result = await client.call<Record<string, unknown>>("GetResourceInfo", {
+            path,
+          });
+
+          const lines = [`**Resource Info**\n`];
+          lines.push(`- **Path:** ${path}`);
+          if (result.guid) lines.push(`- **GUID:** ${result.guid}`);
+          if (result.type) lines.push(`- **Type:** ${result.type}`);
+          if (result.size !== undefined) lines.push(`- **Size:** ${result.size}`);
+          if (result.lastModified) lines.push(`- **Modified:** ${result.lastModified}`);
+          if (result.dependencies && Array.isArray(result.dependencies)) {
+            lines.push(`\n### Dependencies (${result.dependencies.length})`);
+            for (const dep of result.dependencies) {
+              lines.push(`- ${dep}`);
+            }
+          }
+
+          // Fallback for unknown response shapes
+          const knownKeys = new Set(["guid", "type", "size", "lastModified", "dependencies", "path"]);
+          for (const [key, val] of Object.entries(result)) {
+            if (!knownKeys.has(key) && val !== undefined) {
+              lines.push(`- **${key}:** ${typeof val === "object" ? JSON.stringify(val) : val}`);
+            }
+          }
+
+          return { content: [{ type: "text" as const, text: lines.join("\n") + formatConnectionStatus(client) }] };
+        }
+
+        // register, rebuild, open all use EMCP_WB_Resources
+        const params: Record<string, unknown> = { action, path };
+        if (buildRuntime !== undefined) params.buildRuntime = buildRuntime;
+
+        const result = await client.call<Record<string, unknown>>("EMCP_WB_Resources", params);
+
+        const actionLabels: Record<string, string> = {
+          register: `Registered resource: ${path}`,
+          rebuild: `Rebuilt resource database for: ${path}`,
+          open: `Opened resource: ${path}`,
+        };
+
+        return {
+          content: [
+            {
+              type: "text" as const,
+              text: `**${actionLabels[action]}**${result.message ? `\n\n${result.message}` : ""}${formatConnectionStatus(client)}`,
+            },
+          ],
+        };
+      } catch (e) {
+        const msg = e instanceof Error ? e.message : String(e);
+        return {
+          content: [
+            {
+              type: "text" as const,
+              text: `Error managing resource "${path}" (${action}): ${msg}${formatConnectionStatus(client)}`,
+            },
+          ],
+          isError: true,
+        };
+      }
+    }
+  );
+}

@@ -1,0 +1,58 @@
+{
+  "name": "enfusion-mcp",
+  "version": "0.10.0",
+  "type": "module",
+  "description": "MCP server for Arma Reforger / Enfusion engine modding  -  create mods from natural language",
+  "bin": {
+    "enfusion-mcp": "./dist/index.js"
+  },
+  "scripts": {
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "build": "npm run clean && tsc -p tsconfig.build.json",
+    "dev": "tsx src/index.ts",
+    "scrape": "tsx scripts/scrape.ts",
+    "scrape:remote": "tsx scripts/scrape.ts --source remote",
+    "scrape:local": "tsx scripts/scrape.ts --source local",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.26.0",
+    "adm-zip": "^0.5.16",
+    "cheerio": "^1.0.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/adm-zip": "^0.5.7",
+    "@types/node": "^22.0.0",
+    "playwright": "^1.58.2",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "files": [
+    "dist",
+    "data",
+    "mod",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/steffenbk/enfusion-mcp-BK.git"
+  },
+  "homepage": "https://github.com/steffenbk/enfusion-mcp-BK",
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "arma-reforger",
+    "enfusion",
+    "modding",
+    "model-context-protocol",
+    "workbench"
+  ]
+}
