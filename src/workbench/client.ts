@@ -426,13 +426,16 @@ export class WorkbenchClient {
   private killWorkbench(): void {
     try {
       if (process.platform === "linux") {
-        const appId = this.config?.steamAppId ?? "1874910";
-        // Self-match-safe: the regex [A]ppId never matches this command's own text
-        // (it contains "[A]ppId", not "AppId"). `pkill -x wineserver` matches the
-        // process comm, not the cmdline, so it can't match pkill itself either.
-        execSync(`pkill -f '[A]ppId=${appId}' || true; sleep 2; pkill -x wineserver || true`, {
-          stdio: "ignore",
-        });
+        // Kill the whole Steam/Proton launch chain by exe name (reaper, pressure-vessel,
+        // proton, steam.exe) + the wine session. Killing only the AppId reaper orphans
+        // its children and Steam then treats the app as still running.
+        // Self-match-safe: the regex [A]rmaReforger… never matches this command's own
+        // text; `pkill -x wineserver` matches the process comm, not the cmdline.
+        execSync(
+          `pkill -f '[A]rmaReforgerWorkbenchSteamDiag' || true; pkill -x wineserver || true; ` +
+            `for _ in 1 2 3 4 5 6 7 8; do pgrep -f '[A]rmaReforgerWorkbenchSteamDiag' >/dev/null || break; sleep 1; done; sleep 2`,
+          { stdio: "ignore" }
+        );
       } else {
         execSync(`taskkill /IM ${WORKBENCH_EXE} /F`, { stdio: "ignore" });
       }
