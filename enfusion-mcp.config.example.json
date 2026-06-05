@@ -1,6 +1,16 @@
 {
   "workbenchPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Arma Reforger Tools",
   "projectPath": "",
+  "gamePath": "",
   "dataDir": "./data",
-  "patternsDir": "./data/patterns"
+  "patternsDir": "./data/patterns",
+
+  "_comment_launcher": "How to launch the Workbench exe: auto (default; Linux->proton, else native) | native | proton | steam. The fields below only apply to Linux/Proton and are auto-detected when omitted.",
+  "launcher": "auto",
+  "protonPath": "",
+  "steamRoot": "",
+  "steamCompatDataPath": "",
+  "steamAppId": "1874910",
+
+  "_comment_linux_example": "On Linux, a typical config is just: { \"workbenchPath\": \"/home/<you>/.local/share/Steam/steamapps/common/Arma Reforger Tools\", \"gamePath\": \"/path/to/Arma Reforger\" (or a dedicated-server install), \"projectPath\": \"/path/to/your/mods\" }. launcher=auto picks Proton and auto-detects the Proton install, Steam root, and compatdata prefix."
 }

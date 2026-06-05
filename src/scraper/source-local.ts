@@ -1,5 +1,5 @@
 import AdmZip from "adm-zip";
-import { resolve } from "node:path";
+import { resolve, basename } from "node:path";
 import { existsSync } from "node:fs";
 import { logger } from "../utils/logger.js";
 
@@ -13,11 +13,6 @@ const ZIP_FILES = {
   arma: "ArmaReforgerScriptAPIPublic.zip",
 } as const;
 
-const ZIP_PREFIXES = {
-  enfusion: "EnfusionScriptAPIPublic/",
-  arma: "ArmaReforgerScriptAPIPublic/",
-} as const;
-
 export function getZipPath(
   workbenchPath: string,
   source: "enfusion" | "arma"
@@ -28,6 +23,11 @@ export function getZipPath(
 /**
  * Iterate HTML files from a local Workbench docs zip.
  * Yields {filename, html} for each HTML file matching the given pattern.
+ *
+ * Filenames are matched by basename (last path segment), so this is agnostic
+ * to the zip's internal directory layout. Pre-1.7 zips placed pages at
+ * `<Prefix>/annotated.html`; the 1.7 combined zip nests them under
+ * `<Prefix>/html/...`. Basename matching handles both.
  */
 export function* readHtmlFromZip(
   workbenchPath: string,
@@ -37,24 +37,21 @@ export function* readHtmlFromZip(
   const zipPath = getZipPath(workbenchPath, source);
 
   if (!existsSync(zipPath)) {
-    logger.error(`Zip file not found: ${zipPath}`);
+    logger.warn(`Docs zip not found (skipping ${source}): ${zipPath}`);
     return;
   }
 
   logger.info(`Reading from ${zipPath}`);
   const zip = new AdmZip(zipPath);
   const entries = zip.getEntries();
-  const prefix = ZIP_PREFIXES[source];
 
   let count = 0;
   for (const entry of entries) {
     if (entry.isDirectory) continue;
     if (!entry.entryName.endsWith(".html")) continue;
 
-    // Strip the prefix directory
-    const filename = entry.entryName.startsWith(prefix)
-      ? entry.entryName.slice(prefix.length)
-      : entry.entryName;
+    // Match on basename so the internal directory depth doesn't matter.
+    const filename = basename(entry.entryName);
 
     // Apply pattern filter if provided
     if (pattern && !pattern.test(filename)) continue;
@@ -68,7 +65,8 @@ export function* readHtmlFromZip(
 }
 
 /**
- * Read a specific file from the zip by filename.
+ * Read a specific file from the zip by basename (e.g. "annotated.html").
+ * Layout-agnostic: searches all entries for a matching basename.
  */
 export function readFileFromZip(
   workbenchPath: string,
@@ -79,9 +77,11 @@ export function readFileFromZip(
   if (!existsSync(zipPath)) return null;
 
   const zip = new AdmZip(zipPath);
-  const fullPath = ZIP_PREFIXES[source] + filename;
-  const entry = zip.getEntry(fullPath);
-
-  if (!entry) return null;
-  return entry.getData().toString("utf-8");
+  for (const entry of zip.getEntries()) {
+    if (entry.isDirectory) continue;
+    if (basename(entry.entryName) === filename) {
+      return entry.getData().toString("utf-8");
+    }
+  }
+  return null;
 }

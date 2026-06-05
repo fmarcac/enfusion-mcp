@@ -346,7 +346,12 @@ describe("SearchEngine", () => {
       expect(results.length).toBeGreaterThan(0);
       for (const r of results) {
         expect(r.categories).toContain("vehicle");
-        expect(r.component.name.endsWith("Component")).toBe(true);
+        // Components are detected by inheritance (descendants of ScriptComponent
+        // etc.) as well as by name, so a component's name need not contain
+        // "Component" (e.g. SCR_VehicleDustPerWheel). Assert it's a real class
+        // record instead of asserting a name shape.
+        expect(r.component.name.length).toBeGreaterThan(0);
+        expect(r.component.source).toBeDefined();
       }
     });
 
