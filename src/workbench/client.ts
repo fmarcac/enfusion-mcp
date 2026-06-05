@@ -82,6 +82,8 @@ export class WorkbenchError extends Error {
 
 export class WorkbenchClient {
   private launchPromise: Promise<void> | null = null;
+  /** The .gproj of the project we last launched, to avoid needless restarts. */
+  private currentGproj: string | null = null;
   private _state: WorkbenchState = { connected: false, mode: "unknown", lastUpdated: 0 };
 
   /** Current cached connection state. Updated after every successful call. */
@@ -418,12 +420,22 @@ export class WorkbenchClient {
   }
 
   /**
-   * Kill any running Workbench process. Windows-only (taskkill).
-   * Safe to call even if Workbench isn't running.
+   * Kill any running Workbench process. Safe to call even if it isn't running.
+   * Windows: taskkill. Linux: tear down the Steam/Proton launch chain + wine session.
    */
   private killWorkbench(): void {
     try {
-      execSync(`taskkill /IM ${WORKBENCH_EXE} /F`, { stdio: "ignore" });
+      if (process.platform === "linux") {
+        const appId = this.config?.steamAppId ?? "1874910";
+        // Self-match-safe: the regex [A]ppId never matches this command's own text
+        // (it contains "[A]ppId", not "AppId"). `pkill -x wineserver` matches the
+        // process comm, not the cmdline, so it can't match pkill itself either.
+        execSync(`pkill -f '[A]ppId=${appId}' || true; sleep 2; pkill -x wineserver || true`, {
+          stdio: "ignore",
+        });
+      } else {
+        execSync(`taskkill /IM ${WORKBENCH_EXE} /F`, { stdio: "ignore" });
+      }
       logger.info("Killed running Workbench process.");
     } catch {
       // Process might not be running  -  ignore
@@ -431,18 +443,27 @@ export class WorkbenchClient {
   }
 
   private async launchWorkbench(gprojPath?: string): Promise<void> {
-    // 1. Check if already running (maybe it came up between the failed call and now)
+    // 1. Resolve the target .gproj up-front (needed for the switch-project check).
+    let resolvedGproj = gprojPath || this.findFallbackGproj();
+
+    // 2. If Workbench is already responding, decide whether to keep it or switch.
+    //    Workbench only compiles the ACTIVE project, so opening a different project
+    //    means closing the current instance and relaunching into the new one.
     if (await this.ping()) {
-      logger.info("Workbench is already running.");
-      return;
+      const sameProject = !!resolvedGproj && this.currentGproj === resolvedGproj;
+      if (!gprojPath || sameProject) {
+        // No specific project requested, or it's already the open one  -  keep it.
+        logger.info("Workbench is already running.");
+        return;
+      }
+      logger.info(`Switching Workbench to project: ${resolvedGproj}`);
+      this.killWorkbench();
+      await new Promise((r) => setTimeout(r, KILL_SETTLE_MS));
     }
 
-    // 2. Resolve the target .gproj and inject handler scripts into that mod.
-    //    Handler scripts must compile as part of the opened project  -  Workbench
-    //    only compiles the active project and its declared dependencies, NOT every
-    //    addon folder in the project directory.  A standalone sibling addon will
-    //    never be compiled unless the user's project explicitly depends on it.
-    let resolvedGproj = gprojPath || this.findFallbackGproj();
+    // 3. Inject handler scripts into the target mod so they compile as part of it.
+    //    A standalone sibling addon is never compiled unless the active project
+    //    explicitly depends on it.
     if (resolvedGproj) {
       this.installHandlerScripts(dirname(resolvedGproj));
       // Remove any leftover standalone addon to prevent duplicate class errors.
@@ -475,10 +496,13 @@ export class WorkbenchClient {
       );
     }
 
-    // 4. Spawn with -gproj to skip the launcher
+    // 5. Spawn with -gproj to skip the launcher. Under Proton/Steam the Workbench
+    //    is a Windows app, so the .gproj must be a wine path (Z:/...), not a Linux one.
     const args: string[] = [];
     if (resolvedGproj) {
-      args.push("-gproj", resolvedGproj);
+      const gprojArg =
+        this.resolveLauncher() === "native" ? resolvedGproj : this.toWinePath(resolvedGproj);
+      args.push("-gproj", gprojArg);
     }
 
     // Use the game install directory as CWD so Workbench finds base game addons
@@ -499,6 +523,8 @@ export class WorkbenchClient {
       env,
     });
     proc.unref();
+    // Remember which project we opened so a later launch can skip a needless restart.
+    this.currentGproj = resolvedGproj ?? null;
 
     // 5. Wait for NET API  -  track the last error type so the timeout message is actionable
     const deadline = Date.now() + LAUNCH_TIMEOUT_MS;
@@ -557,8 +583,15 @@ export class WorkbenchClient {
   private resolveLauncher(): "native" | "proton" | "steam" {
     const mode = this.config?.launcher ?? "auto";
     if (mode === "native" || mode === "proton" || mode === "steam") return mode;
-    // auto: Windows PE binary can't run natively on Linux → Proton.
-    return process.platform === "linux" ? "proton" : "native";
+    // auto: a Windows PE binary can't run natively on Linux. Launch via Steam so the
+    // sniper runtime + Proton are applied (the proven path); other platforms run native.
+    return process.platform === "linux" ? "steam" : "native";
+  }
+
+  /** Translate a Linux path to the wine `Z:` drive (Workbench under Proton needs it). */
+  private toWinePath(p: string): string {
+    if (/^[A-Za-z]:/.test(p)) return p; // already a wine path
+    return "Z:" + p;
   }
 
   /** Locate the Steam install root (holds steamapps/). */
