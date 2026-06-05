@@ -13,6 +13,7 @@ import { Socket } from "node:net";
 import { existsSync, mkdirSync, copyFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { join, resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { homedir } from "node:os";
 import { spawn, execSync } from "node:child_process";
 import { encodeRequest, decodeResponse } from "./protocol.js";
 import { logger } from "../utils/logger.js";
@@ -484,11 +485,18 @@ export class WorkbenchClient {
     // (data/ArmaReforger.gproj with GUID 58D0FB3206B6F859) via ./addons resolution.
     const cwd = this.findGameDir() || dirname(exePath);
 
-    logger.info(`Launching Workbench: ${exePath}${args.length ? ` ${args.join(" ")}` : ""} (cwd: ${cwd})`);
-    const proc = spawn(exePath, args, {
+    // Resolve how to actually launch the exe (native / Proton / Steam). On Linux
+    // the Workbench is a Windows PE binary and cannot be spawned directly.
+    const { command, commandArgs, env } = this.buildExeLaunch(exePath, args);
+    logger.info(
+      `Launching Workbench [${this.resolveLauncher()}]: ${command}` +
+        `${commandArgs.length ? ` ${commandArgs.join(" ")}` : ""} (cwd: ${cwd})`
+    );
+    const proc = spawn(command, commandArgs, {
       detached: true,
       stdio: "ignore",
       cwd,
+      env,
     });
     proc.unref();
 
@@ -543,6 +551,104 @@ export class WorkbenchClient {
     if (existsSync(rootPath)) return rootPath;
 
     return null;
+  }
+
+  /** Resolve the effective launcher mode ("auto" → platform default). */
+  private resolveLauncher(): "native" | "proton" | "steam" {
+    const mode = this.config?.launcher ?? "auto";
+    if (mode === "native" || mode === "proton" || mode === "steam") return mode;
+    // auto: Windows PE binary can't run natively on Linux → Proton.
+    return process.platform === "linux" ? "proton" : "native";
+  }
+
+  /** Locate the Steam install root (holds steamapps/). */
+  private findSteamRoot(): string | null {
+    if (this.config?.steamRoot && existsSync(this.config.steamRoot)) {
+      return this.config.steamRoot;
+    }
+    const home = homedir();
+    const candidates = [
+      join(home, ".local", "share", "Steam"),
+      join(home, ".steam", "steam"),
+      join(home, ".steam", "root"),
+      join(home, ".var", "app", "com.valvesoftware.Steam", "data", "Steam"), // Flatpak
+    ];
+    for (const c of candidates) {
+      if (existsSync(join(c, "steamapps"))) return c;
+    }
+    return null;
+  }
+
+  /** Locate a Proton `proton` run script, preferring Experimental then newest. */
+  private findProton(steamRoot: string | null): string | null {
+    if (this.config?.protonPath && existsSync(this.config.protonPath)) {
+      return this.config.protonPath;
+    }
+    if (!steamRoot) return null;
+    const commonDir = join(steamRoot, "steamapps", "common");
+    try {
+      const protonDirs = readdirSync(commonDir, { withFileTypes: true })
+        .filter((d) => d.isDirectory() && /^Proton/i.test(d.name))
+        .map((d) => d.name)
+        // Prefer "Proton - Experimental", then higher-named versions (rough but adequate).
+        .sort((a, b) => {
+          const ea = /Experimental/i.test(a) ? 1 : 0;
+          const eb = /Experimental/i.test(b) ? 1 : 0;
+          if (ea !== eb) return eb - ea;
+          return b.localeCompare(a, undefined, { numeric: true });
+        });
+      for (const name of protonDirs) {
+        const p = join(commonDir, name, "proton");
+        if (existsSync(p)) return p;
+      }
+    } catch { /* ignore */ }
+    return null;
+  }
+
+  /**
+   * Build the actual spawn command for the Workbench exe based on the launcher mode.
+   * - native: run the exe directly (Windows, or an externally-wrapped exe).
+   * - proton: `proton run <exe> [args]` with the Steam compat env (Linux).
+   * - steam:  `steam -applaunch <appid> [args]` (Steam applies its own runtime).
+   */
+  private buildExeLaunch(
+    exePath: string,
+    args: string[]
+  ): { command: string; commandArgs: string[]; env: NodeJS.ProcessEnv } {
+    const launcher = this.resolveLauncher();
+
+    if (launcher === "native") {
+      return { command: exePath, commandArgs: args, env: process.env };
+    }
+
+    const appId = this.config?.steamAppId ?? "1874910";
+
+    if (launcher === "steam") {
+      // Steam forwards trailing args to the launched app, so -gproj still applies.
+      return { command: "steam", commandArgs: ["-applaunch", appId, ...args], env: process.env };
+    }
+
+    // proton
+    const steamRoot = this.findSteamRoot();
+    const proton = this.findProton(steamRoot);
+    if (!proton || !steamRoot) {
+      const missing = !proton ? "a Proton install" : "the Steam root";
+      throw new WorkbenchError(
+        `Proton launcher selected but could not locate ${missing}. ` +
+          `Set ENFUSION_PROTON_PATH and/or ENFUSION_STEAM_ROOT, or switch to ` +
+          `ENFUSION_WB_LAUNCHER=steam (launch via the Steam client instead).`,
+        "LAUNCH_FAILED"
+      );
+    }
+    const compatData =
+      this.config?.steamCompatDataPath ||
+      join(steamRoot, "steamapps", "compatdata", appId);
+    const env: NodeJS.ProcessEnv = {
+      ...process.env,
+      STEAM_COMPAT_DATA_PATH: compatData,
+      STEAM_COMPAT_CLIENT_INSTALL_PATH: steamRoot,
+    };
+    return { command: proton, commandArgs: ["run", exePath, ...args], env };
   }
 
   /**

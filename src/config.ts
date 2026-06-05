@@ -27,6 +27,26 @@ export interface Config {
    *  Automatically set at runtime when wb_launch opens a .gproj file.
    *  Can also be set via ENFUSION_DEFAULT_MOD env var as a static fallback. */
   defaultMod?: string;
+
+  /** How to launch the Workbench executable.
+   *  - "auto" (default): Linux → "proton", everything else → "native"
+   *  - "native": spawn the .exe directly (Windows / a pre-wrapped exe)
+   *  - "proton": run the Windows .exe via Proton (Linux)
+   *  - "steam": launch via `steam -applaunch <appid>` (Steam applies its runtime)
+   *  Set via ENFUSION_WB_LAUNCHER. */
+  launcher: "auto" | "native" | "proton" | "steam";
+  /** Path to a Proton `proton` run script (e.g. ".../Proton - Experimental/proton").
+   *  Auto-detected from the Steam install when unset. Set via ENFUSION_PROTON_PATH. */
+  protonPath?: string;
+  /** Steam install root (e.g. ~/.local/share/Steam). Used for STEAM_COMPAT_CLIENT_INSTALL_PATH
+   *  and to auto-derive the Proton path + compatdata prefix. Set via ENFUSION_STEAM_ROOT. */
+  steamRoot?: string;
+  /** Steam compatdata prefix for the Tools appid (holds the Wine prefix).
+   *  Auto-derived as {steamRoot}/steamapps/compatdata/{steamAppId} when unset.
+   *  Set via ENFUSION_STEAM_COMPAT_DATA_PATH. */
+  steamCompatDataPath?: string;
+  /** Steam appid for "Arma Reforger Tools" (default 1874910). Set via ENFUSION_STEAM_APPID. */
+  steamAppId: string;
 }
 
 const DEFAULT_WORKBENCH_PATH =
@@ -49,6 +69,8 @@ const DEFAULTS: Config = {
   ),
   workbenchHost: "127.0.0.1",
   workbenchPort: 5775,
+  launcher: "auto",
+  steamAppId: "1874910",
 };
 
 function loadJsonFile(path: string): Partial<Config> {
@@ -112,9 +134,36 @@ export function loadConfig(): Config {
   if (process.env.ENFUSION_DEFAULT_MOD) {
     config.defaultMod = process.env.ENFUSION_DEFAULT_MOD;
   }
+  if (process.env.ENFUSION_WB_LAUNCHER) {
+    const v = process.env.ENFUSION_WB_LAUNCHER.toLowerCase();
+    if (v === "auto" || v === "native" || v === "proton" || v === "steam") {
+      config.launcher = v;
+    } else {
+      logger.warn(`Ignoring invalid ENFUSION_WB_LAUNCHER="${process.env.ENFUSION_WB_LAUNCHER}" (use auto|native|proton|steam)`);
+    }
+  }
+  if (process.env.ENFUSION_PROTON_PATH) {
+    config.protonPath = process.env.ENFUSION_PROTON_PATH;
+  }
+  if (process.env.ENFUSION_STEAM_ROOT) {
+    config.steamRoot = process.env.ENFUSION_STEAM_ROOT;
+  }
+  if (process.env.ENFUSION_STEAM_COMPAT_DATA_PATH) {
+    config.steamCompatDataPath = process.env.ENFUSION_STEAM_COMPAT_DATA_PATH;
+  }
+  if (process.env.ENFUSION_STEAM_APPID) {
+    config.steamAppId = process.env.ENFUSION_STEAM_APPID;
+  }
 
-  // Auto-derive gamePath from workbenchPath if not explicitly set
-  if (!process.env.ENFUSION_GAME_PATH && config.workbenchPath !== DEFAULT_WORKBENCH_PATH) {
+  // Auto-derive gamePath from workbenchPath ONLY when it hasn't been set explicitly
+  // (by env or a config file). Without the `gamePath === DEFAULTS.gamePath` guard,
+  // a custom workbenchPath would silently overwrite an explicit gamePath from the
+  // config file  -  the bug that made asset_search look in the wrong directory.
+  if (
+    !process.env.ENFUSION_GAME_PATH &&
+    config.gamePath === DEFAULTS.gamePath &&
+    config.workbenchPath !== DEFAULT_WORKBENCH_PATH
+  ) {
     config.gamePath = resolve(config.workbenchPath, "..", "Arma Reforger");
   }
 
