@@ -1,26 +1,26 @@
 # enfusion-mcp
 
-MCP server for Arma Reforger modding. Describe what you want to build, and client handles everything  -  API research, code generation, project scaffolding, Workbench control, and in-editor testing. Zero modding experience required.
+MCP server for Arma Reforger modding. Describe what you want to build, and your MCP client handles everything  -  API research, code generation, project scaffolding, Workbench control, and in-editor testing. Zero modding experience required.
 
 ## Install
 
-### MCP client (Windows)
+### CLI-based MCP clients (Windows)
 
 ```bash
 mcp add --scope user enfusion-mcp -- cmd /c npx -y enfusion-mcp
 ```
 
-### MCP client (macOS / Linux)
+### CLI-based MCP clients (macOS / Linux)
 
 ```bash
 mcp add --scope user enfusion-mcp -- npx -y enfusion-mcp
 ```
 
-Restart MCP client. Verify with `/mcp`.
+Restart the client. Verify that the server is listed.
 
-### client Desktop
+### Desktop MCP clients
 
-Add to your `mcp_client_config.json`:
+Add to your client's MCP server config:
 
 **Windows:**
 
@@ -48,15 +48,15 @@ Add to your `mcp_client_config.json`:
 }
 ```
 
-Restart client Desktop. Verify with `/mcp`.
+Restart the client. Verify that the server is listed.
 
 ### Workbench Plugin
 
-The live Workbench tools (`wb_*`) require handler scripts running inside Workbench. These ship with the package in `mod/Scripts/WorkbenchGame/EnfusionMCP/` and are installed automatically when client launches Workbench via `wb_launch`.
+The live Workbench tools (`wb_*`) require handler scripts running inside Workbench. These ship with the package in `mod/Scripts/WorkbenchGame/EnfusionMCP/` and are installed automatically when the client launches Workbench via `wb_launch`.
 
 ## Usage
 
-Just ask client to make a mod:
+Just ask your assistant to make a mod:
 
 - *"Create a HUD widget that shows player health and stamina"*
 - *"Make a zombie survival game mode with wave spawning"*
@@ -71,7 +71,7 @@ Or use the guided prompts for structured workflows:
 | `/create-mod` | Full guided mod creation  -  from idea to built addon |
 | `/modify-mod` | Modify or extend an existing mod project |
 
-client will:
+The assistant will:
 
 1. **Assess complexity**  -  simple mods are built in one pass; large mods (e.g., a DayZ-style overhaul) get broken into phases with a plan you approve before any code is written
 2. **Research** the Enfusion API (8,693 indexed classes), the Arma Reforger wiki (250+ guides), and base game assets (read directly from `.pak` archives) to find the right approach
@@ -192,3 +192,10 @@ npm test         # 187 tests
 ## License
 
 MIT
+
+## Upstream
+
+This is a maintained fork of [enfusion-mcp](https://github.com/Articulated7/enfusion-mcp)
+by Articulated7, carried to Linux under Proton and Arma Reforger 1.7. It is MIT
+licensed, the same as upstream, and the original copyright notice is kept in
+`LICENSE`.
