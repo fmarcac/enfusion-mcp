@@ -25,7 +25,7 @@ namespace. Launch the Tools through Steam once first so the prefix exists and th
 
 ## Traps when running the exe under Proton directly
 
-Each of these presents as a different bug. `reforger-mods/scripts/wb.sh` handles all four and is the
+Each of these presents as a different bug. A CLI wrapper has to handle all four; this list is the
 reference implementation.
 
 - **The working directory picks the Steam app.** `SteamAPI_Init` reads `steam_appid.txt` from the

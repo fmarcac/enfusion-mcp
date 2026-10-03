@@ -2,14 +2,14 @@
 
 MCP server for Arma Reforger modding: API and wiki search, base-game asset reading straight out of
 `.pak` archives, project scaffolding, and (in principle) live Workbench control. This fork targets
-**Arma Reforger 1.8 on Linux under Proton** and is used by the `reforger-mods` project.
+**Arma Reforger 1.8 on Linux under Proton**.
 
 ## Install
 
 This fork is not on npm. `npx -y enfusion-mcp` installs **upstream**, not this code.
 
 ```bash
-git clone git@github.com:fmarcgh/enfusion-mcp.git && cd enfusion-mcp
+git clone https://github.com/fmarcac/enfusion-mcp.git && cd enfusion-mcp
 npm install && npm run build
 claude mcp add --scope user enfusion-mcp \
   -e ENFUSION_WORKBENCH_PATH="$HOME/.local/share/Steam/steamapps/common/Arma Reforger Tools" \
@@ -57,7 +57,7 @@ claude mcp add --scope user enfusion-mcp \
 They talk to the Workbench NET API (TCP `127.0.0.1:5775`) through handler scripts in
 `mod/Scripts/WorkbenchGame/EnfusionMCP/`. **They never worked on 1.7 and are untested on 1.8**: the
 handlers have to compile inside the open project's WorkbenchGame module, and they did not. For
-compiling and publishing, `reforger-mods/scripts/wb.sh` drives the Workbench CLI directly and is the
+compiling and publishing, driving the Workbench CLI directly (`-validate`, `-packAddon`, `-publishAddon`) is the
 proven path. Linux launch details: [docs/LINUX_PROTON.md](docs/LINUX_PROTON.md).
 
 ### MCP resources
