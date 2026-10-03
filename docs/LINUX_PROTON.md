@@ -1,52 +1,46 @@
-# Running on Linux (Proton) + Steam Offline Mode
+# Running the Workbench on Linux (Proton)
 
-The Arma Reforger Workbench is a **Windows** application. This fork can launch it on
-Linux through **Proton**, so the `wb_*` / `mod_build` tools work on a Linux box.
+The Workbench is a Windows application. This fork can launch it through Proton so the `wb_*` and
+`mod build` tools have something to talk to.
 
-## How launching works
+## Launch strategy
 
-`launcher` config (env `ENFUSION_WB_LAUNCHER`) selects the strategy:
+`ENFUSION_WB_LAUNCHER` picks it:
 
-| value | behavior |
-|-------|----------|
-| `auto` (default) | Linux → `proton`; Windows/macOS → `native` |
-| `native` | spawn the `.exe` directly (Windows, or an already-wrapped exe) |
-| `proton` | run the exe via `proton run` with the Steam compat env (Linux) |
-| `steam` | launch via `steam -applaunch <appid>` (Steam applies its own runtime) |
+| value | behaviour |
+|-------|-----------|
+| `auto` (default) | Linux -> `proton`; Windows/macOS -> `native` |
+| `native` | spawn the `.exe` directly |
+| `proton` | `proton run <exe>` with the Steam compat environment |
+| `steam` | `steam -applaunch <appid>`; Steam applies its own runtime, but returns immediately with no exit code |
 
-On Linux with `auto`/`proton`, the launcher auto-detects:
-- **Proton**  -  newest `Proton - Experimental` (or any `Proton*`) under `steamapps/common`. Override: `ENFUSION_PROTON_PATH`.
-- **Steam root**  -  `~/.local/share/Steam`, `~/.steam/steam`, or the Flatpak path. Override: `ENFUSION_STEAM_ROOT`.
-- **compatdata prefix**  -  `{steamRoot}/steamapps/compatdata/{appId}` (appId default `1874910`). Override: `ENFUSION_STEAM_COMPAT_DATA_PATH`.
+With `auto`/`proton` the launcher detects, each overridable:
 
-It then spawns: `proton run <Workbench.exe> [-gproj …]` with
-`STEAM_COMPAT_DATA_PATH` + `STEAM_COMPAT_CLIENT_INSTALL_PATH` set. The Workbench NET
-API (TCP `127.0.0.1:5775`) is reachable from the host because Proton shares the host
-network namespace.
+- Proton: newest `Proton - Experimental` (or any `Proton*`) under `steamapps/common`. `ENFUSION_PROTON_PATH`.
+- Steam root: `~/.local/share/Steam`, `~/.steam/steam`, or the Flatpak path. `ENFUSION_STEAM_ROOT`.
+- Prefix: `{steamRoot}/steamapps/compatdata/{appId}`, appId `1874910`. `ENFUSION_STEAM_COMPAT_DATA_PATH`, `ENFUSION_STEAM_APPID`.
 
-**If `proton run` doesn't bring up the NET API**, set `ENFUSION_WB_LAUNCHER=steam`  - 
-Steam launches the Tools with its full runtime container, which is the most reliable
-path. (Steam forwards trailing args, so `-gproj` still applies.)
+The NET API (TCP `127.0.0.1:5775`) is reachable from the host because Proton shares its network
+namespace. Launch the Tools through Steam once first so the prefix exists and the licence is cached.
 
-First-run note: launch the Tools through Steam once so Proton creates the
-`compatdata/<appid>` prefix and Steam caches the license, before relying on the MCP
-launcher.
+## Traps when running the exe under Proton directly
 
-## Steam Offline Mode (run Workbench on the laptop *and* play Reforger on another PC)
+Each of these presents as a different bug. `reforger-mods/scripts/wb.sh` handles all four and is the
+reference implementation.
 
-One Steam account can only be "online + in a game" on **one** device at a time  - 
-launching Workbench on the laptop while a second PC plays Reforger signs the PC out.
-The free fix is **Steam Offline Mode** on the laptop:
+- **The working directory picks the Steam app.** `SteamAPI_Init` reads `steam_appid.txt` from the
+  CWD: the game dir says 1874880, the Workbench dir 1874910. With the wrong one, platform services
+  fail right after `Game successfully created`. Compiling finishes before that, so validation looks
+  fine while packing and publishing silently produce nothing. Use the Workbench dir as CWD.
+- **Hand the base game over with `-addonsDir`.** The Tools prefix has no registry entry for the game,
+  so every project fails with `Game addon '58D0FB3206B6F859' not found`.
+- **Use `Z:` paths, not `S:`.** `S:` is a drive mapping Steam creates; it may not exist when Proton is
+  run directly. `Z:` maps `/` and always exists.
+- **`-wbSilent` suppresses packing and publishing** without saying so. Fine for validation only.
 
-1. On the laptop, sign into Steam online once (so the Tools are installed/updated and
-   the license is cached).
-2. Steam → top-left menu → **Go Offline** (Steam keeps running locally  -  Proton and
-   the license still work offline).
-3. Launch Workbench via the MCP (`wb_*`)  -  it runs under Proton against the offline
-   Steam client.
-4. On the other PC, play/join Reforger **online** as normal  -  no session conflict.
+## Two machines, one Steam account
 
-Caveats: no Steam achievements while offline; sign back online occasionally to update.
-Family Sharing does **not** allow simultaneous play, and the Tools are tied to game
-ownership, so a second free account isn't a viable alternative  -  Offline Mode is the
-clean option.
+One account can be in a game on only one device at a time. To run the Workbench on one machine
+while the same account plays on another, put the Workbench machine's Steam client into Offline Mode
+(sign in online once first so the licence is cached). Running Proton directly, without the Steam
+client, avoids the conflict too.

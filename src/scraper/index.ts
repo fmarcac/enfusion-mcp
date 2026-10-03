@@ -33,7 +33,7 @@ function scrapeLocalSource(
   // 1. Parse annotated.html for the class list
   const annotatedHtml = readFileFromZip(workbenchPath, source, "annotated.html");
   if (!annotatedHtml) {
-    logger.error(`Could not read annotated.html from ${source} zip`);
+    logger.error(`Could not read annotated.html from ${source} docs`);
     return { classes, groups, hierarchy, wikiPages };
   }
 
@@ -187,7 +187,7 @@ export async function scrape(options: ScrapeOptions): Promise<void> {
     process.exit(1);
   }
 
-  // Scrape both API sources from local zips
+  // Scrape both API sources from the local docs (zip up to 1.7, directory from 1.8)
   logger.info("=== Scraping Enfusion Engine API ===");
   const enfusion = scrapeLocalSource(options.workbenchPath, "enfusion");
 

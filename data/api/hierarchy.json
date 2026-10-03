@@ -1,5 +1,4686 @@
 [
   {
+    "name": "ActionManager",
+    "children": [
+      "InputManager"
+    ]
+  },
+  {
+    "name": "InputManager",
+    "children": []
+  },
+  {
+    "name": "AlignableSlot",
+    "children": [
+      "ButtonSlot",
+      "GridSlot",
+      "LayoutSlot",
+      "OverlaySlot",
+      "ScrollLayoutSlot",
+      "SizeLayoutSlot"
+    ]
+  },
+  {
+    "name": "ButtonSlot",
+    "children": []
+  },
+  {
+    "name": "GridSlot",
+    "children": []
+  },
+  {
+    "name": "LayoutSlot",
+    "children": [
+      "HorizontalLayoutSlot",
+      "VerticalLayoutSlot"
+    ]
+  },
+  {
+    "name": "HorizontalLayoutSlot",
+    "children": []
+  },
+  {
+    "name": "VerticalLayoutSlot",
+    "children": []
+  },
+  {
+    "name": "OverlaySlot",
+    "children": []
+  },
+  {
+    "name": "ScrollLayoutSlot",
+    "children": []
+  },
+  {
+    "name": "SizeLayoutSlot",
+    "children": []
+  },
+  {
+    "name": "AssetTypes",
+    "children": []
+  },
+  {
+    "name": "AudioHandle",
+    "children": []
+  },
+  {
+    "name": "AudioSystem",
+    "children": []
+  },
+  {
+    "name": "AutotestBase",
+    "children": []
+  },
+  {
+    "name": "AutotestRegister",
+    "children": []
+  },
+  {
+    "name": "BackendApi",
+    "children": []
+  },
+  {
+    "name": "BackendAuthenticatorApi",
+    "children": []
+  },
+  {
+    "name": "BackendCommentCatalogue",
+    "children": []
+  },
+  {
+    "name": "BackendDebugApi",
+    "children": []
+  },
+  {
+    "name": "BackendImage",
+    "children": []
+  },
+  {
+    "name": "BackendValueFilter",
+    "children": []
+  },
+  {
+    "name": "BakeInfoDialog",
+    "children": []
+  },
+  {
+    "name": "BanServiceApi",
+    "children": []
+  },
+  {
+    "name": "BaseContainerTools",
+    "children": []
+  },
+  {
+    "name": "BaseWeatherStateTransitionManager",
+    "children": []
+  },
+  {
+    "name": "BaseWeatherTransitionCallbacks",
+    "children": []
+  },
+  {
+    "name": "BlenderPathContainer",
+    "children": []
+  },
+  {
+    "name": "BlenderRestAPI",
+    "children": []
+  },
+  {
+    "name": "BohemiaAccountApi",
+    "children": []
+  },
+  {
+    "name": "bool",
+    "children": []
+  },
+  {
+    "name": "BoundingVolumeScr",
+    "children": []
+  },
+  {
+    "name": "CharacterFSMStateCb",
+    "children": []
+  },
+  {
+    "name": "CheckLocalizationPluginReport",
+    "children": []
+  },
+  {
+    "name": "CheckLocalizationPluginReportEntry",
+    "children": []
+  },
+  {
+    "name": "Class",
+    "children": []
+  },
+  {
+    "name": "ClientLobbyApi",
+    "children": []
+  },
+  {
+    "name": "ComplexType",
+    "children": []
+  },
+  {
+    "name": "Contact",
+    "children": []
+  },
+  {
+    "name": "ContainerJSONSerializer",
+    "children": []
+  },
+  {
+    "name": "DateTimeUtcAsInt",
+    "children": []
+  },
+  {
+    "name": "DbgUI",
+    "children": []
+  },
+  {
+    "name": "Debug",
+    "children": []
+  },
+  {
+    "name": "DiagMenu",
+    "children": []
+  },
+  {
+    "name": "DSSession",
+    "children": []
+  },
+  {
+    "name": "EBT_HTTPRequest",
+    "children": []
+  },
+  {
+    "name": "EBTContainerFields",
+    "children": []
+  },
+  {
+    "name": "EBTEmatUtils",
+    "children": []
+  },
+  {
+    "name": "EBTGameMaterialSettings",
+    "children": []
+  },
+  {
+    "name": "EBTInfoDialog",
+    "children": []
+  },
+  {
+    "name": "EBTProjectSettings",
+    "children": []
+  },
+  {
+    "name": "EditorEntityIterator",
+    "children": []
+  },
+  {
+    "name": "EntityComponentPrefabData",
+    "children": [
+      "GenericComponentClass"
+    ]
+  },
+  {
+    "name": "GenericComponentClass",
+    "children": [
+      "AnimationPlayerComponentClass",
+      "BaseAnimationControllerComponentClass",
+      "BaseMaterialParamsComponentClass",
+      "BaseRplComponentClass",
+      "BaseSoundComponentClass",
+      "BaseStaticSoundComponentClass",
+      "PawnMovementComponentClass",
+      "ScriptComponentClass",
+      "SimpleSignalComponentClass",
+      "SndComponentClass",
+      "SoundOutputStateComponentClass",
+      "TouchComponentClass",
+      "WorldSubsceneComponentClass"
+    ]
+  },
+  {
+    "name": "AnimationPlayerComponentClass",
+    "children": []
+  },
+  {
+    "name": "BaseAnimationControllerComponentClass",
+    "children": [
+      "AnimationControllerComponentClass",
+      "CharacterAnimGraphComponentClass"
+    ]
+  },
+  {
+    "name": "AnimationControllerComponentClass",
+    "children": []
+  },
+  {
+    "name": "CharacterAnimGraphComponentClass",
+    "children": []
+  },
+  {
+    "name": "BaseMaterialParamsComponentClass",
+    "children": [
+      "AnimationMaterialParamsComponentClass",
+      "MaterialParamsComponentClass"
+    ]
+  },
+  {
+    "name": "AnimationMaterialParamsComponentClass",
+    "children": []
+  },
+  {
+    "name": "MaterialParamsComponentClass",
+    "children": []
+  },
+  {
+    "name": "BaseRplComponentClass",
+    "children": [
+      "RplComponentClass"
+    ]
+  },
+  {
+    "name": "RplComponentClass",
+    "children": []
+  },
+  {
+    "name": "BaseSoundComponentClass",
+    "children": []
+  },
+  {
+    "name": "BaseStaticSoundComponentClass",
+    "children": []
+  },
+  {
+    "name": "PawnMovementComponentClass",
+    "children": [
+      "CharacterMovementComponentClass"
+    ]
+  },
+  {
+    "name": "CharacterMovementComponentClass",
+    "children": []
+  },
+  {
+    "name": "ScriptComponentClass",
+    "children": [
+      "RplExample1ComponentColorAnimClass",
+      "RplExample2ComponentColorAnimClass",
+      "RplExample3ComponentColorAnimClass",
+      "RplExample3SystemClass",
+      "SomeControllerClass"
+    ]
+  },
+  {
+    "name": "RplExample1ComponentColorAnimClass",
+    "children": []
+  },
+  {
+    "name": "RplExample2ComponentColorAnimClass",
+    "children": []
+  },
+  {
+    "name": "RplExample3ComponentColorAnimClass",
+    "children": []
+  },
+  {
+    "name": "RplExample3SystemClass",
+    "children": []
+  },
+  {
+    "name": "SomeControllerClass",
+    "children": []
+  },
+  {
+    "name": "SimpleSignalComponentClass",
+    "children": []
+  },
+  {
+    "name": "SndComponentClass",
+    "children": [
+      "CharacterSndComponentClass"
+    ]
+  },
+  {
+    "name": "CharacterSndComponentClass",
+    "children": []
+  },
+  {
+    "name": "SoundOutputStateComponentClass",
+    "children": []
+  },
+  {
+    "name": "TouchComponentClass",
+    "children": []
+  },
+  {
+    "name": "WorldSubsceneComponentClass",
+    "children": []
+  },
+  {
+    "name": "EntityPrefabData",
+    "children": []
+  },
+  {
+    "name": "EntitySpawnParams",
+    "children": []
+  },
+  {
+    "name": "EnumBitFlag",
+    "children": []
+  },
+  {
+    "name": "EnumLinear",
+    "children": []
+  },
+  {
+    "name": "FBXItem",
+    "children": []
+  },
+  {
+    "name": "FileIO",
+    "children": []
+  },
+  {
+    "name": "FilePath",
+    "children": []
+  },
+  {
+    "name": "float",
+    "children": []
+  },
+  {
+    "name": "FrameSlot",
+    "children": [
+      "PanelSlot",
+      "RTTextureSlot",
+      "WindowSlot",
+      "WorkspaceSlot"
+    ]
+  },
+  {
+    "name": "PanelSlot",
+    "children": []
+  },
+  {
+    "name": "RTTextureSlot",
+    "children": []
+  },
+  {
+    "name": "WindowSlot",
+    "children": []
+  },
+  {
+    "name": "WorkspaceSlot",
+    "children": []
+  },
+  {
+    "name": "Friend",
+    "children": []
+  },
+  {
+    "name": "func",
+    "children": []
+  },
+  {
+    "name": "Game",
+    "children": [
+      "MyGame"
+    ]
+  },
+  {
+    "name": "MyGame",
+    "children": []
+  },
+  {
+    "name": "GameProject",
+    "children": []
+  },
+  {
+    "name": "GameSessionStorage",
+    "children": []
+  },
+  {
+    "name": "GenericComponent",
+    "children": [
+      "AnimationPlayerComponent",
+      "BaseAnimationControllerComponent",
+      "BaseMaterialParamsComponent",
+      "BaseRplComponent",
+      "BaseSoundComponent",
+      "BaseStaticSoundComponent",
+      "PawnMovementComponent",
+      "ScriptComponent",
+      "SimpleSignalComponent",
+      "SndComponent",
+      "SoundOutputStateComponent",
+      "TouchComponent",
+      "WorldSubsceneComponent"
+    ]
+  },
+  {
+    "name": "AnimationPlayerComponent",
+    "children": []
+  },
+  {
+    "name": "BaseAnimationControllerComponent",
+    "children": [
+      "AnimationControllerComponent",
+      "CharacterAnimGraphComponent"
+    ]
+  },
+  {
+    "name": "AnimationControllerComponent",
+    "children": []
+  },
+  {
+    "name": "CharacterAnimGraphComponent",
+    "children": []
+  },
+  {
+    "name": "BaseMaterialParamsComponent",
+    "children": [
+      "AnimationMaterialParamsComponent",
+      "MaterialParamsComponent"
+    ]
+  },
+  {
+    "name": "AnimationMaterialParamsComponent",
+    "children": []
+  },
+  {
+    "name": "MaterialParamsComponent",
+    "children": []
+  },
+  {
+    "name": "BaseRplComponent",
+    "children": [
+      "RplComponent"
+    ]
+  },
+  {
+    "name": "RplComponent",
+    "children": []
+  },
+  {
+    "name": "BaseSoundComponent",
+    "children": []
+  },
+  {
+    "name": "BaseStaticSoundComponent",
+    "children": []
+  },
+  {
+    "name": "PawnMovementComponent",
+    "children": [
+      "CharacterMovementComponent"
+    ]
+  },
+  {
+    "name": "CharacterMovementComponent",
+    "children": []
+  },
+  {
+    "name": "ScriptComponent",
+    "children": [
+      "RplExample1ComponentColorAnim",
+      "RplExample2ComponentColorAnim",
+      "RplExample3ComponentColorAnim",
+      "RplExample3System",
+      "SomeController"
+    ]
+  },
+  {
+    "name": "RplExample1ComponentColorAnim",
+    "children": []
+  },
+  {
+    "name": "RplExample2ComponentColorAnim",
+    "children": []
+  },
+  {
+    "name": "RplExample3ComponentColorAnim",
+    "children": []
+  },
+  {
+    "name": "RplExample3System",
+    "children": []
+  },
+  {
+    "name": "SomeController",
+    "children": []
+  },
+  {
+    "name": "SimpleSignalComponent",
+    "children": []
+  },
+  {
+    "name": "SndComponent",
+    "children": [
+      "CharacterSndComponent"
+    ]
+  },
+  {
+    "name": "CharacterSndComponent",
+    "children": []
+  },
+  {
+    "name": "SoundOutputStateComponent",
+    "children": []
+  },
+  {
+    "name": "TouchComponent",
+    "children": []
+  },
+  {
+    "name": "WorldSubsceneComponent",
+    "children": []
+  },
+  {
+    "name": "GenericEntityClass",
+    "children": [
+      "AutotestGridClass",
+      "BaseWeatherManagerEntityClass",
+      "CinematicEntityClass",
+      "CrossroadEntityClass",
+      "DecalEntityClass",
+      "DeferredDecalEntityClass",
+      "EditorCommentEntityClass",
+      "EntityEditIconClass",
+      "EntityWithRplPropClass",
+      "EntityWithRplRpcClass",
+      "FPS_AutotestClass",
+      "GeneratorBaseEntityClass",
+      "GenericControllerClass",
+      "GenericTerrainEntityClass",
+      "GenericWorldEntityClass",
+      "GenericWorldFogEntityClass",
+      "GenericWorldLightEntityClass",
+      "GenericWorldPPEffectClass",
+      "GenericWorldRainEntityClass",
+      "GenericWorldWindEntityClass",
+      "LightEntityClass",
+      "MotionAutoTestClass",
+      "MotionZoneClass",
+      "MotionZonePointClass",
+      "ParticleEffectEntityClass",
+      "PawnEntityClass",
+      "PawnRelatedEntityClass",
+      "RagdollTestEntityClass",
+      "RiverPartEntityClass",
+      "RoadEntityClass",
+      "RplExample3ControllerClass",
+      "RplExampleDebugShapeClass",
+      "Screenshot_AutotestClass",
+      "Screenshot_WaypointClass",
+      "ScriptCameraClass",
+      "ShapeEntityClass",
+      "SimpleCustomConcaveGeometryEntityClass",
+      "SndWorldClass",
+      "StaticModelEntityClass",
+      "VolumeEntityClass",
+      "VolumeReceiverEntityClass",
+      "WorldDecalClass"
+    ]
+  },
+  {
+    "name": "AutotestGridClass",
+    "children": []
+  },
+  {
+    "name": "BaseWeatherManagerEntityClass",
+    "children": []
+  },
+  {
+    "name": "CinematicEntityClass",
+    "children": []
+  },
+  {
+    "name": "CrossroadEntityClass",
+    "children": []
+  },
+  {
+    "name": "DecalEntityClass",
+    "children": []
+  },
+  {
+    "name": "DeferredDecalEntityClass",
+    "children": []
+  },
+  {
+    "name": "EditorCommentEntityClass",
+    "children": []
+  },
+  {
+    "name": "EntityEditIconClass",
+    "children": []
+  },
+  {
+    "name": "EntityWithRplPropClass",
+    "children": []
+  },
+  {
+    "name": "EntityWithRplRpcClass",
+    "children": []
+  },
+  {
+    "name": "FPS_AutotestClass",
+    "children": []
+  },
+  {
+    "name": "GeneratorBaseEntityClass",
+    "children": [
+      "LakeGeneratorEntityClass",
+      "RiverEntityClass",
+      "RoadGeneratorEntityClass",
+      "SplineTerrainGeneratorEntityBaseClass"
+    ]
+  },
+  {
+    "name": "LakeGeneratorEntityClass",
+    "children": []
+  },
+  {
+    "name": "RiverEntityClass",
+    "children": []
+  },
+  {
+    "name": "RoadGeneratorEntityClass",
+    "children": []
+  },
+  {
+    "name": "SplineTerrainGeneratorEntityBaseClass",
+    "children": []
+  },
+  {
+    "name": "GenericControllerClass",
+    "children": []
+  },
+  {
+    "name": "GenericTerrainEntityClass",
+    "children": []
+  },
+  {
+    "name": "GenericWorldEntityClass",
+    "children": [
+      "WorldEntityClass"
+    ]
+  },
+  {
+    "name": "WorldEntityClass",
+    "children": []
+  },
+  {
+    "name": "GenericWorldFogEntityClass",
+    "children": []
+  },
+  {
+    "name": "GenericWorldLightEntityClass",
+    "children": []
+  },
+  {
+    "name": "GenericWorldPPEffectClass",
+    "children": []
+  },
+  {
+    "name": "GenericWorldRainEntityClass",
+    "children": []
+  },
+  {
+    "name": "GenericWorldWindEntityClass",
+    "children": []
+  },
+  {
+    "name": "LightEntityClass",
+    "children": []
+  },
+  {
+    "name": "MotionAutoTestClass",
+    "children": []
+  },
+  {
+    "name": "MotionZoneClass",
+    "children": []
+  },
+  {
+    "name": "MotionZonePointClass",
+    "children": []
+  },
+  {
+    "name": "ParticleEffectEntityClass",
+    "children": [
+      "ReplicatedParticleEffectEntityClass"
+    ]
+  },
+  {
+    "name": "ReplicatedParticleEffectEntityClass",
+    "children": []
+  },
+  {
+    "name": "PawnEntityClass",
+    "children": [
+      "CharacterEntityClass"
+    ]
+  },
+  {
+    "name": "CharacterEntityClass",
+    "children": []
+  },
+  {
+    "name": "PawnRelatedEntityClass",
+    "children": []
+  },
+  {
+    "name": "RagdollTestEntityClass",
+    "children": []
+  },
+  {
+    "name": "RiverPartEntityClass",
+    "children": []
+  },
+  {
+    "name": "RoadEntityClass",
+    "children": []
+  },
+  {
+    "name": "RplExample3ControllerClass",
+    "children": []
+  },
+  {
+    "name": "RplExampleDebugShapeClass",
+    "children": []
+  },
+  {
+    "name": "Screenshot_AutotestClass",
+    "children": []
+  },
+  {
+    "name": "Screenshot_WaypointClass",
+    "children": []
+  },
+  {
+    "name": "ScriptCameraClass",
+    "children": []
+  },
+  {
+    "name": "ShapeEntityClass",
+    "children": [
+      "PolylineShapeEntityClass",
+      "SplineShapeEntityClass"
+    ]
+  },
+  {
+    "name": "PolylineShapeEntityClass",
+    "children": []
+  },
+  {
+    "name": "SplineShapeEntityClass",
+    "children": []
+  },
+  {
+    "name": "SimpleCustomConcaveGeometryEntityClass",
+    "children": []
+  },
+  {
+    "name": "SndWorldClass",
+    "children": []
+  },
+  {
+    "name": "StaticModelEntityClass",
+    "children": [
+      "TreeEntityClass"
+    ]
+  },
+  {
+    "name": "TreeEntityClass",
+    "children": []
+  },
+  {
+    "name": "VolumeEntityClass",
+    "children": [
+      "ProbeVolumeClass",
+      "WorldOccluderEntityClass"
+    ]
+  },
+  {
+    "name": "ProbeVolumeClass",
+    "children": []
+  },
+  {
+    "name": "WorldOccluderEntityClass",
+    "children": []
+  },
+  {
+    "name": "VolumeReceiverEntityClass",
+    "children": [
+      "EnvironmentProbeEntityClass"
+    ]
+  },
+  {
+    "name": "EnvironmentProbeEntityClass",
+    "children": []
+  },
+  {
+    "name": "WorldDecalClass",
+    "children": []
+  },
+  {
+    "name": "GeoShapeLoader",
+    "children": []
+  },
+  {
+    "name": "GroupApplicationCatalogue",
+    "children": []
+  },
+  {
+    "name": "GroupAuditLogCatalogue",
+    "children": []
+  },
+  {
+    "name": "GroupCatalogue",
+    "children": []
+  },
+  {
+    "name": "GroupMemberCatalogue",
+    "children": []
+  },
+  {
+    "name": "ImageScale",
+    "children": []
+  },
+  {
+    "name": "InheritedAttribute",
+    "children": []
+  },
+  {
+    "name": "InputBinding",
+    "children": []
+  },
+  {
+    "name": "InputDeviceHandler",
+    "children": [
+      "GamepadDeviceHandler",
+      "GyroDeviceHandler",
+      "JoystickDeviceHandler",
+      "KeyboardDeviceHandler",
+      "MouseDeviceHandler",
+      "TrackIRDeviceHandler"
+    ]
+  },
+  {
+    "name": "GamepadDeviceHandler",
+    "children": []
+  },
+  {
+    "name": "GyroDeviceHandler",
+    "children": []
+  },
+  {
+    "name": "JoystickDeviceHandler",
+    "children": []
+  },
+  {
+    "name": "KeyboardDeviceHandler",
+    "children": []
+  },
+  {
+    "name": "MouseDeviceHandler",
+    "children": []
+  },
+  {
+    "name": "TrackIRDeviceHandler",
+    "children": []
+  },
+  {
+    "name": "int",
+    "children": []
+  },
+  {
+    "name": "LoadingAnim",
+    "children": [
+      "BaseLoadingAnim"
+    ]
+  },
+  {
+    "name": "BaseLoadingAnim",
+    "children": []
+  },
+  {
+    "name": "Managed",
+    "children": [
+      "map< int, int >",
+      "map< int, string >",
+      "map< int, Class >",
+      "map< int, Managed >",
+      "map< int, ref Managed >",
+      "map< int, pointer >",
+      "map< int, vector >",
+      "map< string, float >",
+      "map< string, int >",
+      "map< string, string >",
+      "map< string, Class >",
+      "map< string, Managed >",
+      "map< string, ref Managed >",
+      "map< string, pointer >",
+      "map< string, vector >",
+      "map< Class, float >",
+      "map< Class, int >",
+      "map< Class, string >",
+      "map< Class, Class >",
+      "map< Class, Managed >",
+      "map< Class, ref Managed >",
+      "map< Class, pointer >",
+      "map< Class, vector >",
+      "map< pointer, float >",
+      "map< pointer, int >",
+      "map< pointer, string >",
+      "map< pointer, Class >",
+      "map< pointer, Managed >",
+      "map< pointer, ref Managed >",
+      "map< pointer, pointer >",
+      "map< pointer, vector >",
+      "map< Managed, float >",
+      "map< Managed, int >",
+      "map< Managed, string >",
+      "map< Managed, Class >",
+      "map< Managed, Managed >",
+      "map< Managed, ref Managed >",
+      "map< Managed, pointer >",
+      "map< Managed, vector >",
+      "map< ref Managed, float >",
+      "map< ref Managed, int >",
+      "map< ref Managed, string >",
+      "map< ref Managed, Class >",
+      "map< ref Managed, Managed >",
+      "map< ref Managed, ref Managed >",
+      "map< ref Managed, pointer >",
+      "map< ref Managed, vector >",
+      "BImage",
+      "BackendCallback",
+      "BackendCatalogueFilter",
+      "BackendComment",
+      "BaseContainerList",
+      "BaseWorkshopItem",
+      "BlockListItem",
+      "BoneMask",
+      "BuildResourceContext",
+      "CanvasWidgetCommand",
+      "Color",
+      "ContainerIdPathEntry",
+      "CurveColor",
+      "CurveFloat",
+      "CurveVector",
+      "DSSessionCallback",
+      "DebugText",
+      "Dependency",
+      "ExtraProduct",
+      "FileHandle",
+      "GameWorldEditor",
+      "GeneratedResources",
+      "GeoAttribCollection",
+      "GeoShape",
+      "GeoShapeCollection",
+      "GeoVertexCollection",
+      "GraphNodePortBase",
+      "GraphNodeView",
+      "GraphPortInfo",
+      "GraphSceneState",
+      "GroupApplication",
+      "GroupApplicationCatalogueFilters",
+      "GroupAuditLogCatalogueFilters",
+      "GroupAuditLogEvent",
+      "GroupAuditLogMember",
+      "GroupCatalogueFilters",
+      "GroupData",
+      "GroupManifest",
+      "GroupMemberCatalogueFilters",
+      "GroupMemberRole",
+      "GroupMembership",
+      "IEntity",
+      "IGraphModel",
+      "JsonApiStruct",
+      "Material",
+      "MemoryStatsSnapshot",
+      "MissionWorkshopItem",
+      "NotificationCatalogueFilters",
+      "NotificationInfo",
+      "OnlineBanListData",
+      "ParamEnum",
+      "PhysicsGeomDef",
+      "PlatformRequestCallback",
+      "ProductOffer",
+      "ProductOfferCatalogueFilters",
+      "ProductServerRentingDetails",
+      "ProfanityFilterRequestCallback",
+      "PublicProfilesRequestCallback",
+      "RandomGenerator",
+      "Resource",
+      "RestCallback",
+      "Restrict",
+      "Revision",
+      "RplConnectionStats",
+      "SSnapSerializerBase",
+      "SSnapshot",
+      "ScriptAndConfig",
+      "ScriptBitReader",
+      "ScriptBitSerializer",
+      "ScriptBitWriter",
+      "ScriptCtx",
+      "ScriptInvokerBase",
+      "ScriptedWidgetEventHandler",
+      "SearchResourcesFilter",
+      "Serializer",
+      "ServerPingSite",
+      "Shape",
+      "TerrainToolDesc",
+      "TestBase",
+      "TestFailureBase",
+      "TestHarness",
+      "TestSuite",
+      "TraceParam",
+      "TrackDecalFactory",
+      "Tuple",
+      "UserGameDataBase",
+      "WBProgressDialog",
+      "WB_UIMenuItem",
+      "Widget",
+      "WorkbenchPlugin",
+      "WorkshopCatalogueFilters",
+      "WorldEditorTool",
+      "WorldEditorToolAPI",
+      "WorldSaveManifest",
+      "array< Class T >",
+      "map",
+      "set< Class T >"
+    ]
+  },
+  {
+    "name": "map< int, int >",
+    "children": []
+  },
+  {
+    "name": "map< int, string >",
+    "children": []
+  },
+  {
+    "name": "map< int, Class >",
+    "children": []
+  },
+  {
+    "name": "map< int, Managed >",
+    "children": []
+  },
+  {
+    "name": "map< int, ref Managed >",
+    "children": []
+  },
+  {
+    "name": "map< int, pointer >",
+    "children": []
+  },
+  {
+    "name": "map< int, vector >",
+    "children": []
+  },
+  {
+    "name": "map< string, float >",
+    "children": []
+  },
+  {
+    "name": "map< string, int >",
+    "children": []
+  },
+  {
+    "name": "map< string, string >",
+    "children": []
+  },
+  {
+    "name": "map< string, Class >",
+    "children": []
+  },
+  {
+    "name": "map< string, Managed >",
+    "children": []
+  },
+  {
+    "name": "map< string, ref Managed >",
+    "children": []
+  },
+  {
+    "name": "map< string, pointer >",
+    "children": []
+  },
+  {
+    "name": "map< string, vector >",
+    "children": []
+  },
+  {
+    "name": "map< Class, float >",
+    "children": []
+  },
+  {
+    "name": "map< Class, int >",
+    "children": []
+  },
+  {
+    "name": "map< Class, string >",
+    "children": []
+  },
+  {
+    "name": "map< Class, Class >",
+    "children": []
+  },
+  {
+    "name": "map< Class, Managed >",
+    "children": []
+  },
+  {
+    "name": "map< Class, ref Managed >",
+    "children": []
+  },
+  {
+    "name": "map< Class, pointer >",
+    "children": []
+  },
+  {
+    "name": "map< Class, vector >",
+    "children": []
+  },
+  {
+    "name": "map< pointer, float >",
+    "children": []
+  },
+  {
+    "name": "map< pointer, int >",
+    "children": []
+  },
+  {
+    "name": "map< pointer, string >",
+    "children": []
+  },
+  {
+    "name": "map< pointer, Class >",
+    "children": []
+  },
+  {
+    "name": "map< pointer, Managed >",
+    "children": []
+  },
+  {
+    "name": "map< pointer, ref Managed >",
+    "children": []
+  },
+  {
+    "name": "map< pointer, pointer >",
+    "children": []
+  },
+  {
+    "name": "map< pointer, vector >",
+    "children": []
+  },
+  {
+    "name": "map< Managed, float >",
+    "children": []
+  },
+  {
+    "name": "map< Managed, int >",
+    "children": []
+  },
+  {
+    "name": "map< Managed, string >",
+    "children": []
+  },
+  {
+    "name": "map< Managed, Class >",
+    "children": []
+  },
+  {
+    "name": "map< Managed, Managed >",
+    "children": []
+  },
+  {
+    "name": "map< Managed, ref Managed >",
+    "children": []
+  },
+  {
+    "name": "map< Managed, pointer >",
+    "children": []
+  },
+  {
+    "name": "map< Managed, vector >",
+    "children": []
+  },
+  {
+    "name": "map< ref Managed, float >",
+    "children": []
+  },
+  {
+    "name": "map< ref Managed, int >",
+    "children": []
+  },
+  {
+    "name": "map< ref Managed, string >",
+    "children": []
+  },
+  {
+    "name": "map< ref Managed, Class >",
+    "children": []
+  },
+  {
+    "name": "map< ref Managed, Managed >",
+    "children": []
+  },
+  {
+    "name": "map< ref Managed, ref Managed >",
+    "children": []
+  },
+  {
+    "name": "map< ref Managed, pointer >",
+    "children": []
+  },
+  {
+    "name": "map< ref Managed, vector >",
+    "children": []
+  },
+  {
+    "name": "BImage",
+    "children": []
+  },
+  {
+    "name": "BackendCallback",
+    "children": []
+  },
+  {
+    "name": "BackendCatalogueFilter",
+    "children": [
+      "ServerCatalogueFilters"
+    ]
+  },
+  {
+    "name": "ServerCatalogueFilters",
+    "children": []
+  },
+  {
+    "name": "BackendComment",
+    "children": []
+  },
+  {
+    "name": "BaseContainerList",
+    "children": []
+  },
+  {
+    "name": "BaseWorkshopItem",
+    "children": [
+      "WorkshopItem"
+    ]
+  },
+  {
+    "name": "WorkshopItem",
+    "children": [
+      "WorldSaveItem"
+    ]
+  },
+  {
+    "name": "WorldSaveItem",
+    "children": []
+  },
+  {
+    "name": "BlockListItem",
+    "children": []
+  },
+  {
+    "name": "BoneMask",
+    "children": []
+  },
+  {
+    "name": "BuildResourceContext",
+    "children": []
+  },
+  {
+    "name": "CanvasWidgetCommand",
+    "children": [
+      "CompositeDrawCommand",
+      "ImageDrawCommand",
+      "LineDrawCommand",
+      "PolygonDrawCommand",
+      "TextDrawCommand",
+      "TriMeshDrawCommand"
+    ]
+  },
+  {
+    "name": "CompositeDrawCommand",
+    "children": []
+  },
+  {
+    "name": "ImageDrawCommand",
+    "children": []
+  },
+  {
+    "name": "LineDrawCommand",
+    "children": []
+  },
+  {
+    "name": "PolygonDrawCommand",
+    "children": []
+  },
+  {
+    "name": "TextDrawCommand",
+    "children": []
+  },
+  {
+    "name": "TriMeshDrawCommand",
+    "children": []
+  },
+  {
+    "name": "Color",
+    "children": []
+  },
+  {
+    "name": "ContainerIdPathEntry",
+    "children": []
+  },
+  {
+    "name": "CurveColor",
+    "children": []
+  },
+  {
+    "name": "CurveFloat",
+    "children": []
+  },
+  {
+    "name": "CurveVector",
+    "children": []
+  },
+  {
+    "name": "DSSessionCallback",
+    "children": []
+  },
+  {
+    "name": "DebugText",
+    "children": [
+      "DebugTextScreenSpace",
+      "DebugTextWorldSpace"
+    ]
+  },
+  {
+    "name": "DebugTextScreenSpace",
+    "children": []
+  },
+  {
+    "name": "DebugTextWorldSpace",
+    "children": []
+  },
+  {
+    "name": "Dependency",
+    "children": []
+  },
+  {
+    "name": "ExtraProduct",
+    "children": []
+  },
+  {
+    "name": "FileHandle",
+    "children": []
+  },
+  {
+    "name": "GameWorldEditor",
+    "children": []
+  },
+  {
+    "name": "GeneratedResources",
+    "children": []
+  },
+  {
+    "name": "GeoAttribCollection",
+    "children": []
+  },
+  {
+    "name": "GeoShape",
+    "children": [
+      "GeoMultiPoint",
+      "GeoPoint",
+      "GeoPolygon",
+      "GeoPolyline"
+    ]
+  },
+  {
+    "name": "GeoMultiPoint",
+    "children": []
+  },
+  {
+    "name": "GeoPoint",
+    "children": []
+  },
+  {
+    "name": "GeoPolygon",
+    "children": []
+  },
+  {
+    "name": "GeoPolyline",
+    "children": []
+  },
+  {
+    "name": "GeoShapeCollection",
+    "children": []
+  },
+  {
+    "name": "GeoVertexCollection",
+    "children": []
+  },
+  {
+    "name": "GraphNodePortBase",
+    "children": [
+      "GraphNodePortCircle",
+      "GraphNodePortRect"
+    ]
+  },
+  {
+    "name": "GraphNodePortCircle",
+    "children": []
+  },
+  {
+    "name": "GraphNodePortRect",
+    "children": []
+  },
+  {
+    "name": "GraphNodeView",
+    "children": []
+  },
+  {
+    "name": "GraphPortInfo",
+    "children": []
+  },
+  {
+    "name": "GraphSceneState",
+    "children": []
+  },
+  {
+    "name": "GroupApplication",
+    "children": []
+  },
+  {
+    "name": "GroupApplicationCatalogueFilters",
+    "children": []
+  },
+  {
+    "name": "GroupAuditLogCatalogueFilters",
+    "children": []
+  },
+  {
+    "name": "GroupAuditLogEvent",
+    "children": []
+  },
+  {
+    "name": "GroupAuditLogMember",
+    "children": []
+  },
+  {
+    "name": "GroupCatalogueFilters",
+    "children": []
+  },
+  {
+    "name": "GroupData",
+    "children": []
+  },
+  {
+    "name": "GroupManifest",
+    "children": []
+  },
+  {
+    "name": "GroupMemberCatalogueFilters",
+    "children": []
+  },
+  {
+    "name": "GroupMemberRole",
+    "children": []
+  },
+  {
+    "name": "GroupMembership",
+    "children": []
+  },
+  {
+    "name": "IEntity",
+    "children": [
+      "GenericEntity"
+    ]
+  },
+  {
+    "name": "GenericEntity",
+    "children": [
+      "AutotestGrid",
+      "BaseWeatherManagerEntity",
+      "CinematicEntity",
+      "CrossroadEntity",
+      "DecalEntity",
+      "DeferredDecalEntity",
+      "EditorCommentEntity",
+      "EntityEditIcon",
+      "EntityWithRplProp",
+      "EntityWithRplRpc",
+      "FPS_Autotest",
+      "GeneratorBaseEntity",
+      "GenericController",
+      "GenericTerrainEntity",
+      "GenericWorldEntity",
+      "GenericWorldFogEntity",
+      "GenericWorldLightEntity",
+      "GenericWorldPPEffect",
+      "GenericWorldRainEntity",
+      "GenericWorldWindEntity",
+      "LightEntity",
+      "MotionAutoTest",
+      "MotionZone",
+      "MotionZonePoint",
+      "ParticleEffectEntity",
+      "PawnEntity",
+      "PawnRelatedEntity",
+      "RagdollTestEntity",
+      "RiverPartEntity",
+      "RoadEntity",
+      "RplExample3Controller",
+      "RplExampleDebugShape",
+      "Screenshot_Autotest",
+      "Screenshot_Waypoint",
+      "ScriptCamera",
+      "ShapeEntity",
+      "SimpleCustomConcaveGeometryEntity",
+      "SndWorld",
+      "StaticModelEntity",
+      "VolumeEntity",
+      "VolumeReceiverEntity",
+      "WorldDecal"
+    ]
+  },
+  {
+    "name": "AutotestGrid",
+    "children": []
+  },
+  {
+    "name": "BaseWeatherManagerEntity",
+    "children": []
+  },
+  {
+    "name": "CinematicEntity",
+    "children": []
+  },
+  {
+    "name": "CrossroadEntity",
+    "children": []
+  },
+  {
+    "name": "DecalEntity",
+    "children": []
+  },
+  {
+    "name": "DeferredDecalEntity",
+    "children": []
+  },
+  {
+    "name": "EditorCommentEntity",
+    "children": []
+  },
+  {
+    "name": "EntityEditIcon",
+    "children": []
+  },
+  {
+    "name": "EntityWithRplProp",
+    "children": []
+  },
+  {
+    "name": "EntityWithRplRpc",
+    "children": []
+  },
+  {
+    "name": "FPS_Autotest",
+    "children": []
+  },
+  {
+    "name": "GeneratorBaseEntity",
+    "children": [
+      "LakeGeneratorEntity",
+      "RiverEntity",
+      "RoadGeneratorEntity",
+      "SplineTerrainGeneratorEntityBase"
+    ]
+  },
+  {
+    "name": "LakeGeneratorEntity",
+    "children": []
+  },
+  {
+    "name": "RiverEntity",
+    "children": []
+  },
+  {
+    "name": "RoadGeneratorEntity",
+    "children": []
+  },
+  {
+    "name": "SplineTerrainGeneratorEntityBase",
+    "children": []
+  },
+  {
+    "name": "GenericController",
+    "children": []
+  },
+  {
+    "name": "GenericTerrainEntity",
+    "children": []
+  },
+  {
+    "name": "GenericWorldEntity",
+    "children": [
+      "WorldEntity"
+    ]
+  },
+  {
+    "name": "WorldEntity",
+    "children": []
+  },
+  {
+    "name": "GenericWorldFogEntity",
+    "children": []
+  },
+  {
+    "name": "GenericWorldLightEntity",
+    "children": []
+  },
+  {
+    "name": "GenericWorldPPEffect",
+    "children": []
+  },
+  {
+    "name": "GenericWorldRainEntity",
+    "children": []
+  },
+  {
+    "name": "GenericWorldWindEntity",
+    "children": []
+  },
+  {
+    "name": "LightEntity",
+    "children": []
+  },
+  {
+    "name": "MotionAutoTest",
+    "children": []
+  },
+  {
+    "name": "MotionZone",
+    "children": []
+  },
+  {
+    "name": "MotionZonePoint",
+    "children": []
+  },
+  {
+    "name": "ParticleEffectEntity",
+    "children": [
+      "ReplicatedParticleEffectEntity"
+    ]
+  },
+  {
+    "name": "ReplicatedParticleEffectEntity",
+    "children": []
+  },
+  {
+    "name": "PawnEntity",
+    "children": [
+      "CharacterEntity"
+    ]
+  },
+  {
+    "name": "CharacterEntity",
+    "children": []
+  },
+  {
+    "name": "PawnRelatedEntity",
+    "children": []
+  },
+  {
+    "name": "RagdollTestEntity",
+    "children": []
+  },
+  {
+    "name": "RiverPartEntity",
+    "children": []
+  },
+  {
+    "name": "RoadEntity",
+    "children": []
+  },
+  {
+    "name": "RplExample3Controller",
+    "children": []
+  },
+  {
+    "name": "RplExampleDebugShape",
+    "children": []
+  },
+  {
+    "name": "Screenshot_Autotest",
+    "children": []
+  },
+  {
+    "name": "Screenshot_Waypoint",
+    "children": []
+  },
+  {
+    "name": "ScriptCamera",
+    "children": []
+  },
+  {
+    "name": "ShapeEntity",
+    "children": [
+      "PolylineShapeEntity",
+      "SplineShapeEntity"
+    ]
+  },
+  {
+    "name": "PolylineShapeEntity",
+    "children": []
+  },
+  {
+    "name": "SplineShapeEntity",
+    "children": []
+  },
+  {
+    "name": "SimpleCustomConcaveGeometryEntity",
+    "children": []
+  },
+  {
+    "name": "SndWorld",
+    "children": []
+  },
+  {
+    "name": "StaticModelEntity",
+    "children": [
+      "TreeEntity"
+    ]
+  },
+  {
+    "name": "TreeEntity",
+    "children": []
+  },
+  {
+    "name": "VolumeEntity",
+    "children": [
+      "ProbeVolume",
+      "WorldOccluderEntity"
+    ]
+  },
+  {
+    "name": "ProbeVolume",
+    "children": []
+  },
+  {
+    "name": "WorldOccluderEntity",
+    "children": []
+  },
+  {
+    "name": "VolumeReceiverEntity",
+    "children": [
+      "EnvironmentProbeEntity"
+    ]
+  },
+  {
+    "name": "EnvironmentProbeEntity",
+    "children": []
+  },
+  {
+    "name": "WorldDecal",
+    "children": []
+  },
+  {
+    "name": "IGraphModel",
+    "children": [
+      "GenericGraphModel"
+    ]
+  },
+  {
+    "name": "GenericGraphModel",
+    "children": []
+  },
+  {
+    "name": "JsonApiStruct",
+    "children": [
+      "AnimExportProfileChannelsRequest",
+      "AnimExportProfileChannelsResponse",
+      "AnimExportProfilesRequest",
+      "AnimExportProfilesResponse",
+      "AnimExportTrackExportRequest",
+      "AnimExportTrackExportResponse",
+      "BakeInfoRequest",
+      "BakeInfoResponse",
+      "BanListPageParams",
+      "BlenderOperatorDescription",
+      "CheckGUIDRequest",
+      "CheckGUIDResponse",
+      "DSConfig",
+      "DSGameConfig",
+      "DSGameProperties",
+      "DSMod",
+      "DynMaterialTemplate",
+      "EBTAddonInfo",
+      "EBTInfoRequest",
+      "EBT_HTTPErrorResponse",
+      "ExampleRequest",
+      "ExampleResponse",
+      "ExportResult",
+      "ExportTXAResourceRequest",
+      "ExportTerrainRequest",
+      "ExportTerrainResponse",
+      "ExportTextureResourceRequest",
+      "FBXImportRequest",
+      "FBXReportToolRequest",
+      "FBXReportToolResponse",
+      "GenericJSONContainer",
+      "GenericResourceInfo",
+      "GetGameMaterialsResponse",
+      "GetLayerInteractionRequest",
+      "GetLayerInteractionResponse",
+      "GetLoadedProjectsResponse",
+      "GetObjectsResult",
+      "GetPathToAssetsFromGuidsRequest",
+      "GetPathToAssetsFromGuidsResponse",
+      "GetPortalMatRequest",
+      "GetPortalMatResponse",
+      "GetPrefabChildRequest",
+      "GetPrefabGUIDRequest",
+      "GetPrefabGUIDResponse",
+      "GetRelativePathRequest",
+      "GetRelativePathResponse",
+      "GetResourceInfoRequest",
+      "GetRoomsIds",
+      "GetTransformResult",
+      "LayerPresetsRequest",
+      "LayerPresetsResponse",
+      "LoadedProjectsRequest",
+      "LoadedProjectsResponse",
+      "LocatePrefabsFromPathRequest",
+      "LocatePrefabsFromPathResponse",
+      "LocateProjectRequest",
+      "LocateProjectResponse",
+      "MatParam",
+      "MatUVTransformTemplate",
+      "MaterialOverride",
+      "MaterialResourceInfo",
+      "MaterialValidatorRequest",
+      "MaterialValidatorResponse",
+      "OpenXOBRequest",
+      "OpenXOBResponse",
+      "OverrideMeshObjectMaterialRequest",
+      "OverrideMeshObjectMaterialResponse",
+      "PageParams",
+      "PrefabImportErrorResponse",
+      "PrefabImportRequest",
+      "PrefabImportResponse",
+      "PrefabImporterRequest",
+      "PrefabImporterResponse",
+      "RegisterResourceRequest",
+      "RegisterResourceResponse",
+      "ResourceInfo",
+      "RoomFilterBase",
+      "TextureResourceInfo",
+      "TextureValidationRequest",
+      "TextureValidationResponse",
+      "TextureValidatorRequest",
+      "TextureValidatorResponse",
+      "TranslationPluginQuery",
+      "TranslationPluginRequest",
+      "TranslationPluginResponse",
+      "TranslationPluginResponseMeta",
+      "TranslationPluginResponseMetaUsage",
+      "TranslationPluginResult",
+      "TranslationPluginResultHolder",
+      "TranslationRequestMeta",
+      "XOBResourceInfo"
+    ]
+  },
+  {
+    "name": "AnimExportProfileChannelsRequest",
+    "children": []
+  },
+  {
+    "name": "AnimExportProfileChannelsResponse",
+    "children": []
+  },
+  {
+    "name": "AnimExportProfilesRequest",
+    "children": []
+  },
+  {
+    "name": "AnimExportProfilesResponse",
+    "children": []
+  },
+  {
+    "name": "AnimExportTrackExportRequest",
+    "children": []
+  },
+  {
+    "name": "AnimExportTrackExportResponse",
+    "children": []
+  },
+  {
+    "name": "BakeInfoRequest",
+    "children": []
+  },
+  {
+    "name": "BakeInfoResponse",
+    "children": []
+  },
+  {
+    "name": "BanListPageParams",
+    "children": []
+  },
+  {
+    "name": "BlenderOperatorDescription",
+    "children": []
+  },
+  {
+    "name": "CheckGUIDRequest",
+    "children": []
+  },
+  {
+    "name": "CheckGUIDResponse",
+    "children": []
+  },
+  {
+    "name": "DSConfig",
+    "children": []
+  },
+  {
+    "name": "DSGameConfig",
+    "children": []
+  },
+  {
+    "name": "DSGameProperties",
+    "children": []
+  },
+  {
+    "name": "DSMod",
+    "children": []
+  },
+  {
+    "name": "DynMaterialTemplate",
+    "children": []
+  },
+  {
+    "name": "EBTAddonInfo",
+    "children": []
+  },
+  {
+    "name": "EBTInfoRequest",
+    "children": []
+  },
+  {
+    "name": "EBT_HTTPErrorResponse",
+    "children": []
+  },
+  {
+    "name": "ExampleRequest",
+    "children": []
+  },
+  {
+    "name": "ExampleResponse",
+    "children": []
+  },
+  {
+    "name": "ExportResult",
+    "children": []
+  },
+  {
+    "name": "ExportTXAResourceRequest",
+    "children": []
+  },
+  {
+    "name": "ExportTerrainRequest",
+    "children": []
+  },
+  {
+    "name": "ExportTerrainResponse",
+    "children": []
+  },
+  {
+    "name": "ExportTextureResourceRequest",
+    "children": []
+  },
+  {
+    "name": "FBXImportRequest",
+    "children": []
+  },
+  {
+    "name": "FBXReportToolRequest",
+    "children": []
+  },
+  {
+    "name": "FBXReportToolResponse",
+    "children": []
+  },
+  {
+    "name": "GenericJSONContainer",
+    "children": []
+  },
+  {
+    "name": "GenericResourceInfo",
+    "children": []
+  },
+  {
+    "name": "GetGameMaterialsResponse",
+    "children": []
+  },
+  {
+    "name": "GetLayerInteractionRequest",
+    "children": []
+  },
+  {
+    "name": "GetLayerInteractionResponse",
+    "children": []
+  },
+  {
+    "name": "GetLoadedProjectsResponse",
+    "children": []
+  },
+  {
+    "name": "GetObjectsResult",
+    "children": []
+  },
+  {
+    "name": "GetPathToAssetsFromGuidsRequest",
+    "children": []
+  },
+  {
+    "name": "GetPathToAssetsFromGuidsResponse",
+    "children": []
+  },
+  {
+    "name": "GetPortalMatRequest",
+    "children": []
+  },
+  {
+    "name": "GetPortalMatResponse",
+    "children": []
+  },
+  {
+    "name": "GetPrefabChildRequest",
+    "children": []
+  },
+  {
+    "name": "GetPrefabGUIDRequest",
+    "children": []
+  },
+  {
+    "name": "GetPrefabGUIDResponse",
+    "children": []
+  },
+  {
+    "name": "GetRelativePathRequest",
+    "children": []
+  },
+  {
+    "name": "GetRelativePathResponse",
+    "children": []
+  },
+  {
+    "name": "GetResourceInfoRequest",
+    "children": []
+  },
+  {
+    "name": "GetRoomsIds",
+    "children": []
+  },
+  {
+    "name": "GetTransformResult",
+    "children": []
+  },
+  {
+    "name": "LayerPresetsRequest",
+    "children": []
+  },
+  {
+    "name": "LayerPresetsResponse",
+    "children": []
+  },
+  {
+    "name": "LoadedProjectsRequest",
+    "children": []
+  },
+  {
+    "name": "LoadedProjectsResponse",
+    "children": []
+  },
+  {
+    "name": "LocatePrefabsFromPathRequest",
+    "children": []
+  },
+  {
+    "name": "LocatePrefabsFromPathResponse",
+    "children": []
+  },
+  {
+    "name": "LocateProjectRequest",
+    "children": []
+  },
+  {
+    "name": "LocateProjectResponse",
+    "children": []
+  },
+  {
+    "name": "MatParam",
+    "children": []
+  },
+  {
+    "name": "MatUVTransformTemplate",
+    "children": []
+  },
+  {
+    "name": "MaterialOverride",
+    "children": []
+  },
+  {
+    "name": "MaterialResourceInfo",
+    "children": []
+  },
+  {
+    "name": "MaterialValidatorRequest",
+    "children": []
+  },
+  {
+    "name": "MaterialValidatorResponse",
+    "children": []
+  },
+  {
+    "name": "OpenXOBRequest",
+    "children": []
+  },
+  {
+    "name": "OpenXOBResponse",
+    "children": []
+  },
+  {
+    "name": "OverrideMeshObjectMaterialRequest",
+    "children": []
+  },
+  {
+    "name": "OverrideMeshObjectMaterialResponse",
+    "children": []
+  },
+  {
+    "name": "PageParams",
+    "children": []
+  },
+  {
+    "name": "PrefabImportErrorResponse",
+    "children": []
+  },
+  {
+    "name": "PrefabImportRequest",
+    "children": []
+  },
+  {
+    "name": "PrefabImportResponse",
+    "children": []
+  },
+  {
+    "name": "PrefabImporterRequest",
+    "children": []
+  },
+  {
+    "name": "PrefabImporterResponse",
+    "children": []
+  },
+  {
+    "name": "RegisterResourceRequest",
+    "children": []
+  },
+  {
+    "name": "RegisterResourceResponse",
+    "children": []
+  },
+  {
+    "name": "ResourceInfo",
+    "children": []
+  },
+  {
+    "name": "RoomFilterBase",
+    "children": []
+  },
+  {
+    "name": "TextureResourceInfo",
+    "children": []
+  },
+  {
+    "name": "TextureValidationRequest",
+    "children": []
+  },
+  {
+    "name": "TextureValidationResponse",
+    "children": []
+  },
+  {
+    "name": "TextureValidatorRequest",
+    "children": []
+  },
+  {
+    "name": "TextureValidatorResponse",
+    "children": []
+  },
+  {
+    "name": "TranslationPluginQuery",
+    "children": []
+  },
+  {
+    "name": "TranslationPluginRequest",
+    "children": []
+  },
+  {
+    "name": "TranslationPluginResponse",
+    "children": []
+  },
+  {
+    "name": "TranslationPluginResponseMeta",
+    "children": []
+  },
+  {
+    "name": "TranslationPluginResponseMetaUsage",
+    "children": []
+  },
+  {
+    "name": "TranslationPluginResult",
+    "children": []
+  },
+  {
+    "name": "TranslationPluginResultHolder",
+    "children": []
+  },
+  {
+    "name": "TranslationRequestMeta",
+    "children": []
+  },
+  {
+    "name": "XOBResourceInfo",
+    "children": []
+  },
+  {
+    "name": "Material",
+    "children": []
+  },
+  {
+    "name": "MemoryStatsSnapshot",
+    "children": []
+  },
+  {
+    "name": "MissionWorkshopItem",
+    "children": []
+  },
+  {
+    "name": "NotificationCatalogueFilters",
+    "children": []
+  },
+  {
+    "name": "NotificationInfo",
+    "children": []
+  },
+  {
+    "name": "OnlineBanListData",
+    "children": []
+  },
+  {
+    "name": "ParamEnum",
+    "children": []
+  },
+  {
+    "name": "PhysicsGeomDef",
+    "children": []
+  },
+  {
+    "name": "PlatformRequestCallback",
+    "children": [
+      "ScriptPlatformRequestCallback"
+    ]
+  },
+  {
+    "name": "ScriptPlatformRequestCallback",
+    "children": []
+  },
+  {
+    "name": "ProductOffer",
+    "children": []
+  },
+  {
+    "name": "ProductOfferCatalogueFilters",
+    "children": []
+  },
+  {
+    "name": "ProductServerRentingDetails",
+    "children": []
+  },
+  {
+    "name": "ProfanityFilterRequestCallback",
+    "children": [
+      "ScriptProfanityFilterRequestCallback"
+    ]
+  },
+  {
+    "name": "ScriptProfanityFilterRequestCallback",
+    "children": [
+      "SCR_ScriptProfanityFilterRequestCallback"
+    ]
+  },
+  {
+    "name": "SCR_ScriptProfanityFilterRequestCallback",
+    "children": []
+  },
+  {
+    "name": "PublicProfilesRequestCallback",
+    "children": []
+  },
+  {
+    "name": "RandomGenerator",
+    "children": []
+  },
+  {
+    "name": "Resource",
+    "children": []
+  },
+  {
+    "name": "RestCallback",
+    "children": []
+  },
+  {
+    "name": "Restrict",
+    "children": []
+  },
+  {
+    "name": "Revision",
+    "children": []
+  },
+  {
+    "name": "RplConnectionStats",
+    "children": []
+  },
+  {
+    "name": "SSnapSerializerBase",
+    "children": [
+      "SSnapSerializer"
+    ]
+  },
+  {
+    "name": "SSnapSerializer",
+    "children": []
+  },
+  {
+    "name": "SSnapshot",
+    "children": []
+  },
+  {
+    "name": "ScriptAndConfig",
+    "children": [
+      "AttachPoint",
+      "AudioSourceConfig",
+      "CharacterFSMState",
+      "CharacterSimStrategy",
+      "CinematicTrackBase",
+      "CinematicTrackModifier",
+      "DialogueBaseElement",
+      "DialogueGlobalData",
+      "DialogueSpeaker",
+      "DialogueVariableMappingObject",
+      "EventProvider",
+      "GraphNode",
+      "GraphNodeConnectionBase",
+      "GraphNodeScene",
+      "InputMappingKeyData",
+      "ModuleGameSettings",
+      "PawnEntityController",
+      "ScriptStringTableItem",
+      "ScriptValue",
+      "ScriptedWidgetTooltip",
+      "ShapePointDataScriptBase",
+      "SndBaseModule",
+      "WeatherFogPattern",
+      "WeatherLightningPattern",
+      "WeatherRainPattern",
+      "WeatherState",
+      "WeatherStateMachine",
+      "WeatherTransition",
+      "WeatherVariant",
+      "WeatherWindPattern"
+    ]
+  },
+  {
+    "name": "AttachPoint",
+    "children": []
+  },
+  {
+    "name": "AudioSourceConfig",
+    "children": []
+  },
+  {
+    "name": "CharacterFSMState",
+    "children": []
+  },
+  {
+    "name": "CharacterSimStrategy",
+    "children": [
+      "CharacterSimStrategyFSM"
+    ]
+  },
+  {
+    "name": "CharacterSimStrategyFSM",
+    "children": []
+  },
+  {
+    "name": "CinematicTrackBase",
+    "children": []
+  },
+  {
+    "name": "CinematicTrackModifier",
+    "children": [
+      "NoiseCinematicTrackModifier"
+    ]
+  },
+  {
+    "name": "NoiseCinematicTrackModifier",
+    "children": []
+  },
+  {
+    "name": "DialogueBaseElement",
+    "children": [
+      "DialogueData",
+      "DialogueTransitionRule"
+    ]
+  },
+  {
+    "name": "DialogueData",
+    "children": [
+      "AnimationDialogueData",
+      "SetVariableDialogueData",
+      "TimedDialogueData"
+    ]
+  },
+  {
+    "name": "AnimationDialogueData",
+    "children": []
+  },
+  {
+    "name": "SetVariableDialogueData",
+    "children": []
+  },
+  {
+    "name": "TimedDialogueData",
+    "children": [
+      "AudioDialogueData",
+      "TextDialogueData"
+    ]
+  },
+  {
+    "name": "AudioDialogueData",
+    "children": [
+      "DynamicAudioDialogueData"
+    ]
+  },
+  {
+    "name": "DynamicAudioDialogueData",
+    "children": []
+  },
+  {
+    "name": "TextDialogueData",
+    "children": [
+      "ObsoleteSentenceDialogueData",
+      "SentenceDialogueData"
+    ]
+  },
+  {
+    "name": "ObsoleteSentenceDialogueData",
+    "children": []
+  },
+  {
+    "name": "SentenceDialogueData",
+    "children": []
+  },
+  {
+    "name": "DialogueTransitionRule",
+    "children": [
+      "DialogueVariableRule"
+    ]
+  },
+  {
+    "name": "DialogueVariableRule",
+    "children": []
+  },
+  {
+    "name": "DialogueGlobalData",
+    "children": [
+      "AudioGlobalData"
+    ]
+  },
+  {
+    "name": "AudioGlobalData",
+    "children": []
+  },
+  {
+    "name": "DialogueSpeaker",
+    "children": []
+  },
+  {
+    "name": "DialogueVariableMappingObject",
+    "children": []
+  },
+  {
+    "name": "EventProvider",
+    "children": [
+      "WorldController",
+      "WorldSystem"
+    ]
+  },
+  {
+    "name": "WorldController",
+    "children": [
+      "PlayerNameInputController",
+      "RplSchedulerDebugController"
+    ]
+  },
+  {
+    "name": "PlayerNameInputController",
+    "children": []
+  },
+  {
+    "name": "RplSchedulerDebugController",
+    "children": []
+  },
+  {
+    "name": "WorldSystem",
+    "children": [
+      "AnimationControllerSystem",
+      "AnimationPlayerSystem",
+      "ConfigurableSystem",
+      "DebugSystem",
+      "GameMode",
+      "HelloWorldSystem",
+      "MultiPointSystem",
+      "NearbyEntitiesSystem",
+      "ParticleEffectsSystem",
+      "PawnEntitySystem",
+      "PlayerNameInputSystem",
+      "RplSchedulerDebugSystem",
+      "SndSystem",
+      "TestWorldSystem"
+    ]
+  },
+  {
+    "name": "AnimationControllerSystem",
+    "children": []
+  },
+  {
+    "name": "AnimationPlayerSystem",
+    "children": []
+  },
+  {
+    "name": "ConfigurableSystem",
+    "children": []
+  },
+  {
+    "name": "DebugSystem",
+    "children": []
+  },
+  {
+    "name": "GameMode",
+    "children": [
+      "DeathmatchMode",
+      "TeamDeathmatchMode"
+    ]
+  },
+  {
+    "name": "DeathmatchMode",
+    "children": []
+  },
+  {
+    "name": "TeamDeathmatchMode",
+    "children": []
+  },
+  {
+    "name": "HelloWorldSystem",
+    "children": []
+  },
+  {
+    "name": "MultiPointSystem",
+    "children": []
+  },
+  {
+    "name": "NearbyEntitiesSystem",
+    "children": []
+  },
+  {
+    "name": "ParticleEffectsSystem",
+    "children": []
+  },
+  {
+    "name": "PawnEntitySystem",
+    "children": []
+  },
+  {
+    "name": "PlayerNameInputSystem",
+    "children": []
+  },
+  {
+    "name": "RplSchedulerDebugSystem",
+    "children": []
+  },
+  {
+    "name": "SndSystem",
+    "children": []
+  },
+  {
+    "name": "TestWorldSystem",
+    "children": []
+  },
+  {
+    "name": "GraphNode",
+    "children": []
+  },
+  {
+    "name": "GraphNodeConnectionBase",
+    "children": [
+      "GraphNodeConnectionCurve",
+      "GraphNodeConnectionLine"
+    ]
+  },
+  {
+    "name": "GraphNodeConnectionCurve",
+    "children": []
+  },
+  {
+    "name": "GraphNodeConnectionLine",
+    "children": []
+  },
+  {
+    "name": "GraphNodeScene",
+    "children": []
+  },
+  {
+    "name": "InputMappingKeyData",
+    "children": []
+  },
+  {
+    "name": "ModuleGameSettings",
+    "children": []
+  },
+  {
+    "name": "PawnEntityController",
+    "children": []
+  },
+  {
+    "name": "ScriptStringTableItem",
+    "children": [
+      "DefaultStringTableItem"
+    ]
+  },
+  {
+    "name": "DefaultStringTableItem",
+    "children": []
+  },
+  {
+    "name": "ScriptValue",
+    "children": [
+      "ScriptValueArrayFloat",
+      "ScriptValueBool",
+      "ScriptValueFloat",
+      "ScriptValueInt",
+      "ScriptValueManaged",
+      "ScriptValueResourceName",
+      "ScriptValueString",
+      "ScriptValueVector"
+    ]
+  },
+  {
+    "name": "ScriptValueArrayFloat",
+    "children": []
+  },
+  {
+    "name": "ScriptValueBool",
+    "children": []
+  },
+  {
+    "name": "ScriptValueFloat",
+    "children": []
+  },
+  {
+    "name": "ScriptValueInt",
+    "children": []
+  },
+  {
+    "name": "ScriptValueManaged",
+    "children": [
+      "ScriptValueEntity"
+    ]
+  },
+  {
+    "name": "ScriptValueEntity",
+    "children": []
+  },
+  {
+    "name": "ScriptValueResourceName",
+    "children": []
+  },
+  {
+    "name": "ScriptValueString",
+    "children": []
+  },
+  {
+    "name": "ScriptValueVector",
+    "children": []
+  },
+  {
+    "name": "ScriptedWidgetTooltip",
+    "children": []
+  },
+  {
+    "name": "ShapePointDataScriptBase",
+    "children": []
+  },
+  {
+    "name": "SndBaseModule",
+    "children": [
+      "BaseSoundManagerModule"
+    ]
+  },
+  {
+    "name": "BaseSoundManagerModule",
+    "children": []
+  },
+  {
+    "name": "WeatherFogPattern",
+    "children": []
+  },
+  {
+    "name": "WeatherLightningPattern",
+    "children": []
+  },
+  {
+    "name": "WeatherRainPattern",
+    "children": []
+  },
+  {
+    "name": "WeatherState",
+    "children": []
+  },
+  {
+    "name": "WeatherStateMachine",
+    "children": []
+  },
+  {
+    "name": "WeatherTransition",
+    "children": []
+  },
+  {
+    "name": "WeatherVariant",
+    "children": []
+  },
+  {
+    "name": "WeatherWindPattern",
+    "children": []
+  },
+  {
+    "name": "ScriptBitReader",
+    "children": []
+  },
+  {
+    "name": "ScriptBitSerializer",
+    "children": []
+  },
+  {
+    "name": "ScriptBitWriter",
+    "children": []
+  },
+  {
+    "name": "ScriptCtx",
+    "children": []
+  },
+  {
+    "name": "ScriptInvokerBase",
+    "children": []
+  },
+  {
+    "name": "ScriptedWidgetEventHandler",
+    "children": [
+      "MenuBase",
+      "ScriptedWidgetComponent"
+    ]
+  },
+  {
+    "name": "MenuBase",
+    "children": [
+      "MessageBox",
+      "MyMenu"
+    ]
+  },
+  {
+    "name": "MessageBox",
+    "children": []
+  },
+  {
+    "name": "MyMenu",
+    "children": []
+  },
+  {
+    "name": "ScriptedWidgetComponent",
+    "children": []
+  },
+  {
+    "name": "SearchResourcesFilter",
+    "children": []
+  },
+  {
+    "name": "Serializer",
+    "children": [
+      "FileSerializer"
+    ]
+  },
+  {
+    "name": "FileSerializer",
+    "children": []
+  },
+  {
+    "name": "ServerPingSite",
+    "children": []
+  },
+  {
+    "name": "Shape",
+    "children": []
+  },
+  {
+    "name": "TerrainToolDesc",
+    "children": [
+      "TerrainToolDesc_HeightAdd",
+      "TerrainToolDesc_HeightExact",
+      "TerrainToolDesc_HeightNoise",
+      "TerrainToolDesc_HeightSmooth",
+      "TerrainToolDesc_HeightUser",
+      "TerrainToolDesc_LayerAdd"
+    ]
+  },
+  {
+    "name": "TerrainToolDesc_HeightAdd",
+    "children": []
+  },
+  {
+    "name": "TerrainToolDesc_HeightExact",
+    "children": []
+  },
+  {
+    "name": "TerrainToolDesc_HeightNoise",
+    "children": []
+  },
+  {
+    "name": "TerrainToolDesc_HeightSmooth",
+    "children": []
+  },
+  {
+    "name": "TerrainToolDesc_HeightUser",
+    "children": []
+  },
+  {
+    "name": "TerrainToolDesc_LayerAdd",
+    "children": []
+  },
+  {
+    "name": "TestBase",
+    "children": [
+      "MyAsyncTest"
+    ]
+  },
+  {
+    "name": "MyAsyncTest",
+    "children": []
+  },
+  {
+    "name": "TestFailureBase",
+    "children": [
+      "TestFailureMsg",
+      "TestResultBase",
+      "TestResultTimeout"
+    ]
+  },
+  {
+    "name": "TestFailureMsg",
+    "children": []
+  },
+  {
+    "name": "TestResultBase",
+    "children": []
+  },
+  {
+    "name": "TestResultTimeout",
+    "children": []
+  },
+  {
+    "name": "TestHarness",
+    "children": []
+  },
+  {
+    "name": "TestSuite",
+    "children": [
+      "MyTestSuite"
+    ]
+  },
+  {
+    "name": "MyTestSuite",
+    "children": []
+  },
+  {
+    "name": "TraceParam",
+    "children": [
+      "TraceBox",
+      "TraceCapsule",
+      "TraceCylinder",
+      "TraceSphere"
+    ]
+  },
+  {
+    "name": "TraceBox",
+    "children": [
+      "TraceOBB"
+    ]
+  },
+  {
+    "name": "TraceOBB",
+    "children": []
+  },
+  {
+    "name": "TraceCapsule",
+    "children": []
+  },
+  {
+    "name": "TraceCylinder",
+    "children": []
+  },
+  {
+    "name": "TraceSphere",
+    "children": []
+  },
+  {
+    "name": "TrackDecalFactory",
+    "children": []
+  },
+  {
+    "name": "Tuple",
+    "children": [
+      "Tuple1< Class T1 >",
+      "Tuple2< Class T1, Class T2 >",
+      "Tuple3< Class T1, Class T2, Class T3 >",
+      "Tuple4< Class T1, Class T2, Class T3, Class T4 >",
+      "Tuple5< Class T1, Class T2, Class T3, Class T4, Class T5 >",
+      "Tuple6< Class T1, Class T2, Class T3, Class T4, Class T5, Class T6 >"
+    ]
+  },
+  {
+    "name": "Tuple1< Class T1 >",
+    "children": []
+  },
+  {
+    "name": "Tuple2< Class T1, Class T2 >",
+    "children": []
+  },
+  {
+    "name": "Tuple3< Class T1, Class T2, Class T3 >",
+    "children": []
+  },
+  {
+    "name": "Tuple4< Class T1, Class T2, Class T3, Class T4 >",
+    "children": []
+  },
+  {
+    "name": "Tuple5< Class T1, Class T2, Class T3, Class T4, Class T5 >",
+    "children": []
+  },
+  {
+    "name": "Tuple6< Class T1, Class T2, Class T3, Class T4, Class T5, Class T6 >",
+    "children": []
+  },
+  {
+    "name": "UserGameDataBase",
+    "children": []
+  },
+  {
+    "name": "WBProgressDialog",
+    "children": []
+  },
+  {
+    "name": "WB_UIMenuItem",
+    "children": []
+  },
+  {
+    "name": "Widget",
+    "children": [
+      "BlurWidget",
+      "CanvasWidgetBase",
+      "ContentWidget",
+      "FrameWidget",
+      "GridLayoutWidget",
+      "ImageWidget",
+      "LayoutWidgetBase",
+      "OverlayWidget",
+      "RTTextureWidget",
+      "RenderTargetWidget",
+      "ScaleWidget",
+      "SizeLayoutWidget",
+      "SocketWidget",
+      "TextWidget",
+      "UIWidget",
+      "UniformGridLayoutWidget",
+      "UserWidget",
+      "VideoWidget"
+    ]
+  },
+  {
+    "name": "BlurWidget",
+    "children": []
+  },
+  {
+    "name": "CanvasWidgetBase",
+    "children": [
+      "CanvasWidget"
+    ]
+  },
+  {
+    "name": "CanvasWidget",
+    "children": [
+      "GraphWidget"
+    ]
+  },
+  {
+    "name": "GraphWidget",
+    "children": []
+  },
+  {
+    "name": "ContentWidget",
+    "children": []
+  },
+  {
+    "name": "FrameWidget",
+    "children": []
+  },
+  {
+    "name": "GridLayoutWidget",
+    "children": []
+  },
+  {
+    "name": "ImageWidget",
+    "children": []
+  },
+  {
+    "name": "LayoutWidgetBase",
+    "children": [
+      "HorizontalLayoutWidget",
+      "VerticalLayoutWidget"
+    ]
+  },
+  {
+    "name": "HorizontalLayoutWidget",
+    "children": []
+  },
+  {
+    "name": "VerticalLayoutWidget",
+    "children": []
+  },
+  {
+    "name": "OverlayWidget",
+    "children": []
+  },
+  {
+    "name": "RTTextureWidget",
+    "children": [
+      "WorkspaceWidget"
+    ]
+  },
+  {
+    "name": "WorkspaceWidget",
+    "children": []
+  },
+  {
+    "name": "RenderTargetWidget",
+    "children": []
+  },
+  {
+    "name": "ScaleWidget",
+    "children": []
+  },
+  {
+    "name": "SizeLayoutWidget",
+    "children": []
+  },
+  {
+    "name": "SocketWidget",
+    "children": []
+  },
+  {
+    "name": "TextWidget",
+    "children": [
+      "MultilineEditBoxWidget",
+      "RichTextWidget"
+    ]
+  },
+  {
+    "name": "MultilineEditBoxWidget",
+    "children": []
+  },
+  {
+    "name": "RichTextWidget",
+    "children": []
+  },
+  {
+    "name": "UIWidget",
+    "children": [
+      "BaseListboxWidget",
+      "BasicGraphWidget",
+      "ButtonWidget",
+      "CheckBoxWidget",
+      "EditBoxWidget",
+      "GameConsoleWidget",
+      "PanelWidget",
+      "ProgressBarWidget",
+      "ScrollLayoutWidget",
+      "SliderWidget",
+      "SmartPanelWidget",
+      "ThreeStateCheckboxWidget",
+      "WindowWidget",
+      "XComboBoxWidget"
+    ]
+  },
+  {
+    "name": "BaseListboxWidget",
+    "children": [
+      "SimpleListboxWidget"
+    ]
+  },
+  {
+    "name": "SimpleListboxWidget",
+    "children": [
+      "GenericListboxWidget",
+      "TextListboxWidget",
+      "UniversalListboxWidget"
+    ]
+  },
+  {
+    "name": "GenericListboxWidget",
+    "children": []
+  },
+  {
+    "name": "TextListboxWidget",
+    "children": []
+  },
+  {
+    "name": "UniversalListboxWidget",
+    "children": []
+  },
+  {
+    "name": "BasicGraphWidget",
+    "children": [
+      "RingBufferGraphWidget"
+    ]
+  },
+  {
+    "name": "RingBufferGraphWidget",
+    "children": [
+      "TimeBasedGraphWidget"
+    ]
+  },
+  {
+    "name": "TimeBasedGraphWidget",
+    "children": [
+      "TimeBasedGraphWithAxesWidget"
+    ]
+  },
+  {
+    "name": "TimeBasedGraphWithAxesWidget",
+    "children": []
+  },
+  {
+    "name": "ButtonWidget",
+    "children": []
+  },
+  {
+    "name": "CheckBoxWidget",
+    "children": []
+  },
+  {
+    "name": "EditBoxWidget",
+    "children": []
+  },
+  {
+    "name": "GameConsoleWidget",
+    "children": []
+  },
+  {
+    "name": "PanelWidget",
+    "children": []
+  },
+  {
+    "name": "ProgressBarWidget",
+    "children": []
+  },
+  {
+    "name": "ScrollLayoutWidget",
+    "children": []
+  },
+  {
+    "name": "SliderWidget",
+    "children": []
+  },
+  {
+    "name": "SmartPanelWidget",
+    "children": []
+  },
+  {
+    "name": "ThreeStateCheckboxWidget",
+    "children": []
+  },
+  {
+    "name": "WindowWidget",
+    "children": []
+  },
+  {
+    "name": "XComboBoxWidget",
+    "children": []
+  },
+  {
+    "name": "UniformGridLayoutWidget",
+    "children": []
+  },
+  {
+    "name": "UserWidget",
+    "children": []
+  },
+  {
+    "name": "VideoWidget",
+    "children": []
+  },
+  {
+    "name": "WorkbenchPlugin",
+    "children": [
+      "AddonBuildInfoTool",
+      "BakeMLODPlugin",
+      "BatchTextureProcessorPlugin",
+      "BuildShoreMap",
+      "BuildShoreMapWEPlugin",
+      "CameraOrientationTool",
+      "EBTConfigPlugin",
+      "EntityOrientationTool",
+      "EntityRelativePlugin",
+      "GenerateFlowMaps",
+      "GenerateFlowMapsWEPlugin",
+      "LocalizationEditorPlugin",
+      "ResaveMetaPlugin",
+      "ResavePlugin",
+      "ResourceManagerPlugin",
+      "ResourceProcessorPlugin",
+      "ResourceTestPlugin",
+      "SendToBlenderPlugin",
+      "ValidateFBXPlugin",
+      "WorldEditorPlugin",
+      "WorldExporterPlugin",
+      "WorldRunPlugin",
+      "WorldTestPlugin"
+    ]
+  },
+  {
+    "name": "AddonBuildInfoTool",
+    "children": []
+  },
+  {
+    "name": "BakeMLODPlugin",
+    "children": []
+  },
+  {
+    "name": "BatchTextureProcessorPlugin",
+    "children": []
+  },
+  {
+    "name": "BuildShoreMap",
+    "children": []
+  },
+  {
+    "name": "BuildShoreMapWEPlugin",
+    "children": []
+  },
+  {
+    "name": "CameraOrientationTool",
+    "children": []
+  },
+  {
+    "name": "EBTConfigPlugin",
+    "children": []
+  },
+  {
+    "name": "EntityOrientationTool",
+    "children": []
+  },
+  {
+    "name": "EntityRelativePlugin",
+    "children": []
+  },
+  {
+    "name": "GenerateFlowMaps",
+    "children": []
+  },
+  {
+    "name": "GenerateFlowMapsWEPlugin",
+    "children": []
+  },
+  {
+    "name": "LocalizationEditorPlugin",
+    "children": [
+      "CheckLocalizationPlugin",
+      "TranslationPlugin"
+    ]
+  },
+  {
+    "name": "CheckLocalizationPlugin",
+    "children": []
+  },
+  {
+    "name": "TranslationPlugin",
+    "children": []
+  },
+  {
+    "name": "ResaveMetaPlugin",
+    "children": []
+  },
+  {
+    "name": "ResavePlugin",
+    "children": []
+  },
+  {
+    "name": "ResourceManagerPlugin",
+    "children": [
+      "ResourceImportPlugin",
+      "TerrainImportPlugin",
+      "TextureImportPlugin"
+    ]
+  },
+  {
+    "name": "ResourceImportPlugin",
+    "children": []
+  },
+  {
+    "name": "TerrainImportPlugin",
+    "children": []
+  },
+  {
+    "name": "TextureImportPlugin",
+    "children": []
+  },
+  {
+    "name": "ResourceProcessorPlugin",
+    "children": []
+  },
+  {
+    "name": "ResourceTestPlugin",
+    "children": []
+  },
+  {
+    "name": "SendToBlenderPlugin",
+    "children": []
+  },
+  {
+    "name": "ValidateFBXPlugin",
+    "children": []
+  },
+  {
+    "name": "WorldEditorPlugin",
+    "children": [
+      "PeerPlugin"
+    ]
+  },
+  {
+    "name": "PeerPlugin",
+    "children": []
+  },
+  {
+    "name": "WorldExporterPlugin",
+    "children": []
+  },
+  {
+    "name": "WorldRunPlugin",
+    "children": []
+  },
+  {
+    "name": "WorldTestPlugin",
+    "children": []
+  },
+  {
+    "name": "WorkshopCatalogueFilters",
+    "children": []
+  },
+  {
+    "name": "WorldEditorTool",
+    "children": [
+      "BakeMlodTool",
+      "MeasureTool"
+    ]
+  },
+  {
+    "name": "BakeMlodTool",
+    "children": []
+  },
+  {
+    "name": "MeasureTool",
+    "children": []
+  },
+  {
+    "name": "WorldEditorToolAPI",
+    "children": []
+  },
+  {
+    "name": "WorldSaveManifest",
+    "children": []
+  },
+  {
+    "name": "array< Class T >",
+    "children": [
+      "ContainerID",
+      "ParamEnumArray",
+      "ParamEnumSuperSampling",
+      "ParamEnumTextureImportSize",
+      "ParamEnumTextureSize"
+    ]
+  },
+  {
+    "name": "ContainerID",
+    "children": []
+  },
+  {
+    "name": "ParamEnumArray",
+    "children": []
+  },
+  {
+    "name": "ParamEnumSuperSampling",
+    "children": []
+  },
+  {
+    "name": "ParamEnumTextureImportSize",
+    "children": []
+  },
+  {
+    "name": "ParamEnumTextureSize",
+    "children": []
+  },
+  {
+    "name": "map",
+    "children": []
+  },
+  {
+    "name": "set< Class T >",
+    "children": []
+  },
+  {
+    "name": "MaterialValidatorUtils",
+    "children": []
+  },
+  {
+    "name": "Math",
+    "children": []
+  },
+  {
+    "name": "Math2D",
+    "children": []
+  },
+  {
+    "name": "Math3D",
+    "children": []
+  },
+  {
+    "name": "Measurement",
+    "children": []
+  },
+  {
+    "name": "MeasurementFile",
+    "children": []
+  },
+  {
+    "name": "MenuManager",
+    "children": []
+  },
+  {
+    "name": "MyInputComponent",
+    "children": []
+  },
+  {
+    "name": "NetApiHandler",
+    "children": [
+      "AnimExportProfileChannels",
+      "AnimExportProfiles",
+      "AnimExportTrackExport",
+      "BakeInfo",
+      "CheckGUID",
+      "EBTInfo",
+      "ExampleCall",
+      "ExportFBXResource",
+      "ExportMaterialResource",
+      "ExportTXAResource",
+      "ExportTerrain",
+      "ExportTextureResource",
+      "FBXReportToolMessage",
+      "GetGameMaterials",
+      "GetLayerInteraction",
+      "GetLoadedProjects",
+      "GetPathToAssetsFromGuids",
+      "GetPortalMat",
+      "GetPrefabChildInfo",
+      "GetPrefabGUID",
+      "GetRelativePath",
+      "GetResourceInfo",
+      "LayerPresets",
+      "LoadedProjects",
+      "LocatePrefabsFromPath",
+      "LocateProject",
+      "MaterialValidator",
+      "OpenXOB",
+      "OverrideMeshObjectMaterial",
+      "PrefabImporter",
+      "PrefabImporterBake",
+      "RegisterResource",
+      "TextureValidation",
+      "TextureValidator"
+    ]
+  },
+  {
+    "name": "AnimExportProfileChannels",
+    "children": []
+  },
+  {
+    "name": "AnimExportProfiles",
+    "children": []
+  },
+  {
+    "name": "AnimExportTrackExport",
+    "children": []
+  },
+  {
+    "name": "BakeInfo",
+    "children": []
+  },
+  {
+    "name": "CheckGUID",
+    "children": []
+  },
+  {
+    "name": "EBTInfo",
+    "children": []
+  },
+  {
+    "name": "ExampleCall",
+    "children": []
+  },
+  {
+    "name": "ExportFBXResource",
+    "children": []
+  },
+  {
+    "name": "ExportMaterialResource",
+    "children": []
+  },
+  {
+    "name": "ExportTXAResource",
+    "children": []
+  },
+  {
+    "name": "ExportTerrain",
+    "children": []
+  },
+  {
+    "name": "ExportTextureResource",
+    "children": []
+  },
+  {
+    "name": "FBXReportToolMessage",
+    "children": []
+  },
+  {
+    "name": "GetGameMaterials",
+    "children": []
+  },
+  {
+    "name": "GetLayerInteraction",
+    "children": []
+  },
+  {
+    "name": "GetLoadedProjects",
+    "children": []
+  },
+  {
+    "name": "GetPathToAssetsFromGuids",
+    "children": []
+  },
+  {
+    "name": "GetPortalMat",
+    "children": []
+  },
+  {
+    "name": "GetPrefabChildInfo",
+    "children": []
+  },
+  {
+    "name": "GetPrefabGUID",
+    "children": []
+  },
+  {
+    "name": "GetRelativePath",
+    "children": []
+  },
+  {
+    "name": "GetResourceInfo",
+    "children": []
+  },
+  {
+    "name": "LayerPresets",
+    "children": []
+  },
+  {
+    "name": "LoadedProjects",
+    "children": []
+  },
+  {
+    "name": "LocatePrefabsFromPath",
+    "children": []
+  },
+  {
+    "name": "LocateProject",
+    "children": []
+  },
+  {
+    "name": "MaterialValidator",
+    "children": []
+  },
+  {
+    "name": "OpenXOB",
+    "children": []
+  },
+  {
+    "name": "OverrideMeshObjectMaterial",
+    "children": []
+  },
+  {
+    "name": "PrefabImporter",
+    "children": []
+  },
+  {
+    "name": "PrefabImporterBake",
+    "children": []
+  },
+  {
+    "name": "RegisterResource",
+    "children": []
+  },
+  {
+    "name": "TextureValidation",
+    "children": []
+  },
+  {
+    "name": "TextureValidator",
+    "children": []
+  },
+  {
+    "name": "NetScriptConnectionListener",
+    "children": []
+  },
+  {
+    "name": "NewsFeedItem",
+    "children": []
+  },
+  {
+    "name": "NotificationCatalogueApi",
+    "children": []
+  },
+  {
+    "name": "Obsolete",
+    "children": []
+  },
+  {
+    "name": "OnRpl",
+    "children": []
+  },
+  {
+    "name": "ParticleEffectEntitySpawnParams",
+    "children": []
+  },
+  {
+    "name": "PeerConfig",
+    "children": []
+  },
+  {
+    "name": "PhysicsUtils",
+    "children": []
+  },
+  {
+    "name": "PhysicsWorld",
+    "children": []
+  },
+  {
+    "name": "PlatformConfig",
+    "children": []
+  },
+  {
+    "name": "PlatformService",
+    "children": []
+  },
+  {
+    "name": "PlayerId",
+    "children": []
+  },
+  {
+    "name": "PlayerRole",
+    "children": []
+  },
+  {
+    "name": "PlayerRoleManagerApi",
+    "children": []
+  },
+  {
+    "name": "pointer",
+    "children": [
+      "Animation",
+      "GraphGraphicsItem",
+      "LightHandle",
+      "NativeComponent",
+      "ParseHandle",
+      "Particles",
+      "PhysicsBlock",
+      "PhysicsMaterial",
+      "PhysicsRagdoll",
+      "PixelRawData",
+      "RplNode",
+      "ScreenshotTextureData",
+      "SharedItem",
+      "TransformResetParams",
+      "WorldControllerInfo",
+      "WorldOneTimePointArgs",
+      "WorldSystemInfo",
+      "WorldSystems",
+      "WorldUpdatePointArgs",
+      "global_pointer",
+      "handle64"
+    ]
+  },
+  {
+    "name": "Animation",
+    "children": []
+  },
+  {
+    "name": "GraphGraphicsItem",
+    "children": []
+  },
+  {
+    "name": "LightHandle",
+    "children": []
+  },
+  {
+    "name": "NativeComponent",
+    "children": [
+      "CharacterPhysicsComponent",
+      "Physics"
+    ]
+  },
+  {
+    "name": "CharacterPhysicsComponent",
+    "children": []
+  },
+  {
+    "name": "Physics",
+    "children": []
+  },
+  {
+    "name": "ParseHandle",
+    "children": []
+  },
+  {
+    "name": "Particles",
+    "children": []
+  },
+  {
+    "name": "PhysicsBlock",
+    "children": []
+  },
+  {
+    "name": "PhysicsMaterial",
+    "children": []
+  },
+  {
+    "name": "PhysicsRagdoll",
+    "children": []
+  },
+  {
+    "name": "PixelRawData",
+    "children": []
+  },
+  {
+    "name": "RplNode",
+    "children": []
+  },
+  {
+    "name": "ScreenshotTextureData",
+    "children": []
+  },
+  {
+    "name": "SharedItem",
+    "children": []
+  },
+  {
+    "name": "TransformResetParams",
+    "children": []
+  },
+  {
+    "name": "WorldControllerInfo",
+    "children": []
+  },
+  {
+    "name": "WorldOneTimePointArgs",
+    "children": []
+  },
+  {
+    "name": "WorldSystemInfo",
+    "children": []
+  },
+  {
+    "name": "WorldSystems",
+    "children": []
+  },
+  {
+    "name": "WorldUpdatePointArgs",
+    "children": []
+  },
+  {
+    "name": "global_pointer",
+    "children": [
+      "BaseResourceObject",
+      "BaseWorld",
+      "Decal",
+      "PhysicsGeom",
+      "PhysicsJoint",
+      "WBModuleDef"
+    ]
+  },
+  {
+    "name": "BaseResourceObject",
+    "children": [
+      "AnimationSource",
+      "BaseContainer",
+      "VObject"
+    ]
+  },
+  {
+    "name": "AnimationSource",
+    "children": []
+  },
+  {
+    "name": "BaseContainer",
+    "children": [
+      "ContactSurface",
+      "IEntityComponentSource",
+      "IEntitySource",
+      "MetaFile",
+      "SndInfo",
+      "SurfaceProperties",
+      "UserSettings",
+      "WidgetSource"
+    ]
+  },
+  {
+    "name": "ContactSurface",
+    "children": []
+  },
+  {
+    "name": "IEntityComponentSource",
+    "children": []
+  },
+  {
+    "name": "IEntitySource",
+    "children": []
+  },
+  {
+    "name": "MetaFile",
+    "children": []
+  },
+  {
+    "name": "SndInfo",
+    "children": []
+  },
+  {
+    "name": "SurfaceProperties",
+    "children": [
+      "GameLibMaterial"
+    ]
+  },
+  {
+    "name": "GameLibMaterial",
+    "children": []
+  },
+  {
+    "name": "UserSettings",
+    "children": []
+  },
+  {
+    "name": "WidgetSource",
+    "children": []
+  },
+  {
+    "name": "VObject",
+    "children": [
+      "MeshObject"
+    ]
+  },
+  {
+    "name": "MeshObject",
+    "children": []
+  },
+  {
+    "name": "BaseWorld",
+    "children": [
+      "World"
+    ]
+  },
+  {
+    "name": "World",
+    "children": []
+  },
+  {
+    "name": "Decal",
+    "children": []
+  },
+  {
+    "name": "PhysicsGeom",
+    "children": []
+  },
+  {
+    "name": "PhysicsJoint",
+    "children": [
+      "Physics6DOFJoint",
+      "PhysicsBallSocketJoint",
+      "PhysicsConeTwistJoint",
+      "PhysicsFixedJoint",
+      "PhysicsHingeJoint",
+      "PhysicsSliderJoint"
+    ]
+  },
+  {
+    "name": "Physics6DOFJoint",
+    "children": [
+      "Physics6DOFSpringJoint"
+    ]
+  },
+  {
+    "name": "Physics6DOFSpringJoint",
+    "children": []
+  },
+  {
+    "name": "PhysicsBallSocketJoint",
+    "children": []
+  },
+  {
+    "name": "PhysicsConeTwistJoint",
+    "children": []
+  },
+  {
+    "name": "PhysicsFixedJoint",
+    "children": []
+  },
+  {
+    "name": "PhysicsHingeJoint",
+    "children": []
+  },
+  {
+    "name": "PhysicsSliderJoint",
+    "children": []
+  },
+  {
+    "name": "WBModuleDef",
+    "children": [
+      "AnimEditor",
+      "AudioEditor",
+      "BehaviorEditor",
+      "DialogueEditor",
+      "LocalizationEditor",
+      "NavmeshGeneratorMain",
+      "ParticleEditor",
+      "ProcAnimEditor",
+      "ResourceManager",
+      "ScriptEditor",
+      "WorldEditor"
+    ]
+  },
+  {
+    "name": "AnimEditor",
+    "children": []
+  },
+  {
+    "name": "AudioEditor",
+    "children": []
+  },
+  {
+    "name": "BehaviorEditor",
+    "children": []
+  },
+  {
+    "name": "DialogueEditor",
+    "children": []
+  },
+  {
+    "name": "LocalizationEditor",
+    "children": []
+  },
+  {
+    "name": "NavmeshGeneratorMain",
+    "children": []
+  },
+  {
+    "name": "ParticleEditor",
+    "children": []
+  },
+  {
+    "name": "ProcAnimEditor",
+    "children": []
+  },
+  {
+    "name": "ResourceManager",
+    "children": []
+  },
+  {
+    "name": "ScriptEditor",
+    "children": []
+  },
+  {
+    "name": "WorldEditor",
+    "children": []
+  },
+  {
+    "name": "handle64",
+    "children": [
+      "EntityID",
+      "KickCauseCode",
+      "ProcessHandle",
+      "TypeID",
+      "WorldTimestamp"
+    ]
+  },
+  {
+    "name": "EntityID",
+    "children": []
+  },
+  {
+    "name": "KickCauseCode",
+    "children": []
+  },
+  {
+    "name": "ProcessHandle",
+    "children": []
+  },
+  {
+    "name": "TypeID",
+    "children": []
+  },
+  {
+    "name": "WorldTimestamp",
+    "children": []
+  },
+  {
+    "name": "PopupFeedItem",
+    "children": []
+  },
+  {
+    "name": "PrefabImporterUtils",
+    "children": []
+  },
+  {
+    "name": "ProductOfferCatalogueApi",
+    "children": []
+  },
+  {
+    "name": "ProfileData",
+    "children": []
+  },
+  {
+    "name": "Replication",
+    "children": []
+  },
+  {
+    "name": "ResourceDatabase",
+    "children": []
+  },
+  {
+    "name": "ResourceExportCrawler",
+    "children": []
+  },
+  {
+    "name": "RestApi",
+    "children": []
+  },
+  {
+    "name": "RestAPIHelper< JsonApiStruct T >",
+    "children": []
+  },
+  {
+    "name": "RestContext",
+    "children": []
+  },
+  {
+    "name": "Room",
+    "children": []
+  },
+  {
+    "name": "RplId",
+    "children": []
+  },
+  {
+    "name": "RplIdentity",
+    "children": []
+  },
+  {
+    "name": "RplSession",
+    "children": []
+  },
+  {
+    "name": "RplSessionCallbacks",
+    "children": [
+      "RplExample3SessionListener"
+    ]
+  },
+  {
+    "name": "RplExample3SessionListener",
+    "children": []
+  },
+  {
+    "name": "ScriptCallQueue",
+    "children": []
+  },
+  {
+    "name": "ScriptModule",
+    "children": []
+  },
+  {
+    "name": "ScriptWorldClock",
+    "children": []
+  },
+  {
+    "name": "ServerCatalogueApi",
+    "children": []
+  },
+  {
+    "name": "ServerConfig",
+    "children": []
+  },
+  {
+    "name": "ServerConfigApi",
+    "children": []
+  },
+  {
+    "name": "ServerConfigMeta",
+    "children": []
+  },
+  {
+    "name": "ServerGameDataBase",
+    "children": []
+  },
+  {
+    "name": "ServerInfo",
+    "children": []
+  },
+  {
+    "name": "ServerJoinManagerApi",
+    "children": []
+  },
+  {
+    "name": "ServerLobbyApi",
+    "children": []
+  },
+  {
+    "name": "ServerQueueInfo",
+    "children": [
+      "ServerQueueData"
+    ]
+  },
+  {
+    "name": "ServerQueueData",
+    "children": []
+  },
+  {
+    "name": "ServerWorkshopData",
+    "children": []
+  },
+  {
+    "name": "ServiceStatusItem",
+    "children": []
+  },
+  {
+    "name": "SessionStorage",
+    "children": []
+  },
+  {
+    "name": "ShapeUtils",
+    "children": []
+  },
+  {
+    "name": "SharedItemRef",
+    "children": []
+  },
+  {
+    "name": "SignalInput",
+    "children": []
+  },
+  {
+    "name": "SimpleTimeSignal",
+    "children": []
+  },
+  {
+    "name": "StartBakeDialog",
+    "children": [
+      "StartBakeDialogET",
+      "StartBakeDialogXOB"
+    ]
+  },
+  {
+    "name": "StartBakeDialogET",
+    "children": []
+  },
+  {
+    "name": "StartBakeDialogXOB",
+    "children": []
+  },
+  {
+    "name": "StaticArray",
+    "children": []
+  },
+  {
+    "name": "string",
+    "children": [
+      "ResourceName",
+      "UUID"
+    ]
+  },
+  {
+    "name": "ResourceName",
+    "children": []
+  },
+  {
+    "name": "UUID",
+    "children": []
+  },
+  {
+    "name": "System",
+    "children": []
+  },
+  {
+    "name": "Test",
+    "children": []
+  },
+  {
+    "name": "TestStep",
+    "children": []
+  },
+  {
+    "name": "TexTools",
+    "children": []
+  },
+  {
+    "name": "TextureType",
+    "children": [
+      "FontTextureType"
+    ]
+  },
+  {
+    "name": "FontTextureType",
+    "children": []
+  },
+  {
+    "name": "TextureTypeProperty",
+    "children": []
+  },
+  {
+    "name": "TextureTypes",
+    "children": []
+  },
+  {
+    "name": "TextureValidationUtils",
+    "children": []
+  },
+  {
+    "name": "TranslationPlugin_DataWrapper",
+    "children": []
+  },
+  {
+    "name": "TranslationPlugin_LoadConfigUI",
+    "children": []
+  },
+  {
+    "name": "TranslationPluginConfigLocaleMatch",
+    "children": []
+  },
+  {
+    "name": "TranslationPluginMatchConfig",
+    "children": []
+  },
+  {
+    "name": "TxaExporter",
+    "children": []
+  },
+  {
+    "name": "TypeName",
+    "children": []
+  },
+  {
+    "name": "UIWidgets",
+    "children": []
+  },
+  {
+    "name": "UniformGridSlot",
+    "children": []
+  },
+  {
+    "name": "UniqueAttribute",
+    "children": [
+      "Attribute",
+      "BTNodeAttribute",
+      "BaseContainerCustomTitle",
+      "BaseContainerVersion",
+      "ButtonAttribute",
+      "CinematicEventAttribute",
+      "CinematicTrackAttribute",
+      "CommonEditorProps",
+      "EventAttribute",
+      "KickCauseGroupLink",
+      "MenuBindAttribute",
+      "NonSerialized",
+      "ReceiverAttribute",
+      "RplBeforeExtracted",
+      "RplBeforeInjected",
+      "RplProp",
+      "RplRpc",
+      "ScriptValueAttribute",
+      "SortAttribute",
+      "WorkbenchPluginAttribute"
+    ]
+  },
+  {
+    "name": "Attribute",
+    "children": []
+  },
+  {
+    "name": "BTNodeAttribute",
+    "children": [
+      "BTNodeInAttribute",
+      "BTNodeOutAttribute"
+    ]
+  },
+  {
+    "name": "BTNodeInAttribute",
+    "children": []
+  },
+  {
+    "name": "BTNodeOutAttribute",
+    "children": []
+  },
+  {
+    "name": "BaseContainerCustomTitle",
+    "children": [
+      "BaseContainerCustomTitleBlenderVersion",
+      "BaseContainerCustomTitleField",
+      "PeerConfigViewTitle",
+      "TranslationPluginFields"
+    ]
+  },
+  {
+    "name": "BaseContainerCustomTitleBlenderVersion",
+    "children": []
+  },
+  {
+    "name": "BaseContainerCustomTitleField",
+    "children": []
+  },
+  {
+    "name": "PeerConfigViewTitle",
+    "children": []
+  },
+  {
+    "name": "TranslationPluginFields",
+    "children": []
+  },
+  {
+    "name": "BaseContainerVersion",
+    "children": []
+  },
+  {
+    "name": "ButtonAttribute",
+    "children": []
+  },
+  {
+    "name": "CinematicEventAttribute",
+    "children": []
+  },
+  {
+    "name": "CinematicTrackAttribute",
+    "children": []
+  },
+  {
+    "name": "CommonEditorProps",
+    "children": [
+      "BaseContainerProps",
+      "ComponentEditorProps",
+      "EntityEditorProps"
+    ]
+  },
+  {
+    "name": "BaseContainerProps",
+    "children": []
+  },
+  {
+    "name": "ComponentEditorProps",
+    "children": []
+  },
+  {
+    "name": "EntityEditorProps",
+    "children": []
+  },
+  {
+    "name": "EventAttribute",
+    "children": []
+  },
+  {
+    "name": "KickCauseGroupLink",
+    "children": []
+  },
+  {
+    "name": "MenuBindAttribute",
+    "children": []
+  },
+  {
+    "name": "NonSerialized",
+    "children": []
+  },
+  {
+    "name": "ReceiverAttribute",
+    "children": []
+  },
+  {
+    "name": "RplBeforeExtracted",
+    "children": []
+  },
+  {
+    "name": "RplBeforeInjected",
+    "children": []
+  },
+  {
+    "name": "RplProp",
+    "children": []
+  },
+  {
+    "name": "RplRpc",
+    "children": []
+  },
+  {
+    "name": "ScriptValueAttribute",
+    "children": []
+  },
+  {
+    "name": "SortAttribute",
+    "children": []
+  },
+  {
+    "name": "WorkbenchPluginAttribute",
+    "children": [
+      "WorkbenchToolAttribute"
+    ]
+  },
+  {
+    "name": "WorkbenchToolAttribute",
+    "children": []
+  },
+  {
+    "name": "UserGameDataApi",
+    "children": []
+  },
+  {
+    "name": "ValidateMaterialPlugin",
+    "children": []
+  },
+  {
+    "name": "vector",
+    "children": []
+  },
+  {
+    "name": "WeatherLightning",
+    "children": []
+  },
+  {
+    "name": "WeatherLightningFlash",
+    "children": []
+  },
+  {
+    "name": "WeatherManager",
+    "children": []
+  },
+  {
+    "name": "WeatherStateTransitionNode",
+    "children": []
+  },
+  {
+    "name": "WidgetManager",
+    "children": []
+  },
+  {
+    "name": "WidgetType",
+    "children": [
+      "GameLibWidgetType"
+    ]
+  },
+  {
+    "name": "GameLibWidgetType",
+    "children": []
+  },
+  {
+    "name": "Workbench",
+    "children": []
+  },
+  {
+    "name": "WorkbenchDialog_AbortRetryIgnore",
+    "children": []
+  },
+  {
+    "name": "WorkbenchDialog_OKCancel",
+    "children": []
+  },
+  {
+    "name": "WorkshopAssetBase",
+    "children": [
+      "WorkshopAsset"
+    ]
+  },
+  {
+    "name": "WorkshopAsset",
+    "children": []
+  },
+  {
+    "name": "WorkshopAssetTag",
+    "children": []
+  },
+  {
+    "name": "WorkshopCatalogue",
+    "children": [
+      "WorkshopApi",
+      "WorkshopAuthor"
+    ]
+  },
+  {
+    "name": "WorkshopApi",
+    "children": []
+  },
+  {
+    "name": "WorkshopAuthor",
+    "children": []
+  },
+  {
+    "name": "WorkshopCatalogueApi",
+    "children": []
+  },
+  {
+    "name": "WorkshopCollection",
+    "children": []
+  },
+  {
+    "name": "WorkshopCollectionItem",
+    "children": []
+  },
+  {
+    "name": "WorkshopJob",
+    "children": []
+  },
+  {
+    "name": "WorkshopLicense",
+    "children": []
+  },
+  {
+    "name": "WorkshopRevisionBase",
+    "children": [
+      "WorkshopRevision"
+    ]
+  },
+  {
+    "name": "WorkshopRevision",
+    "children": []
+  },
+  {
+    "name": "WorkshopTag",
+    "children": []
+  },
+  {
+    "name": "WorkshopUserProfile",
+    "children": []
+  },
+  {
+    "name": "WorldBuildMeta",
+    "children": []
+  },
+  {
+    "name": "WorldEditorAPI",
+    "children": []
+  },
+  {
+    "name": "WorldEditorIngame",
+    "children": []
+  },
+  {
+    "name": "WorldExporterConfig",
+    "children": []
+  },
+  {
+    "name": "WorldExportScript",
+    "children": []
+  },
+  {
     "name": "Achievements",
     "children": []
   },
@@ -520,6 +5201,10 @@
     "children": []
   },
   {
+    "name": "SCR_BaseContainerCountedResourceNameTitle",
+    "children": []
+  },
+  {
     "name": "SCR_BaseContainerCustomEntityCatalogCatalog",
     "children": []
   },
@@ -832,38 +5517,6 @@
     "children": []
   },
   {
-    "name": "ProcAnimComponent",
-    "children": [
-      "VehicleProcAnimComponent"
-    ]
-  },
-  {
-    "name": "VehicleProcAnimComponent",
-    "children": [
-      "CarProcAnimComponent"
-    ]
-  },
-  {
-    "name": "CarProcAnimComponent",
-    "children": []
-  },
-  {
-    "name": "ProcAnimComponentClass",
-    "children": [
-      "VehicleProcAnimComponentClass"
-    ]
-  },
-  {
-    "name": "VehicleProcAnimComponentClass",
-    "children": [
-      "CarProcAnimComponentClass"
-    ]
-  },
-  {
-    "name": "CarProcAnimComponentClass",
-    "children": []
-  },
-  {
     "name": "BaseRoad",
     "children": []
   },
@@ -1030,6 +5683,14 @@
   },
   {
     "name": "CharacterCameraSet",
+    "children": []
+  },
+  {
+    "name": "StaticSoundComponent",
+    "children": []
+  },
+  {
+    "name": "StaticSoundComponentClass",
     "children": []
   },
   {
@@ -1792,7 +6453,8 @@
       "AICommunicationComponent",
       "AIComponentEntity",
       "AIFormationComponent",
-      "AIPathfindingComponent"
+      "AIPathfindingComponent",
+      "AISmartActionUserComponent"
     ]
   },
   {
@@ -1865,6 +6527,22 @@
   },
   {
     "name": "AIBaseAimingComponent",
+    "children": [
+      "AICharacterAimingComponent",
+      "AICharacterHeadAimingComponent",
+      "AITurretAimingComponent"
+    ]
+  },
+  {
+    "name": "AICharacterAimingComponent",
+    "children": []
+  },
+  {
+    "name": "AICharacterHeadAimingComponent",
+    "children": []
+  },
+  {
+    "name": "AITurretAimingComponent",
     "children": []
   },
   {
@@ -1952,7 +6630,33 @@
     "children": []
   },
   {
+    "name": "AISmartActionUserComponent",
+    "children": []
+  },
+  {
     "name": "AnimatedColliderComponent",
+    "children": []
+  },
+  {
+    "name": "BaseProcAnimComponent",
+    "children": [
+      "ProcAnimComponent"
+    ]
+  },
+  {
+    "name": "ProcAnimComponent",
+    "children": [
+      "VehicleProcAnimComponent"
+    ]
+  },
+  {
+    "name": "VehicleProcAnimComponent",
+    "children": [
+      "CarProcAnimComponent"
+    ]
+  },
+  {
+    "name": "CarProcAnimComponent",
     "children": []
   },
   {
@@ -1998,10 +6702,6 @@
   },
   {
     "name": "ChimeraCoverManagerComponent",
-    "children": []
-  },
-  {
-    "name": "DynamicPhysicsObstacleComponent",
     "children": []
   },
   {
@@ -3141,6 +7841,12 @@
   },
   {
     "name": "SCR_DeployableInventoryItemInventoryComponent",
+    "children": [
+      "SCR_ReusableDeployableInventoryComponent"
+    ]
+  },
+  {
+    "name": "SCR_ReusableDeployableInventoryComponent",
     "children": []
   },
   {
@@ -3417,10 +8123,6 @@
     "children": []
   },
   {
-    "name": "StaticSoundComponent",
-    "children": []
-  },
-  {
     "name": "StreetLampComponent",
     "children": []
   },
@@ -3443,7 +8145,8 @@
       "AICommunicationComponentClass",
       "AIComponentEntityClass",
       "AIFormationComponentClass",
-      "AIPathfindingComponentClass"
+      "AIPathfindingComponentClass",
+      "AISmartActionUserComponentClass"
     ]
   },
   {
@@ -3516,6 +8219,22 @@
   },
   {
     "name": "AIBaseAimingComponentClass",
+    "children": [
+      "AICharacterAimingComponentClass",
+      "AICharacterHeadAimingComponentClass",
+      "AITurretAimingComponentClass"
+    ]
+  },
+  {
+    "name": "AICharacterAimingComponentClass",
+    "children": []
+  },
+  {
+    "name": "AICharacterHeadAimingComponentClass",
+    "children": []
+  },
+  {
+    "name": "AITurretAimingComponentClass",
     "children": []
   },
   {
@@ -3603,7 +8322,33 @@
     "children": []
   },
   {
+    "name": "AISmartActionUserComponentClass",
+    "children": []
+  },
+  {
     "name": "AnimatedColliderComponentClass",
+    "children": []
+  },
+  {
+    "name": "BaseProcAnimComponentClass",
+    "children": [
+      "ProcAnimComponentClass"
+    ]
+  },
+  {
+    "name": "ProcAnimComponentClass",
+    "children": [
+      "VehicleProcAnimComponentClass"
+    ]
+  },
+  {
+    "name": "VehicleProcAnimComponentClass",
+    "children": [
+      "CarProcAnimComponentClass"
+    ]
+  },
+  {
+    "name": "CarProcAnimComponentClass",
     "children": []
   },
   {
@@ -3649,10 +8394,6 @@
   },
   {
     "name": "ChimeraCoverManagerComponentClass",
-    "children": []
-  },
-  {
-    "name": "DynamicPhysicsObstacleComponentClass",
     "children": []
   },
   {
@@ -4792,6 +9533,12 @@
   },
   {
     "name": "SCR_DeployableInventoryItemInventoryComponentClass",
+    "children": [
+      "SCR_ReusableDeployableInventoryComponentClass"
+    ]
+  },
+  {
+    "name": "SCR_ReusableDeployableInventoryComponentClass",
     "children": []
   },
   {
@@ -5065,10 +9812,6 @@
   },
   {
     "name": "RoadNetworkBridgeComponentClass",
-    "children": []
-  },
-  {
-    "name": "StaticSoundComponentClass",
     "children": []
   },
   {
@@ -11300,6 +16043,12 @@
   },
   {
     "name": "SerializerDefaultSpawnData",
+    "children": [
+      "EntitySerializerDefaultSpawnData"
+    ]
+  },
+  {
+    "name": "EntitySerializerDefaultSpawnData",
     "children": []
   },
   {
@@ -11746,6 +16495,10 @@
   },
   {
     "name": "MultipleStateButtonState",
+    "children": []
+  },
+  {
+    "name": "DynamicPhysicsObstacleComponent",
     "children": []
   },
   {
@@ -12293,10 +17046,6 @@
     "children": []
   },
   {
-    "name": "SCR_AIGroup_DelayedSpawn",
-    "children": []
-  },
-  {
     "name": "SCR_AIGroupConditionCheck",
     "children": [
       "SCR_AIGroupAutonomyCheck",
@@ -12338,6 +17087,10 @@
   },
   {
     "name": "SCR_AIInfoReaction_Wounded",
+    "children": []
+  },
+  {
+    "name": "SCR_AIIntegerOperations",
     "children": []
   },
   {
@@ -12818,6 +17571,14 @@
     "children": []
   },
   {
+    "name": "SCR_ArsenalAlternativeData",
+    "children": [
+      "SCR_ArsenalAlternativeCostData",
+      "SCR_ReusableItemSellAmountData",
+      "SCR_SingleShotWeaponSellAmountData"
+    ]
+  },
+  {
     "name": "SCR_ArsenalAlternativeCostData",
     "children": [
       "SCR_ArsenalAlternativeCostSellAmountData"
@@ -12825,6 +17586,14 @@
   },
   {
     "name": "SCR_ArsenalAlternativeCostSellAmountData",
+    "children": []
+  },
+  {
+    "name": "SCR_ReusableItemSellAmountData",
+    "children": []
+  },
+  {
+    "name": "SCR_SingleShotWeaponSellAmountData",
     "children": []
   },
   {
@@ -12912,11 +17681,23 @@
     "children": []
   },
   {
+    "name": "SCR_AutotestParamData",
+    "children": []
+  },
+  {
     "name": "SCR_AutotestPrinter",
     "children": []
   },
   {
     "name": "SCR_AutotestReport",
+    "children": []
+  },
+  {
+    "name": "SCR_AutotestRunSettings",
+    "children": []
+  },
+  {
+    "name": "SCR_AutotestRunSettingsBuilder",
     "children": []
   },
   {
@@ -16012,6 +20793,14 @@
     "children": []
   },
   {
+    "name": "SCR_BaseServiceIconInfo",
+    "children": []
+  },
+  {
+    "name": "SCR_BaseServiceIconList",
+    "children": []
+  },
+  {
     "name": "SCR_BaseSpawnable",
     "children": [
       "SCR_DebrisSpawnable",
@@ -16487,6 +21276,10 @@
     "children": []
   },
   {
+    "name": "SCR_CodeHelper",
+    "children": []
+  },
+  {
     "name": "SCR_CollisionDamageContainer",
     "children": []
   },
@@ -16668,6 +21461,28 @@
   },
   {
     "name": "SCR_CursorVisualState",
+    "children": []
+  },
+  {
+    "name": "SCR_CustomAnimData_Properties",
+    "children": [
+      "SCR_LoiterCustomAnimData"
+    ]
+  },
+  {
+    "name": "SCR_LoiterCustomAnimData",
+    "children": []
+  },
+  {
+    "name": "SCR_CustomAnimDataConfig_Base",
+    "children": []
+  },
+  {
+    "name": "SCR_CyclewWaypointLoadContext",
+    "children": []
+  },
+  {
+    "name": "SCR_CyclewWaypointLoadContextShared",
     "children": []
   },
   {
@@ -16940,6 +21755,10 @@
   },
   {
     "name": "SCR_DoxygenFillerPlugin_MethodParameter",
+    "children": []
+  },
+  {
+    "name": "SCR_DPIScaleHelper",
     "children": []
   },
   {
@@ -18374,7 +23193,27 @@
     "children": []
   },
   {
-    "name": "SCR_LoiterCustomAnimData",
+    "name": "SCR_LoiterItemDataBase",
+    "children": [
+      "SCR_LoiterItemData",
+      "SCR_LoiterMultiItemData",
+      "SCR_LoiterRandomItemData"
+    ]
+  },
+  {
+    "name": "SCR_LoiterItemData",
+    "children": []
+  },
+  {
+    "name": "SCR_LoiterMultiItemData",
+    "children": []
+  },
+  {
+    "name": "SCR_LoiterRandomItemData",
+    "children": []
+  },
+  {
+    "name": "SCR_LoiterItemPresets",
     "children": []
   },
   {
@@ -18824,6 +23663,14 @@
     "children": []
   },
   {
+    "name": "SCR_NormalizedSignal",
+    "children": []
+  },
+  {
+    "name": "SCR_NormalizedSignalData",
+    "children": []
+  },
+  {
     "name": "SCR_NotificationAproxDisplayContainer",
     "children": []
   },
@@ -19213,6 +24060,10 @@
     "children": []
   },
   {
+    "name": "SCR_PlayerListActions",
+    "children": []
+  },
+  {
     "name": "SCR_PlayerListEntry",
     "children": []
   },
@@ -19289,6 +24140,10 @@
     "children": []
   },
   {
+    "name": "SCR_PrefabFilesHelper",
+    "children": []
+  },
+  {
     "name": "SCR_PrefabGeneratorAssetPoint",
     "children": []
   },
@@ -19298,6 +24153,14 @@
   },
   {
     "name": "SCR_PrefabHelper",
+    "children": []
+  },
+  {
+    "name": "SCR_PrefabHelper_PrefabData",
+    "children": []
+  },
+  {
+    "name": "SCR_PrefabHelper_PrefabDataFilter",
     "children": []
   },
   {
@@ -21447,6 +26310,14 @@
     "children": []
   },
   {
+    "name": "SCR_TestLib",
+    "children": []
+  },
+  {
+    "name": "SCR_TestResourceDatabase",
+    "children": []
+  },
+  {
     "name": "SCR_TestRunner",
     "children": []
   },
@@ -21464,6 +26335,35 @@
   },
   {
     "name": "SCR_TimeAndWeatherState",
+    "children": []
+  },
+  {
+    "name": "SCR_TimeMeasurementHelper_Info",
+    "children": []
+  },
+  {
+    "name": "SCR_Timer",
+    "children": [
+      "SCR_TimerInternal"
+    ]
+  },
+  {
+    "name": "SCR_TimerInternal",
+    "children": []
+  },
+  {
+    "name": "SCR_TimerEntryBase",
+    "children": [
+      "SCR_RealTimerEntry",
+      "SCR_WorldTimerEntry"
+    ]
+  },
+  {
+    "name": "SCR_RealTimerEntry",
+    "children": []
+  },
+  {
+    "name": "SCR_WorldTimerEntry",
     "children": []
   },
   {
@@ -21623,6 +26523,7 @@
       "SCR_FuelItemHintsUIInfo",
       "SCR_NonrefundableItemHintUIInfo",
       "SCR_PlayerSupplyAllocationItemHintUIInfo",
+      "SCR_ReusableInventoryItemHintUIInfo",
       "SCR_SupplyCostItemHintUIInfo",
       "SCR_SupplyRefundItemHintUIInfo",
       "SCR_ValuableIntelItemHintUIInfo"
@@ -21678,6 +26579,10 @@
   },
   {
     "name": "SCR_PlayerSupplyAllocationItemHintUIInfo",
+    "children": []
+  },
+  {
+    "name": "SCR_ReusableInventoryItemHintUIInfo",
     "children": []
   },
   {
@@ -22019,6 +26924,14 @@
   },
   {
     "name": "SCR_WallPair",
+    "children": []
+  },
+  {
+    "name": "SCR_WaypointLoadContext",
+    "children": []
+  },
+  {
+    "name": "SCR_WaypointLoadContextShared",
     "children": []
   },
   {
@@ -24304,6 +29217,7 @@
       "SCR_BarbedWireCuttingDamageEffect",
       "SCR_BaseBlastDamageEffect",
       "SCR_BaseBulletDamageEffect",
+      "SCR_BlisterDamageEffect",
       "SCR_CollisionDamageEffect",
       "SCR_ConcussionDamageEffect",
       "SCR_DrowningDamageEffect",
@@ -24348,6 +29262,10 @@
   },
   {
     "name": "SCR_IncendiaryBulletDamageEffect",
+    "children": []
+  },
+  {
+    "name": "SCR_BlisterDamageEffect",
     "children": []
   },
   {
@@ -24426,6 +29344,7 @@
     "name": "SCR_PersistentDamageEffect",
     "children": [
       "DotDamageEffect",
+      "SCR_ExposedFeetDamageEffect",
       "SCR_SpecialCollisionDamageEffect",
       "SCR_TourniquetDamageEffect"
     ]
@@ -24469,6 +29388,10 @@
   },
   {
     "name": "SCR_SalineDamageEffect",
+    "children": []
+  },
+  {
+    "name": "SCR_ExposedFeetDamageEffect",
     "children": []
   },
   {
@@ -29094,7 +34017,7 @@
     "name": "PersistenceConfig",
     "children": [
       "EntityPersistenceConfig",
-      "ScriptedStatePersistenceConfig"
+      "StatePersistenceConfig"
     ]
   },
   {
@@ -29102,7 +34025,7 @@
     "children": []
   },
   {
-    "name": "ScriptedStatePersistenceConfig",
+    "name": "StatePersistenceConfig",
     "children": []
   },
   {
@@ -29473,7 +34396,6 @@
       "GenericEntitySerializer",
       "MusicManagerSerializer",
       "SCR_AIGroupSerializer",
-      "SCR_AIWaypointArtillerySupportSerializer",
       "SCR_FactionManagerSerializer",
       "SCR_GameModeSerializer",
       "SCR_PlayerControllerSerializer",
@@ -29487,13 +34409,23 @@
   {
     "name": "GenericEntitySerializer",
     "children": [
+      "AIWaypointCycleSerializer",
       "BuildableEntitySerializer",
+      "SCR_AIWaypointArtillerySupportSerializer",
       "SCR_ScenarioFrameworkTriggerEntitySerializer",
       "SCR_SpawnPointSerializer"
     ]
   },
   {
+    "name": "AIWaypointCycleSerializer",
+    "children": []
+  },
+  {
     "name": "BuildableEntitySerializer",
+    "children": []
+  },
+  {
+    "name": "SCR_AIWaypointArtillerySupportSerializer",
     "children": []
   },
   {
@@ -29510,10 +34442,6 @@
   },
   {
     "name": "SCR_AIGroupSerializer",
-    "children": []
-  },
-  {
-    "name": "SCR_AIWaypointArtillerySupportSerializer",
     "children": []
   },
   {
@@ -29699,6 +34627,12 @@
   },
   {
     "name": "LoadoutSlotInfo",
+    "children": [
+      "SCR_FeetLoadoutSlotInfo"
+    ]
+  },
+  {
+    "name": "SCR_FeetLoadoutSlotInfo",
     "children": []
   },
   {
@@ -29763,6 +34697,12 @@
   },
   {
     "name": "SCR_WeaponDeployablePart",
+    "children": [
+      "SCR_WeaponWithAttachmentDeployablePart"
+    ]
+  },
+  {
+    "name": "SCR_WeaponWithAttachmentDeployablePart",
     "children": []
   },
   {
@@ -29846,6 +34786,21 @@
     "children": []
   },
   {
+    "name": "SCR_PlayerListBaseAction",
+    "children": [
+      "SCR_ChangeRankPlayerListAction",
+      "SCR_EditorCameraPlayerListAction"
+    ]
+  },
+  {
+    "name": "SCR_ChangeRankPlayerListAction",
+    "children": []
+  },
+  {
+    "name": "SCR_EditorCameraPlayerListAction",
+    "children": []
+  },
+  {
     "name": "SCR_QRFGroupConfig",
     "children": []
   },
@@ -29869,7 +34824,9 @@
     "name": "SCR_RequiredDeployablePart",
     "children": [
       "SCR_AlternativeRequirementsDeployablePart",
-      "SCR_ComboRequiredDeployableParts"
+      "SCR_ComboRequiredDeployableParts",
+      "SCR_ReusableRequiredDeployablePart",
+      "SCR_WeaponWithAttachementRequiredDeployablePart"
     ]
   },
   {
@@ -29878,6 +34835,14 @@
   },
   {
     "name": "SCR_ComboRequiredDeployableParts",
+    "children": []
+  },
+  {
+    "name": "SCR_ReusableRequiredDeployablePart",
+    "children": []
+  },
+  {
+    "name": "SCR_WeaponWithAttachementRequiredDeployablePart",
     "children": []
   },
   {
@@ -30054,14 +35019,9 @@
   {
     "name": "SerializationContext",
     "children": [
-      "BaseSerializationContext",
       "LoadContext",
       "SaveContext"
     ]
-  },
-  {
-    "name": "BaseSerializationContext",
-    "children": []
   },
   {
     "name": "LoadContext",
@@ -31357,6 +36317,10 @@
     "children": []
   },
   {
+    "name": "SCR_CigaretAnimationComponent",
+    "children": []
+  },
+  {
     "name": "SCR_CleanSweepNetworkComponent",
     "children": []
   },
@@ -31707,6 +36671,7 @@
       "SCR_AmbientRadioChatterComponent",
       "SCR_CampaignBuildingProviderComponent",
       "SCR_CampaignRadioRegisteringComponent",
+      "SCR_FactionBaseResourceComponent",
       "SCR_FactionCommanderBaseLogicComponent",
       "SCR_FactionCommanderSignupComponent",
       "SCR_FlagComponent",
@@ -31727,11 +36692,21 @@
     "children": []
   },
   {
+    "name": "SCR_FactionBaseResourceComponent",
+    "children": []
+  },
+  {
     "name": "SCR_FactionCommanderBaseLogicComponent",
     "children": []
   },
   {
     "name": "SCR_FactionCommanderSignupComponent",
+    "children": [
+      "SCR_VehicleFactionCommanderSignupComponent"
+    ]
+  },
+  {
+    "name": "SCR_VehicleFactionCommanderSignupComponent",
     "children": []
   },
   {
@@ -31819,6 +36794,10 @@
   },
   {
     "name": "SCR_DeployablePlaceableItemComponent",
+    "children": []
+  },
+  {
+    "name": "SCR_PlayerActionsComponent",
     "children": []
   },
   {
@@ -33323,6 +38302,10 @@
     "children": []
   },
   {
+    "name": "SCR_CigaretAnimationComponentClass",
+    "children": []
+  },
+  {
     "name": "SCR_CleanSweepNetworkComponentClass",
     "children": []
   },
@@ -33677,6 +38660,7 @@
       "SCR_AmbientRadioChatterComponentClass",
       "SCR_CampaignBuildingProviderComponentClass",
       "SCR_CampaignRadioRegisteringComponentClass",
+      "SCR_FactionBaseResourceComponentClass",
       "SCR_FactionCommanderBaseLogicComponentClass",
       "SCR_FactionCommanderSignupComponentClass",
       "SCR_FlagComponentClass",
@@ -33697,11 +38681,21 @@
     "children": []
   },
   {
+    "name": "SCR_FactionBaseResourceComponentClass",
+    "children": []
+  },
+  {
     "name": "SCR_FactionCommanderBaseLogicComponentClass",
     "children": []
   },
   {
     "name": "SCR_FactionCommanderSignupComponentClass",
+    "children": [
+      "SCR_VehicleFactionCommanderSignupComponentClass"
+    ]
+  },
+  {
+    "name": "SCR_VehicleFactionCommanderSignupComponentClass",
     "children": []
   },
   {
@@ -33789,6 +38783,10 @@
   },
   {
     "name": "SCR_DeployablePlaceableItemComponentClass",
+    "children": []
+  },
+  {
+    "name": "SCR_PlayerActionsComponentClass",
     "children": []
   },
   {
@@ -36726,6 +41724,7 @@
       "SCR_InterfaceSettingsSubMenu",
       "SCR_KeybindSetting",
       "SCR_VideoSettingsConsoleSubMenu",
+      "SCR_VideoSettingsHandheldSubMenu",
       "SCR_VideoSettingsSubMenu"
     ]
   },
@@ -36755,6 +41754,10 @@
   },
   {
     "name": "SCR_VideoSettingsConsoleSubMenu",
+    "children": []
+  },
+  {
+    "name": "SCR_VideoSettingsHandheldSubMenu",
     "children": []
   },
   {
@@ -37858,6 +42861,10 @@
     "children": []
   },
   {
+    "name": "SCR_ParamTest",
+    "children": []
+  },
+  {
     "name": "SCR_AutotestCaseBase",
     "children": [
       "SCR_TEST_Example1Subject_Counter_CountsToFive",
@@ -37883,11 +42890,11 @@
     "children": []
   },
   {
-    "name": "SCR_AutotestHarness",
+    "name": "SCR_AutotestFailure",
     "children": []
   },
   {
-    "name": "SCR_AutotestResult",
+    "name": "SCR_AutotestHarness",
     "children": []
   },
   {
@@ -38033,11 +43040,7 @@
     "children": []
   },
   {
-    "name": "SCR_AutotestPlugin",
-    "children": []
-  },
-  {
-    "name": "SCR_AutotestToolPlugin",
+    "name": "SCR_AutotestConfigValidationPlugin",
     "children": []
   },
   {
@@ -38413,6 +43416,10 @@
     "children": []
   },
   {
+    "name": "SCR_AutotestPlugin",
+    "children": []
+  },
+  {
     "name": "SCR_DamageAreaShapesPlugin",
     "children": []
   },
@@ -38446,6 +43453,10 @@
   },
   {
     "name": "SCR_TerrainEdgesFinderPlugin",
+    "children": []
+  },
+  {
+    "name": "SCR_TerrainSlopeViewerPlugin",
     "children": []
   },
   {
@@ -38564,7 +43575,9 @@
       "DecalSystem",
       "DeployMenuSystem",
       "DestructionHeatmapSystem",
+      "DistanceConsumerSystem",
       "DistanceParticleEffectSystem",
+      "DistanceProducerSystem",
       "DoorSystem",
       "EffectManagerSystem",
       "FallDamageInspectorSystem",
@@ -38602,6 +43615,7 @@
       "NotificationsSystem",
       "NwkMovementConsumerSystem",
       "NwkMovementProducerSystem",
+      "ObserversSystem",
       "PerceivableSystem",
       "PerceptionSystem",
       "ProcAnimSystem",
@@ -38613,6 +43627,7 @@
       "RespawnSystem",
       "RestoreInactivePhysEntitiesStateSystem",
       "RplComponentDebugDrawSystem",
+      "SCR_AIEnemyMarkingSystem",
       "SCR_AmbientPatrolSystem",
       "SCR_AmbientVehicleSystem",
       "SCR_AnimatedBeltSystem",
@@ -38641,6 +43656,8 @@
       "VehicleUpdateSignalsSystem",
       "VehiclesDustSystem",
       "VicinitySystem",
+      "VisibilityConsumerSystem",
+      "VisibilityProducerSystem",
       "VoNSystem",
       "VolumesDebugSystem"
     ]
@@ -38720,7 +43737,15 @@
     "children": []
   },
   {
+    "name": "DistanceConsumerSystem",
+    "children": []
+  },
+  {
     "name": "DistanceParticleEffectSystem",
+    "children": []
+  },
+  {
+    "name": "DistanceProducerSystem",
     "children": []
   },
   {
@@ -38884,6 +43909,10 @@
     "children": []
   },
   {
+    "name": "ObserversSystem",
+    "children": []
+  },
+  {
     "name": "PerceivableSystem",
     "children": []
   },
@@ -38925,6 +43954,10 @@
   },
   {
     "name": "RplComponentDebugDrawSystem",
+    "children": []
+  },
+  {
+    "name": "SCR_AIEnemyMarkingSystem",
     "children": []
   },
   {
@@ -39046,6 +44079,14 @@
     "children": []
   },
   {
+    "name": "VisibilityConsumerSystem",
+    "children": []
+  },
+  {
+    "name": "VisibilityProducerSystem",
+    "children": []
+  },
+  {
     "name": "VoNSystem",
     "children": []
   },
@@ -39069,6 +44110,10 @@
   },
   {
     "name": "RoadNetworkSystem",
+    "children": []
+  },
+  {
+    "name": "SCR_AnalyticsApplication",
     "children": []
   },
   {

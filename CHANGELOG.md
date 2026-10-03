@@ -5,6 +5,18 @@ Maintained private fork of [steffenbk/enfusion-mcp-BK](https://github.com/steffe
 
 ## [Unreleased]
 
+### Changed
+- **Reforger 1.8 API index re-scraped** (Tools buildid 24870687, 1.8.0.13): 887 Enfusion +
+  8,085 Arma classes, was 812 + 8,009 on 1.7. The scraper now reads the docs as either a zip
+  (up to 1.7) or an unpacked directory (1.8 ships `ArmaReforgerScriptAPIPublic/html/` and
+  `EnfusionScriptAPI/html/` loose, the latter without "Public"). The zip-only reader found
+  nothing on 1.8 and kept the 1.7 index without failing.
+- README rewritten for this fork: install from source (npx installs upstream), tool table
+  matching the registered tools, how to refresh the index. `docs/LINUX_PROTON.md` gained the
+  four direct-Proton launch traps and lost the retired-laptop narrative.
+
+## [1.0.0-ff]
+
 ### Added
 - **Linux / Proton Workbench launcher.** The Windows Workbench `.exe` can now be
   launched on Linux. New `launcher` config (`auto` | `native` | `proton` | `steam`,

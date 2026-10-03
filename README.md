@@ -1,201 +1,106 @@
-# enfusion-mcp
+# enfusion-mcp (private fork, `1.0.0-ff`)
 
-MCP server for Arma Reforger modding. Describe what you want to build, and your MCP client handles everything  -  API research, code generation, project scaffolding, Workbench control, and in-editor testing. Zero modding experience required.
+MCP server for Arma Reforger modding: API and wiki search, base-game asset reading straight out of
+`.pak` archives, project scaffolding, and (in principle) live Workbench control. This fork targets
+**Arma Reforger 1.8 on Linux under Proton** and is used by the `reforger-mods` project.
 
 ## Install
 
-### CLI-based MCP clients (Windows)
+This fork is not on npm. `npx -y enfusion-mcp` installs **upstream**, not this code.
 
 ```bash
-mcp add --scope user enfusion-mcp -- cmd /c npx -y enfusion-mcp
+git clone git@github.com:fmarcgh/enfusion-mcp.git && cd enfusion-mcp
+npm install && npm run build
+claude mcp add --scope user enfusion-mcp \
+  -e ENFUSION_WORKBENCH_PATH="$HOME/.local/share/Steam/steamapps/common/Arma Reforger Tools" \
+  -e ENFUSION_GAME_PATH=/path/to/game-or-server \
+  -e ENFUSION_PROJECT_PATH=/path/to/your/mods \
+  -- node "$PWD/dist/index.js"
 ```
 
-### CLI-based MCP clients (macOS / Linux)
-
-```bash
-mcp add --scope user enfusion-mcp -- npx -y enfusion-mcp
-```
-
-Restart the client. Verify that the server is listed.
-
-### Desktop MCP clients
-
-Add to your client's MCP server config:
-
-**Windows:**
-
-```json
-{
-  "mcpServers": {
-    "enfusion-mcp": {
-      "command": "cmd",
-      "args": ["/c", "npx", "-y", "enfusion-mcp"]
-    }
-  }
-}
-```
-
-**macOS / Linux:**
-
-```json
-{
-  "mcpServers": {
-    "enfusion-mcp": {
-      "command": "npx",
-      "args": ["-y", "enfusion-mcp"]
-    }
-  }
-}
-```
-
-Restart the client. Verify that the server is listed.
-
-### Workbench Plugin
-
-The live Workbench tools (`wb_*`) require handler scripts running inside Workbench. These ship with the package in `mod/Scripts/WorkbenchGame/EnfusionMCP/` and are installed automatically when the client launches Workbench via `wb_launch`.
-
-## Usage
-
-Just ask your assistant to make a mod:
-
-- *"Create a HUD widget that shows player health and stamina"*
-- *"Make a zombie survival game mode with wave spawning"*
-- *"Create a custom faction called CSAT with desert camo soldiers"*
-- *"Add an interactive object that heals the player when used"*
-- *"Override the damage system to add armor mechanics"*
-
-Or use the guided prompts for structured workflows:
-
-| Prompt | Description |
-|--------|-------------|
-| `/create-mod` | Full guided mod creation  -  from idea to built addon |
-| `/modify-mod` | Modify or extend an existing mod project |
-
-The assistant will:
-
-1. **Assess complexity**  -  simple mods are built in one pass; large mods (e.g., a DayZ-style overhaul) get broken into phases with a plan you approve before any code is written
-2. **Research** the Enfusion API (8,693 indexed classes), the Arma Reforger wiki (250+ guides), and base game assets (read directly from `.pak` archives) to find the right approach
-3. **Scaffold** the full addon  -  `.gproj`, scripts, prefabs, configs, UI layouts
-4. **Launch Workbench** if it's not already running
-5. **Load the project**, reload scripts, register resources
-6. **Validate and build** the addon
-7. **Enter play mode** so you can test in-game
-
-For complex mods, a `MODPLAN.md` is written to the project root tracking the full vision, completed phases, and what's next  -  so any future session can pick up right where the last one left off via `/modify-mod`.
+**Rebuild after every source change** (`npm run build`) and reload the client. The server runs
+`dist/`, so an edit to `src/` does nothing until then.
 
 ## Tools
 
-### Offline Tools
-
-Work without Workbench running  -  API search, mod scaffolding, code generation, validation, and building.
+### Offline (pure Node, no Workbench)
 
 | Tool | What it does |
 |------|-------------|
-| `api_search` | Search 8,693 Enfusion/Arma Reforger API classes and methods  -  includes inherited members, enum-like class detection, related sibling classes, and `format: 'tree'` for ASCII inheritance hierarchy visualization |
-| `component_search` | Search ScriptComponent descendants  -  filter by category (character, vehicle, weapon, damage, inventory, ai, ui, etc.) and event handlers |
-| `wiki_search` | Search 250+ tutorials and guides from the Enfusion engine docs and BI Community Wiki |
-| `wiki_read` | Read the full content of a wiki page by title  -  no truncation, includes code examples |
-| `wb_knowledge` | Search the bundled Arma Reforger modding knowledge base  -  distilled patterns covering scripting, audio, weapons, vehicles, AI, UI, game modes, animation, and more |
-| `game_browse` | Browse base game files  -  loose files and `.pak` archives transparently |
-| `game_read` | Read base game files  -  scripts, prefabs, configs from loose files or `.pak` |
-| `prefab_inspect` | Inspect a prefab's full inheritance chain  -  merges all components across ancestors, showing which level each value comes from. Solves the problem of `.et` files only showing overrides. |
-| `asset_search` | Search game assets by name across loose files and `.pak` archives |
-| `project_browse` | List files in a mod project directory |
-| `project_read` | Read any project file |
-| `project_write` | Write or update project files |
-| `mod_create` | Scaffold a complete addon with directory structure and `.gproj` |
-| `script_create` | Generate Enforce Script (`.c`) files  -  7 types: component, gamemode, action, entity, manager, modded, basic. Auto-fetches overridable parent methods from API index when `parentClass` is specified |
-| `prefab_create` | Generate Entity Template (`.et`) prefabs  -  7 types: character, vehicle, weapon, spawnpoint, gamemode, interactive, generic |
-| `layout_create` | Generate UI layout (`.layout`) files  -  5 types: hud, menu, dialog, list, custom |
-| `config_create` | Generate config files  -  factions, missions, entity catalogs, editor placeables |
-| `server_config` | Generate dedicated server config for local testing |
-| `mod_validate` | Validate project structure, scripts, prefabs, configs, and naming |
-| `mod_build` | Build the addon using the Workbench CLI |
+| `api_search` | Search the scraped script API (8,972 classes on 1.8: 887 Enfusion + 8,085 Arma), with inherited members and `format: 'tree'` for an inheritance view |
+| `component_search` | Search ScriptComponent descendants by category and event handler |
+| `wiki_search` / `wiki_read` | Search and read the bundled wiki corpus (274 pages) |
+| `wb_knowledge` | Search the bundled modding knowledge base (offline despite the `wb_` prefix) |
+| `game_browse` / `game_read` | Browse and read base-game files, loose or inside `.pak` |
+| `asset_search` | Find base-game assets by name across loose files and `.pak` |
+| `game_duplicate` | Copy a base-game prefab or config into a mod, resolving its ancestor chain |
+| `project` | `browse` / `read` / `write` files in a mod project |
+| `mod` | `create` (scaffold an addon), `validate` (structure, gproj, scripts, prefabs, configs, references, naming), `build` (Workbench CLI) |
+| `prefab` | `create` a prefab from a template, or `inspect` its merged inheritance chain |
+| `script_create` | Generate a `.c` file (component, gamemode, action, entity, manager, modded, basic) |
+| `layout_create` | Generate a `.layout` (hud, menu, dialog, list, custom) |
+| `config_create` | Generate factions, missions, entity catalogs, editor placeables |
+| `scenario_create` / `scenario_create_conflict` | Generate scenario files (Conflict: header, world stub, layers) |
+| `building_setup` | Set up a destructible building from a Blender export manifest |
+| `animation_graph` | Author vehicle `.agr`/`.ast` animation graph scaffolds |
+| `server_config` | Generate a dedicated server config |
+| `workshop_info` | Read Workshop metadata from a `.gproj` |
 
-### Live Workbench Tools
+### Live Workbench (`wb_*`)
 
-Control a running Workbench instance over TCP. Requires the handler scripts installed (see setup above).
+`wb_launch` `wb_connect` `wb_diagnose` `wb_cleanup` `wb_state` `wb_play` `wb_stop` `wb_save`
+`wb_undo_redo` `wb_open_resource` `wb_reload` `wb_execute_action` `wb_entity_create`
+`wb_entity_delete` `wb_entity_duplicate` `wb_entity_list` `wb_entity_inspect` `wb_entity_modify`
+`wb_entity_select` `wb_component` `wb_terrain` `wb_layers` `wb_resources` `wb_prefabs`
+`wb_clipboard` `wb_script_editor` `wb_localization` `wb_projects` `wb_validate`
 
-| Tool | What it does |
-|------|-------------|
-| `wb_launch` | Start Workbench if not running, wait for NET API |
-| `wb_connect` | Test connection to Workbench |
-| `wb_state` | Full state snapshot  -  mode, world, entity count, selection |
-| `wb_play` | Switch to game mode (Play in Editor) |
-| `wb_stop` | Return to edit mode |
-| `wb_save` | Save the current world |
-| `wb_undo_redo` | Undo or redo the last action |
-| `wb_open_resource` | Open a resource in its editor |
-| `wb_reload` | Reload scripts or plugins without restarting |
-| `wb_execute_action` | Run any Workbench menu action by path |
-| `wb_entity_create` | Create entity from prefab at a position |
-| `wb_entity_delete` | Delete entity by name |
-| `wb_entity_list` | List and search entities in the world |
-| `wb_entity_inspect` | Get entity details  -  properties, components, children |
-| `wb_entity_modify` | Move, rotate, rename, reparent, set/clear/get/list properties, list/add/remove array items |
-| `wb_entity_select` | Select, deselect, clear, get current selection |
-| `wb_component` | Add, remove, list entity components  -  supports lookup by name or index (for unnamed entities) |
-| `wb_terrain` | Query terrain height and world bounds |
-| `wb_layers` | Create, delete, rename layers, set visibility/active |
-| `wb_resources` | Register resources, rebuild database |
-| `wb_prefabs` | Create templates, save, GUID lookup |
-| `wb_clipboard` | Copy, cut, paste, duplicate entities |
-| `wb_script_editor` | Read/write lines in the open script file |
-| `wb_localization` | String table CRUD for localization |
-| `wb_projects` | List loaded projects, open `.gproj` files |
-| `wb_validate` | Material and texture validation |
+They talk to the Workbench NET API (TCP `127.0.0.1:5775`) through handler scripts in
+`mod/Scripts/WorkbenchGame/EnfusionMCP/`. **They never worked on 1.7 and are untested on 1.8**: the
+handlers have to compile inside the open project's WorkbenchGame module, and they did not. For
+compiling and publishing, `reforger-mods/scripts/wb.sh` drives the Workbench CLI directly and is the
+proven path. Linux launch details: [docs/LINUX_PROTON.md](docs/LINUX_PROTON.md).
 
-### Mod Patterns
+### MCP resources
 
-10 built-in templates for `mod_create`:
-
-`game-mode` `custom-faction` `custom-action` `spawn-system` `custom-component` `modded-behavior` `admin-tool` `custom-vehicle` `weapon-reskin` `hud-widget`
-
-### MCP Resources
-
-| URI | Description |
-|-----|-------------|
-| `enfusion://class/{className}` | Full class docs with inheritance, methods, ancestors/descendants |
-| `enfusion://pattern/{patternName}` | Mod pattern definition with all templates |
-| `enfusion://group/{groupName}` | API group with class list |
+`enfusion://class/{className}`, `enfusion://pattern/{patternName}`, `enfusion://group/{groupName}`.
 
 ## Configuration
 
-All optional. Sensible defaults are used when nothing is set.
+All optional. Environment variables beat `~/.enfusion-mcp/config.json`.
 
-| Environment Variable | Description | Default |
-|---------------------|-------------|---------|
-| `ENFUSION_PROJECT_PATH` | Default mod output directory | `~/Documents/My Games/ArmaReforgerWorkbench/addons` |
-| `ENFUSION_WORKBENCH_PATH` | Path to Arma Reforger Tools | `C:\Program Files (x86)\Steam\steamapps\common\Arma Reforger Tools` |
-| `ENFUSION_GAME_PATH` | Path to the Arma Reforger game install (used as CWD when launching Workbench so base-game addons resolve correctly) | Auto-detected from sibling of `ENFUSION_WORKBENCH_PATH` |
-| `ENFUSION_WORKBENCH_HOST` | NET API host | `127.0.0.1` |
-| `ENFUSION_WORKBENCH_PORT` | NET API port | `5775` |
+| Variable | Meaning | Default |
+|----------|---------|---------|
+| `ENFUSION_WORKBENCH_PATH` | Arma Reforger Tools install | Windows Steam path |
+| `ENFUSION_GAME_PATH` | Game (or dedicated server) install read by `game_*`/`asset_search` | sibling of the Tools path |
+| `ENFUSION_PROJECT_PATH` | Default mod directory | `~/Documents/My Games/ArmaReforgerWorkbench/addons` |
+| `ENFUSION_EXTRACTED_PATH` | Directory of extracted base-game files, read before the `.pak` | unset |
+| `ENFUSION_DEFAULT_MOD` | Mod name used when a tool call names none | unset |
+| `ENFUSION_MCP_DATA_DIR` | Where the API index and wiki corpus live | `data/` in the package |
+| `ENFUSION_WORKBENCH_HOST` / `_PORT` | NET API endpoint | `127.0.0.1` / `5775` |
+| `ENFUSION_WB_LAUNCHER` and friends | Linux launch strategy | see `docs/LINUX_PROTON.md` |
 
-Config can also be loaded from `~/.enfusion-mcp/config.json`. Environment variables take priority.
+## Refreshing the API index after a game update
 
-## Requirements
+```bash
+npm run scrape -- --workbench-path "$HOME/.local/share/Steam/steamapps/common/Arma Reforger Tools"
+npm run build
+```
 
-- **Node.js 20+**
-- **Arma Reforger Tools** (Steam)  -  needed for `mod_build` and all `wb_*` tools
+It reads the Doxygen docs the Tools ship under `Workbench/docs/`. Up to 1.7 those were zips; **1.8
+ships them unpacked** (`ArmaReforgerScriptAPIPublic/html/`, `EnfusionScriptAPI/html/`) and the
+scraper accepts both. Check the closing `Scrape complete:` counts: a scrape that finds no docs warns
+and leaves the old index in place. Last scraped: Tools buildid 24870687 (1.8.0.13), 2026-10-03.
 
 ## Development
 
 ```bash
-git clone https://github.com/steffenbk/enfusion-mcp-BK.git
-cd enfusion-mcp-BK
-npm install
-npm run scrape   # Build API index from Workbench docs
-npm run build
-npm test         # 187 tests
+npm test   # 446 tests; 2 known failures, see CHANGELOG
 ```
 
-## License
+Requires Node 20+.
 
-MIT
+## Upstream and licence
 
-## Upstream
-
-This is a maintained fork of [enfusion-mcp](https://github.com/Articulated7/enfusion-mcp)
-by Articulated7, carried to Linux under Proton and Arma Reforger 1.7. It is MIT
-licensed, the same as upstream, and the original copyright notice is kept in
-`LICENSE`.
+Maintained fork of [steffenbk/enfusion-mcp-BK](https://github.com/steffenbk/enfusion-mcp-BK), itself
+a fork of [Articulated7/enfusion-mcp](https://github.com/Articulated7/enfusion-mcp). MIT, same as
+upstream; the original copyright notice is kept in `LICENSE`.

@@ -1,5 +1,955 @@
 [
   {
+    "name": "Animation",
+    "description": "",
+    "classes": []
+  },
+  {
+    "name": "Attributes",
+    "description": "",
+    "classes": [
+      "BaseContainerCustomTitleField",
+      "Attribute",
+      "KickCauseGroupLink",
+      "BaseContainerCustomTitle",
+      "Workbench",
+      "BaseContainerProps",
+      "BaseContainer",
+      "BaseContainerVersion",
+      "CommonEditorProps",
+      "ComponentEditorProps",
+      "EntityEditorProps",
+      "EnumBitFlag",
+      "EnumLinear",
+      "Friend",
+      "InheritedAttribute",
+      "Obsolete",
+      "SortAttribute",
+      "UniqueAttribute"
+    ]
+  },
+  {
+    "name": "Audio",
+    "description": "",
+    "classes": [
+      "AudioSystem",
+      "AudioHandle",
+      "int"
+    ]
+  },
+  {
+    "name": "Character",
+    "description": "",
+    "classes": []
+  },
+  {
+    "name": "Colors Constants",
+    "description": "",
+    "classes": []
+  },
+  {
+    "name": "Components",
+    "description": "",
+    "classes": [
+      "AnimationControllerComponent",
+      "AnimationControllerComponentClass",
+      "AnimationPlayerComponentClass",
+      "AnimationPlayerComponent",
+      "BaseAnimationControllerComponent",
+      "BaseAnimationControllerComponentClass",
+      "BaseMaterialParamsComponentClass",
+      "BaseMaterialParamsComponent",
+      "BaseRplComponentClass",
+      "BaseRplComponent",
+      "BaseSoundComponentClass",
+      "BaseSoundComponent",
+      "BaseStaticSoundComponentClass",
+      "CharacterMovementComponentClass",
+      "GenericComponent",
+      "MaterialParamsComponentClass",
+      "MaterialParamsComponent",
+      "PawnMovementComponent",
+      "PawnMovementComponentClass",
+      "RplComponentClass",
+      "RplComponent",
+      "ScriptComponent",
+      "SimpleSignalComponent",
+      "SimpleSignalComponentClass",
+      "SndComponent",
+      "SndComponentClass",
+      "SoundOutputStateComponentClass",
+      "SoundOutputStateComponent",
+      "TouchComponentClass",
+      "TouchComponent",
+      "WorldSubsceneComponent"
+    ]
+  },
+  {
+    "name": "Components_Character",
+    "description": "",
+    "classes": [
+      "AnimationMaterialParamsComponentClass",
+      "AnimationMaterialParamsComponent",
+      "CharacterAnimGraphComponent",
+      "CharacterFSMState",
+      "CharacterFSMStateCb",
+      "CharacterMovementComponent",
+      "CharacterPhysicsComponent",
+      "CharacterSndComponentClass",
+      "CharacterSndComponent"
+    ]
+  },
+  {
+    "name": "Components_Sound",
+    "description": "",
+    "classes": [
+      "BaseStaticSoundComponent",
+      "SndComponent"
+    ]
+  },
+  {
+    "name": "Constants",
+    "description": "static script constants",
+    "classes": []
+  },
+  {
+    "name": "Containers",
+    "description": "",
+    "classes": [
+      "BaseContainer",
+      "BaseContainerList",
+      "BaseContainerTools",
+      "IEntityComponentSource",
+      "IEntitySource",
+      "UserSettings",
+      "WidgetSource"
+    ]
+  },
+  {
+    "name": "Core",
+    "description": "",
+    "classes": [
+      "GameLibMaterial",
+      "SndInfo"
+    ]
+  },
+  {
+    "name": "Debug utilities Constants",
+    "description": "",
+    "classes": [
+      "DbgUI",
+      "Debug",
+      "DebugText",
+      "DebugTextScreenSpace",
+      "DebugTextWorldSpace",
+      "DiagMenu",
+      "Shape",
+      "ShapeUtils",
+      "string"
+    ]
+  },
+  {
+    "name": "Diag menu API definition Constants » Debug utilities",
+    "description": "",
+    "classes": [
+      "DiagMenu"
+    ]
+  },
+  {
+    "name": "Dialogue",
+    "description": "",
+    "classes": [
+      "AnimationDialogueData",
+      "AudioDialogueData",
+      "AudioGlobalData",
+      "DialogueBaseElement",
+      "DialogueData",
+      "DialogueGlobalData",
+      "DialogueSpeaker",
+      "DialogueTransitionRule",
+      "DialogueVariableMappingObject",
+      "DialogueVariableRule",
+      "DynamicAudioDialogueData",
+      "ObsoleteSentenceDialogueData",
+      "SentenceDialogueData",
+      "SetVariableDialogueData",
+      "TextDialogueData",
+      "TimedDialogueData"
+    ]
+  },
+  {
+    "name": "Enforce script essentials",
+    "description": "",
+    "classes": [
+      "Restrict",
+      "string"
+    ]
+  },
+  {
+    "name": "Entities",
+    "description": "",
+    "classes": [
+      "EntityComponentPrefabData",
+      "EntityPrefabData",
+      "IEntity",
+      "NativeComponent",
+      "BaseWeatherManagerEntityClass",
+      "BaseWeatherManagerEntity",
+      "CharacterEntity",
+      "CharacterEntityClass",
+      "CinematicEntityClass",
+      "CinematicEntity",
+      "DecalEntityClass",
+      "DecalEntity",
+      "DeferredDecalEntityClass",
+      "DeferredDecalEntity",
+      "EnvironmentProbeEntityClass",
+      "EnvironmentProbeEntity",
+      "GeneratorBaseEntityClass",
+      "GeneratorBaseEntity",
+      "GenericControllerClass",
+      "GenericController",
+      "GenericEntity",
+      "GenericEntityClass",
+      "GenericTerrainEntityClass",
+      "GenericTerrainEntity",
+      "GenericWorldEntityClass",
+      "GenericWorldEntity",
+      "GenericWorldFogEntityClass",
+      "GenericWorldFogEntity",
+      "GenericWorldLightEntityClass",
+      "GenericWorldLightEntity",
+      "GenericWorldPPEffectClass",
+      "GenericWorldPPEffect",
+      "GenericWorldRainEntityClass",
+      "GenericWorldRainEntity",
+      "GenericWorldWindEntityClass",
+      "GenericWorldWindEntity",
+      "LakeGeneratorEntityClass",
+      "LakeGeneratorEntity",
+      "LightEntityClass",
+      "LightEntity",
+      "PawnEntity",
+      "PawnEntityClass",
+      "PawnRelatedEntity",
+      "PawnRelatedEntityClass",
+      "PolylineShapeEntityClass",
+      "PolylineShapeEntity",
+      "ProbeVolumeClass",
+      "ProbeVolume",
+      "RagdollTestEntityClass",
+      "RagdollTestEntity",
+      "RiverEntityClass",
+      "RiverEntity",
+      "RiverPartEntityClass",
+      "RiverPartEntity",
+      "RoadEntityClass",
+      "RoadEntity",
+      "ShapeEntityClass",
+      "ShapeEntity",
+      "SimpleCustomConcaveGeometryEntityClass",
+      "SimpleCustomConcaveGeometryEntity",
+      "SplineShapeEntityClass",
+      "SplineShapeEntity",
+      "SplineTerrainGeneratorEntityBaseClass",
+      "SplineTerrainGeneratorEntityBase",
+      "StaticModelEntityClass",
+      "StaticModelEntity",
+      "TreeEntity",
+      "TreeEntityClass",
+      "VolumeEntityClass",
+      "VolumeEntity",
+      "VolumeReceiverEntityClass",
+      "VolumeReceiverEntity",
+      "WorldOccluderEntityClass",
+      "WorldOccluderEntity",
+      "Game"
+    ]
+  },
+  {
+    "name": "Entity system",
+    "description": "",
+    "classes": [
+      "EntityID",
+      "BoneMask",
+      "int"
+    ]
+  },
+  {
+    "name": "Event System",
+    "description": "See alsoEvent System",
+    "classes": [
+      "EventAttribute",
+      "EventProvider",
+      "Class",
+      "ReceiverAttribute"
+    ]
+  },
+  {
+    "name": "Graph",
+    "description": "",
+    "classes": [
+      "GenericGraphModel",
+      "GraphGraphicsItem",
+      "GraphNode",
+      "GraphNodeScene",
+      "GraphNodeView",
+      "GraphSceneState",
+      "IGraphModel"
+    ]
+  },
+  {
+    "name": "Graph_Connections",
+    "description": "",
+    "classes": [
+      "GraphNodeConnectionBase",
+      "GraphNodeConnectionCurve",
+      "GraphNodeConnectionLine"
+    ]
+  },
+  {
+    "name": "Graph_Ports",
+    "description": "",
+    "classes": [
+      "GraphNodePortBase",
+      "GraphNodePortCircle",
+      "GraphNodePortRect"
+    ]
+  },
+  {
+    "name": "Input System",
+    "description": "See alsoInput System",
+    "classes": [
+      "ActionManager",
+      "GamepadDeviceHandler",
+      "GyroDeviceHandler",
+      "InputBinding",
+      "InputDeviceHandler",
+      "InputManager",
+      "JoystickDeviceHandler",
+      "KeyboardDeviceHandler",
+      "MouseDeviceHandler",
+      "TrackIRDeviceHandler",
+      "float",
+      "string"
+    ]
+  },
+  {
+    "name": "Math",
+    "description": "",
+    "classes": [
+      "CurveColor",
+      "Color",
+      "CurveFloat",
+      "CurveVector",
+      "Math",
+      "Math2D",
+      "Math3D"
+    ]
+  },
+  {
+    "name": "Menu System",
+    "description": "See alsoMenu System",
+    "classes": [
+      "MenuBase",
+      "MenuManager"
+    ]
+  },
+  {
+    "name": "NetApi",
+    "description": "Workbench NET API",
+    "classes": [
+      "NetApiHandler"
+    ]
+  },
+  {
+    "name": "Objects_Character",
+    "description": "",
+    "classes": [
+      "CharacterSimStrategy",
+      "CharacterSimStrategyFSM"
+    ]
+  },
+  {
+    "name": "Particles",
+    "description": "",
+    "classes": [
+      "ParticleEffectEntityClass",
+      "ParticleEffectEntity",
+      "ParticleEffectEntitySpawnParams",
+      "ReplicatedParticleEffectEntityClass",
+      "ReplicatedParticleEffectEntity"
+    ]
+  },
+  {
+    "name": "Physics",
+    "description": "",
+    "classes": [
+      "Contact",
+      "Physics",
+      "Physics6DOFJoint",
+      "Physics6DOFSpringJoint",
+      "PhysicsBallSocketJoint",
+      "PhysicsBlock",
+      "PhysicsConeTwistJoint",
+      "PhysicsFixedJoint",
+      "PhysicsGeom",
+      "PhysicsGeomDef",
+      "PhysicsHingeJoint",
+      "PhysicsJoint",
+      "PhysicsMaterial",
+      "PhysicsRagdoll",
+      "PhysicsSliderJoint",
+      "PhysicsWorld",
+      "SurfaceProperties",
+      "PhysicsUtils"
+    ]
+  },
+  {
+    "name": "Vehicles Physics",
+    "description": "",
+    "classes": [
+      "ContactSurface"
+    ]
+  },
+  {
+    "name": "Replication",
+    "description": "",
+    "classes": [
+      "Replication",
+      "RplConnectionStats",
+      "RplId",
+      "RplIdentity",
+      "RplNode",
+      "ScriptCtx",
+      "RplProp",
+      "RplRpc",
+      "OnRpl",
+      "RplBeforeInjected",
+      "RplBeforeExtracted",
+      "ScriptBitWriter",
+      "ScriptBitReader",
+      "ScriptBitSerializer",
+      "SSnapSerializerBase",
+      "SSnapshot",
+      "SSnapSerializer",
+      "RplSessionCallbacks",
+      "int"
+    ]
+  },
+  {
+    "name": "plugin",
+    "description": "This plugin opens resources specified in the -resources command line param. \nIf multiple resources are specified, they must be delimitered by a comma ','. Resources are defined as this example {7297BDBDE223627F} Every resource is captured to a screenshot which will be saved into directory specified by -screenshot-output-dir command line parameter. Name of the file is created as a RESOURCE_NAME.bmp. For every screenshot a metadata file is created which includes additional information about the resource. Name of the file is created as a RESOURCE_NAME.bmp.txt. Plugin also creates summary.txt file in the output directory.",
+    "classes": []
+  },
+  {
+    "name": "Resources",
+    "description": "",
+    "classes": [
+      "AnimationSource",
+      "BaseResourceObject",
+      "MeshObject",
+      "Resource",
+      "ResourceDatabase",
+      "VObject"
+    ]
+  },
+  {
+    "name": "Screenshot autotest",
+    "description": "",
+    "classes": [
+      "Screenshot_AutotestClass",
+      "Screenshot_WaypointClass",
+      "Screenshot_Autotest",
+      "Screenshot_Waypoint"
+    ]
+  },
+  {
+    "name": "Script Testing Framework",
+    "description": "For framework description, see Script Testing Framework.",
+    "classes": [
+      "TestBase",
+      "Test",
+      "TestFailureBase",
+      "TestHarness",
+      "TestResultTimeout",
+      "TestSuite",
+      "Attribute",
+      "TestStep",
+      "TestResultBase"
+    ]
+  },
+  {
+    "name": "ScriptValue",
+    "description": "",
+    "classes": [
+      "ScriptValue",
+      "ScriptValueArrayFloat",
+      "ScriptValueAttribute",
+      "ScriptValueBool",
+      "ScriptValueEntity",
+      "ScriptValueFloat",
+      "ScriptValueInt",
+      "ScriptValueManaged",
+      "ScriptValueResourceName",
+      "ScriptValueString",
+      "ScriptValueVector"
+    ]
+  },
+  {
+    "name": "Sound",
+    "description": "",
+    "classes": [
+      "AudioSourceConfig",
+      "BaseSoundManagerModule",
+      "SndBaseModule",
+      "SndSystem",
+      "SndWorldClass",
+      "SndWorld"
+    ]
+  },
+  {
+    "name": "String constants Constants",
+    "description": "",
+    "classes": []
+  },
+  {
+    "name": "System",
+    "description": "Enforce script system methods.",
+    "classes": [
+      "FileHandle",
+      "FileIO",
+      "FilePath",
+      "GameProject",
+      "GameSessionStorage",
+      "ParseHandle",
+      "PixelRawData",
+      "ProfileData",
+      "RandomGenerator",
+      "ScreenshotTextureData",
+      "ScriptModule",
+      "System",
+      "SearchResourcesFilter",
+      "MemoryStatsSnapshot",
+      "ProcessHandle",
+      "func",
+      "ResourceName",
+      "string",
+      "int"
+    ]
+  },
+  {
+    "name": "Tools",
+    "description": "Helpful functions & classes.",
+    "classes": [
+      "Tuple",
+      "Tuple1< Class T1 >",
+      "Tuple2< Class T1, Class T2 >",
+      "Tuple3< Class T1, Class T2, Class T3 >",
+      "Tuple4< Class T1, Class T2, Class T3, Class T4 >",
+      "Tuple5< Class T1, Class T2, Class T3, Class T4, Class T5 >",
+      "Tuple6< Class T1, Class T2, Class T3, Class T4, Class T5, Class T6 >"
+    ]
+  },
+  {
+    "name": "Types",
+    "description": "Enforce script essentials.",
+    "classes": [
+      "bool",
+      "float",
+      "int",
+      "ResourceName",
+      "SharedItemRef",
+      "StaticArray",
+      "string",
+      "TypeName",
+      "UUID",
+      "vector",
+      "Class",
+      "Managed",
+      "ScriptAndConfig",
+      "pointer",
+      "global_pointer",
+      "handle64",
+      "func",
+      "TypeID",
+      "array< Class T >",
+      "set< Class T >",
+      "map"
+    ]
+  },
+  {
+    "name": "UI",
+    "description": "",
+    "classes": [
+      "AlignableSlot",
+      "BaseListboxWidget",
+      "BasicGraphWidget",
+      "BlurWidget",
+      "ButtonSlot",
+      "ButtonWidget",
+      "CanvasWidget",
+      "CanvasWidgetBase",
+      "CheckBoxWidget",
+      "ContentWidget",
+      "EditBoxWidget",
+      "FrameSlot",
+      "FrameWidget",
+      "GenericListboxWidget",
+      "GridLayoutWidget",
+      "GridSlot",
+      "HorizontalLayoutSlot",
+      "HorizontalLayoutWidget",
+      "ImageWidget",
+      "LayoutSlot",
+      "LayoutWidgetBase",
+      "MultilineEditBoxWidget",
+      "OverlaySlot",
+      "OverlayWidget",
+      "PanelSlot",
+      "PanelWidget",
+      "ProgressBarWidget",
+      "RenderTargetWidget",
+      "RichTextWidget",
+      "RingBufferGraphWidget",
+      "RTTextureSlot",
+      "RTTextureWidget",
+      "ScaleWidget",
+      "ScriptedWidgetComponent",
+      "ScriptedWidgetEventHandler",
+      "ScrollLayoutSlot",
+      "ScrollLayoutWidget",
+      "SimpleListboxWidget",
+      "SizeLayoutSlot",
+      "SizeLayoutWidget",
+      "SliderWidget",
+      "SocketWidget",
+      "TextListboxWidget",
+      "TextWidget",
+      "Widget",
+      "ThreeStateCheckboxWidget",
+      "TimeBasedGraphWidget",
+      "TimeBasedGraphWithAxesWidget",
+      "UIWidget",
+      "UniformGridLayoutWidget",
+      "UniformGridSlot",
+      "UniversalListboxWidget",
+      "UserWidget",
+      "VerticalLayoutSlot",
+      "VerticalLayoutWidget",
+      "VideoWidget",
+      "WidgetManager",
+      "Class",
+      "WindowSlot",
+      "WindowWidget",
+      "WorkspaceSlot",
+      "WorkspaceWidget",
+      "XComboBoxWidget",
+      "GameLibWidgetType",
+      "GameConsoleWidget",
+      "GraphWidget",
+      "SmartPanelWidget"
+    ]
+  },
+  {
+    "name": "Visual",
+    "description": "",
+    "classes": [
+      "Animation",
+      "Color",
+      "Material",
+      "Particles"
+    ]
+  },
+  {
+    "name": "Widget UI system",
+    "description": "",
+    "classes": [
+      "WidgetType",
+      "CanvasWidgetCommand",
+      "TextDrawCommand",
+      "LineDrawCommand",
+      "PolygonDrawCommand",
+      "TriMeshDrawCommand",
+      "ImageDrawCommand",
+      "CompositeDrawCommand",
+      "TypeID",
+      "func",
+      "bool",
+      "Widget"
+    ]
+  },
+  {
+    "name": "WorkbenchAPI",
+    "description": "",
+    "classes": [
+      "ContainerID",
+      "WorldEditorAPI",
+      "BuildResourceContext",
+      "GeneratedResources",
+      "MetaFile",
+      "TexTools",
+      "WBProgressDialog",
+      "Workbench",
+      "World"
+    ]
+  },
+  {
+    "name": "WorkbenchAPI_GeoShapes",
+    "description": "",
+    "classes": [
+      "GeoAttribCollection",
+      "GeoShape",
+      "GeoMultiPoint",
+      "GeoPoint",
+      "GeoPolygon",
+      "GeoPolyline",
+      "GeoShapeCollection",
+      "GeoShapeLoader",
+      "GeoVertexCollection",
+      "Shape"
+    ]
+  },
+  {
+    "name": "WorkbenchAPI_Modules",
+    "description": "",
+    "classes": [
+      "AnimEditor",
+      "AudioEditor",
+      "BehaviorEditor",
+      "DialogueEditor",
+      "LocalizationEditor",
+      "NavmeshGeneratorMain",
+      "ParticleEditor",
+      "ProcAnimEditor",
+      "ResourceManager",
+      "ScriptEditor",
+      "WBModuleDef",
+      "WorldEditor"
+    ]
+  },
+  {
+    "name": "WorkbenchAPI_Plugins",
+    "description": "",
+    "classes": [
+      "LocalizationEditorPlugin",
+      "ResourceManagerPlugin",
+      "WorkbenchPlugin",
+      "WorldEditorPlugin",
+      "WorldEditorTool",
+      "World"
+    ]
+  },
+  {
+    "name": "WorkbenchAPI_Terrain",
+    "description": "",
+    "classes": [
+      "TerrainToolDesc",
+      "TerrainToolDesc_HeightAdd",
+      "TerrainToolDesc_HeightExact",
+      "TerrainToolDesc_HeightNoise",
+      "TerrainToolDesc_HeightSmooth",
+      "TerrainToolDesc_HeightUser",
+      "TerrainToolDesc_LayerAdd"
+    ]
+  },
+  {
+    "name": "World",
+    "description": "",
+    "classes": [
+      "BaseWorld",
+      "Decal",
+      "LightHandle",
+      "TraceBox",
+      "TraceCapsule",
+      "TraceCylinder",
+      "TraceOBB",
+      "TraceParam",
+      "TraceSphere",
+      "TrackDecalFactory",
+      "WorldTimestamp",
+      "SharedItem",
+      "World",
+      "func",
+      "bool",
+      "IEntity",
+      "vector",
+      "float"
+    ]
+  },
+  {
+    "name": "WorldEditorTools",
+    "description": "",
+    "classes": [
+      "WorldEditorToolAPI"
+    ]
+  },
+  {
+    "name": "World Systems",
+    "description": "",
+    "classes": [
+      "AnimationControllerSystem",
+      "AnimationPlayerSystem",
+      "NearbyEntitiesSystem",
+      "ParticleEffectsSystem",
+      "RplSchedulerDebugController",
+      "RplSchedulerDebugSystem",
+      "WorldController",
+      "WorldControllerInfo",
+      "WorldOneTimePointArgs",
+      "WorldSystem",
+      "WorldSystemInfo",
+      "WorldSystems",
+      "WorldUpdatePointArgs"
+    ]
+  },
+  {
+    "name": "Online",
+    "description": "",
+    "classes": [
+      "BackendApi",
+      "BackendAuthenticatorApi",
+      "BackendCallback",
+      "BackendCatalogueFilter",
+      "BackendComment",
+      "BackendCommentCatalogue",
+      "BackendDebugApi",
+      "BackendImage",
+      "BackendValueFilter",
+      "BanListPageParams",
+      "JsonApiStruct",
+      "BanServiceApi",
+      "BaseWorkshopItem",
+      "BlockListItem",
+      "BohemiaAccountApi",
+      "Game",
+      "ClientLobbyApi",
+      "Dependency",
+      "DSSession",
+      "DSSessionCallback",
+      "ImageScale",
+      "MissionWorkshopItem",
+      "NewsFeedItem",
+      "OnlineBanListData",
+      "PlayerRole",
+      "PlayerRoleManagerApi",
+      "PopupFeedItem",
+      "RestApi",
+      "RestCallback",
+      "RestContext",
+      "Revision",
+      "Room",
+      "ServerConfigApi",
+      "ServerConfigMeta",
+      "ServiceStatusItem",
+      "SessionStorage",
+      "WorkshopApi",
+      "WorkshopAuthor",
+      "WorkshopCatalogue",
+      "WorkshopItem",
+      "WorkshopTag",
+      "WorldSaveItem",
+      "WorldSaveManifest"
+    ]
+  },
+  {
+    "name": "Online_UserGameData",
+    "description": "",
+    "classes": [
+      "UserGameDataApi",
+      "UserGameDataBase"
+    ]
+  },
+  {
+    "name": "Online_bimage",
+    "description": "",
+    "classes": [
+      "BImage"
+    ]
+  },
+  {
+    "name": "Online_extras",
+    "description": "",
+    "classes": [
+      "ExtraProduct",
+      "ProductOffer",
+      "ProductOfferCatalogueApi",
+      "ProductOfferCatalogueFilters",
+      "ProductServerRentingDetails"
+    ]
+  },
+  {
+    "name": "Online_groups",
+    "description": "",
+    "classes": [
+      "GroupApplication",
+      "GroupApplicationCatalogue",
+      "GroupApplicationCatalogueFilters",
+      "GroupAuditLogCatalogue",
+      "GroupAuditLogCatalogueFilters",
+      "GroupAuditLogEvent",
+      "GroupAuditLogMember",
+      "GroupCatalogue",
+      "GroupCatalogueFilters",
+      "GroupData",
+      "GroupManifest",
+      "GroupMemberCatalogue",
+      "GroupMemberCatalogueFilters",
+      "GroupMemberRole",
+      "GroupMembership"
+    ]
+  },
+  {
+    "name": "Online_notifications",
+    "description": "",
+    "classes": [
+      "NotificationCatalogueApi",
+      "NotificationCatalogueFilters",
+      "NotificationInfo"
+    ]
+  },
+  {
+    "name": "Online_server",
+    "description": "",
+    "classes": [
+      "ServerCatalogueApi",
+      "ServerCatalogueFilters",
+      "ServerGameDataBase",
+      "ServerInfo",
+      "ServerJoinManagerApi",
+      "ServerLobbyApi",
+      "ServerPingSite",
+      "ServerQueueData",
+      "ServerQueueInfo",
+      "ServerWorkshopData"
+    ]
+  },
+  {
+    "name": "Online_server_config",
+    "description": "",
+    "classes": [
+      "ServerConfig"
+    ]
+  },
+  {
+    "name": "Online_workshop",
+    "description": "",
+    "classes": [
+      "WorkshopAsset",
+      "WorkshopAssetBase",
+      "WorkshopAssetTag",
+      "WorkshopCatalogueApi",
+      "WorkshopCatalogueFilters",
+      "WorkshopCollection",
+      "WorkshopCollectionItem",
+      "WorkshopJob",
+      "WorkshopLicense",
+      "WorkshopRevision",
+      "WorkshopRevisionBase",
+      "WorkshopUserProfile"
+    ]
+  },
+  {
     "name": "AI",
     "description": "",
     "classes": [
@@ -58,6 +1008,8 @@
       "AIOrder",
       "AIPathfindingComponentClass",
       "AIPathfindingComponent",
+      "AISmartActionUserComponent",
+      "AISmartActionUserComponentClass",
       "AISpawnerGroupClass",
       "AISpawnerGroup",
       "AITask",
@@ -110,6 +1062,8 @@
       "AITaskSetVariable",
       "AITaskStop",
       "AITaskThrowGrenade",
+      "AITurretAimingComponentClass",
+      "AITurretAimingComponent",
       "AIWaypointClass",
       "AIWaypoint",
       "AIWaypointCycleClass",
@@ -219,6 +1173,10 @@
     "name": "AI_Character",
     "description": "",
     "classes": [
+      "AICharacterAimingComponentClass",
+      "AICharacterAimingComponent",
+      "AICharacterHeadAimingComponentClass",
+      "AICharacterHeadAimingComponent",
       "AICharacterMovementComponentClass",
       "AICharacterMovementComponent"
     ]
@@ -271,7 +1229,7 @@
   },
   {
     "name": "Batch Prefabs Operations Tool",
-    "description": "",
+    "description": "Workbench tool for batch operation on multiple objects. \nIt",
     "classes": [
       "SCR_BatchPrefabsOperationsTool"
     ]
@@ -410,6 +1368,8 @@
       "BaseItemAnimationComponentClass",
       "BaseLightManagerComponent",
       "BaseLightManagerComponentClass",
+      "BaseProcAnimComponentClass",
+      "BaseProcAnimComponent",
       "BaseRadioComponentClass",
       "BaseRadioComponent",
       "BaseStaminaComponentClass",
@@ -494,8 +1454,8 @@
       "SignalsManagerComponentClass",
       "SimplePawnControllerComponentClass",
       "SimplePawnControllerComponent",
-      "SimpleSoundComponentClass",
       "SimpleSoundComponent",
+      "SimpleSoundComponentClass",
       "SlidingDoorComponent",
       "SlidingDoorComponentClass",
       "SlotManagerComponentClass",
@@ -629,8 +1589,8 @@
     ]
   },
   {
-    "name": "Editable EntitiesEditor",
-    "description": "",
+    "name": "Editable Entities Editor",
+    "description": "Editable entities.",
     "classes": [
       "SCR_SlotCompositionComponent",
       "SCR_EditableCharacterComponent",
@@ -665,7 +1625,7 @@
   },
   {
     "name": "Editor",
-    "description": "",
+    "description": "Editor is a tool for run-time world observation and manipulation.\nIt's designed to provide a platform for many specialized features.\n\nElements\n\nManagers\n\nIt's created for each player by editor core (SCR_EditorManagerCore).\nLocally it's controlled by editor manager (SCR_EditorManagerEntity).\nVarious modes handle specialized functionality (SCR_EditorModeEntity).\nEditor components are responsible for individual features (SCR_BaseEditorComponent).\n\n\nEditable Entities\n\nEntities like vehicles or props can be registered for use in the editor.\nCore of editable entities (SCR_EditableEntityCore) holds a list of all entities.\nIndividual entities are identified by a component (SCR_EditableEntityComponent) or its inherited versions.\n\n\nTechnical Implementation\n\nA lot of communication is done through script invokers.\ne.g., editor components listen to events on editor mode or manager entity, instead of the entities iterating through their components and calling functions there.\nOutside systems can hook into these systems too, as they already exist for editor purposes.\nDisadvantage is that from where an event is invoked, it's not clear who everyone is listening.\n\n\nAwareness between various parts of editor is always top-down, never the other way around. Exmaples:\nEditor mode is aware of the editor manager it belongs to and can access its functions, but the editor manager does not really touch the editor mode (apart from initialization).\nEditor component knows what editor mode is attached to, but the mode does not care what components it carries.\nWidget component on editor GUI reads and writes to editor component, but the component is unaware of the GUI.\n\n\nGUI functionality is strictly separated from system functionality.\ne.g., SCR_ToolbarActionsEditorComponent holds the list of toolbar actions, but does not control GUI; instead, it provides API to which SCR_ActionsToolbarEditorUIComponent connects.",
     "classes": []
   },
   {
@@ -679,13 +1639,13 @@
     ]
   },
   {
-    "name": "Attribute VariablesEditor » Containers",
-    "description": "",
+    "name": "Attribute Variables Editor » Containers",
+    "description": "Editor attribute variables.",
     "classes": []
   },
   {
-    "name": "Editor ComponentsEditor » Entities",
-    "description": "",
+    "name": "Editor Components Editor » Entities",
+    "description": "Editor manager components.",
     "classes": [
       "SCR_AccessKeysEditorComponent",
       "SCR_AttributesManagerEditorComponent",
@@ -725,13 +1685,13 @@
     ]
   },
   {
-    "name": "AttributesEditor » Entities » Editor Components",
-    "description": "",
+    "name": "Attributes Editor » Entities » Editor Components",
+    "description": "Global editor attributes.",
     "classes": []
   },
   {
-    "name": "Entity ManagersEditor » Containers",
-    "description": "",
+    "name": "Entity Managers Editor » Containers",
+    "description": "Classes managing editable entities of specific states. \nAttached on SCR_EntitiesManagerEditorComponent.",
     "classes": [
       "SCR_BaseEditableEntityFilter",
       "SCR_CompatibleSlotEditableEntityFilter",
@@ -757,22 +1717,22 @@
     ]
   },
   {
-    "name": "ContainersEditor",
-    "description": "",
+    "name": "Containers Editor",
+    "description": "Editor containers.",
     "classes": [
       "SCR_EditorPreviewParams"
     ]
   },
   {
-    "name": "BackendEditor » Containers",
-    "description": "",
+    "name": "Backend Editor » Containers",
+    "description": "Backend configuration of editor features.",
     "classes": [
       "SCR_EditorMetaStruct"
     ]
   },
   {
-    "name": "Root ConfigsEditor » Containers",
-    "description": "",
+    "name": "Root Configs Editor » Containers",
+    "description": "Root configs for the editor.",
     "classes": [
       "SCR_PlaceableEntitiesMeta",
       "SCR_PlaceableEntitiesRegistry",
@@ -781,16 +1741,16 @@
     ]
   },
   {
-    "name": "Context ActionsEditor » Containers",
-    "description": "",
+    "name": "Context Actions Editor » Containers",
+    "description": "Editor context actions.",
     "classes": [
       "SCR_GeneralContextAction",
       "SCR_SelectedEntitiesContextAction"
     ]
   },
   {
-    "name": "CoreEditor",
-    "description": "",
+    "name": "Core Editor",
+    "description": "Editor core configuration.",
     "classes": [
       "SCR_EditableEntityCore",
       "SCR_EditableEntityComponent",
@@ -799,8 +1759,8 @@
     ]
   },
   {
-    "name": "Editable Entity UIEditor » Containers",
-    "description": "",
+    "name": "Editable Entity UI Editor » Containers",
+    "description": "GUI representation of editable entities.",
     "classes": [
       "SCR_EntitiesEditorUIRule",
       "SCR_EditableEntityUIRuleTracker",
@@ -809,8 +1769,8 @@
     ]
   },
   {
-    "name": "Audio-visual effectsEditor » Containers",
-    "description": "",
+    "name": "Audio-visual effects Editor » Containers",
+    "description": "Effects tied to specific operations in the editor.",
     "classes": [
       "SCR_EntityEditorEffect",
       "SCR_BaseEditorEffect",
@@ -820,8 +1780,8 @@
     ]
   },
   {
-    "name": "EntitiesEditor",
-    "description": "",
+    "name": "Entities Editor",
+    "description": "Editor entities manage functionality of the editor. \n\nStructure\nFor the editor to function propertly, it must be configured in the following structure. All entities must be saved into a prefabs and linked in attributes mentioned below. \n<p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p>\n\nExecution Order\nFunctions in relevant classes are called in the following order.\n\n<p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p>",
     "classes": [
       "SCR_SiteSlotEntity",
       "SCR_EditorBaseEntity",
@@ -835,18 +1795,18 @@
     ]
   },
   {
-    "name": "InfoEditor » Containers",
-    "description": "",
+    "name": "Info Editor » Containers",
+    "description": "Information about editable entity.",
     "classes": []
   },
   {
-    "name": "LabelsEditor » Containers",
-    "description": "",
+    "name": "Labels Editor » Containers",
+    "description": "Labels describing entities.",
     "classes": []
   },
   {
-    "name": "UIEditor",
-    "description": "",
+    "name": "UI Editor",
+    "description": "Editor GUI.",
     "classes": [
       "SCR_BaseDuplicatableEditorAttribute",
       "SCR_AttributeDescriptionUIComponent",
@@ -907,8 +1867,8 @@
     ]
   },
   {
-    "name": "UI ComponentsEditor » UI",
-    "description": "",
+    "name": "UI Components Editor » UI",
+    "description": "Editor UI components.",
     "classes": [
       "SCR_BaseDuplicatableEditorAttribute",
       "SCR_AttributeDescriptionUIComponent",
@@ -964,8 +1924,8 @@
     ]
   },
   {
-    "name": "MenusEditor » UI",
-    "description": "",
+    "name": "Menus Editor » UI",
+    "description": "Editor menus.",
     "classes": [
       "EditorAttributesDialogUI",
       "EditorBrowserDialogUI",
@@ -1063,7 +2023,7 @@
   },
   {
     "name": "Game Core",
-    "description": "",
+    "description": "Cores attached to ArmaReforgerScripted.",
     "classes": [
       "SCR_EditableEntityCore",
       "SCR_EditableEntityComponent",
@@ -1075,7 +2035,7 @@
   },
   {
     "name": "Game Mode",
-    "description": "",
+    "description": "Game modes.",
     "classes": [
       "SCR_GameModeSectorControl",
       "BaseGameModeClass",
@@ -1117,7 +2077,7 @@
   },
   {
     "name": "Windows Prefab Generator",
-    "description": "",
+    "description": "Workbench plugin for generation of windows, sash & glass prefabs.",
     "classes": [
       "SCR_GenerateWindowsPrefabsTool"
     ]
@@ -1256,7 +2216,7 @@
   },
   {
     "name": "Manual Camera",
-    "description": "",
+    "description": "Manually controlled camera.",
     "classes": [
       "SCR_AccelerationManualCameraComponent",
       "SCR_AdjustSpeedManualCameraComponent",
@@ -1332,7 +2292,7 @@
   },
   {
     "name": "Math",
-    "description": "",
+    "description": "Math library.",
     "classes": [
       "Curve",
       "Curve3"
@@ -1384,19 +2344,12 @@
     "description": "",
     "classes": [
       "AnimatedColliderComponent",
+      "AnimatedColliderComponentClass",
       "BuoyancyComponent",
       "BuoyancyComponentClass",
-      "DynamicPhysicsObstacleComponentClass",
       "DynamicPhysicsObstacleComponent",
       "VehicleBuoyancyComponent",
       "VehicleBuoyancyComponentClass"
-    ]
-  },
-  {
-    "name": "Physiscs",
-    "description": "",
-    "classes": [
-      "AnimatedColliderComponentClass"
     ]
   },
   {
@@ -1463,7 +2416,7 @@
     "classes": [
       "EntityPersistenceConfig",
       "PersistenceConfig",
-      "ScriptedStatePersistenceConfig"
+      "StatePersistenceConfig"
     ]
   },
   {
@@ -1488,6 +2441,7 @@
     "name": "Plugins_Persistence_System_Serializers",
     "description": "",
     "classes": [
+      "EntitySerializerDefaultSpawnData",
       "GenericEntitySerializer",
       "PersistenceSerializerBase",
       "ScriptedComponentSerializer",
@@ -1616,6 +2570,11 @@
     ]
   },
   {
+    "name": "Road",
+    "description": "",
+    "classes": []
+  },
+  {
     "name": "RoadNetwork",
     "description": "",
     "classes": [
@@ -1641,7 +2600,9 @@
       "CharacterLeaningSystem",
       "DecalSystem",
       "DestructionHeatmapSystem",
+      "DistanceConsumerSystem",
       "DistanceParticleEffectSystem",
+      "DistanceProducerSystem",
       "FallDamageInspectorSystem",
       "FlattenGrassSystem",
       "FuelSystem",
@@ -1674,6 +2635,7 @@
       "LongRangeSoundSystem",
       "NwkMovementConsumerSystem",
       "NwkMovementProducerSystem",
+      "ObserversSystem",
       "PerceivableSystem",
       "PerceptionSystem",
       "ProcAnimSystem",
@@ -1694,6 +2656,8 @@
       "VehicleUpdateAnimsSystem",
       "VehicleUpdateSignalsSystem",
       "VicinitySystem",
+      "VisibilityConsumerSystem",
+      "VisibilityProducerSystem",
       "VolumesDebugSystem",
       "VoNSystem"
     ]
